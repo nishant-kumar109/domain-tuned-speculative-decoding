@@ -12,17 +12,6 @@ Speculative decoding speeds up LLM inference by using a small draft model to pro
 
 This project tests the hypothesis: *fine-tuning the draft model on code-domain data improves acceptance rate and unlocks real latency gains.*
 
-## Key Results
-
-| Condition | Draft | Speedup | Tokens/sec | HumanEval Pass@1 |
-|---|---|---|---|---|
-| C1: Baseline (generic) | TinyLlama-1.1B | 1.85× | 19.2 | 0.61% |
-| **C2: Domain-tuned (ours)** | TinyLlama-1.1B + QLoRA | **1.91×** | 20.1 | 0.00% |
-| C3: Medusa | CodeLlama-7B + 4 heads | 1.03× | **28.3** | 0.00% |
-| C4: EAGLE-2 (untrained) | CodeLlama-7B + MLP | 1.00× | 19.8 | 1.22% |
-
-Domain tuning improves acceptance rate by ~0.06× over the generic baseline. Medusa achieves the highest raw throughput via parallelised head predictions. Pass@1 scores are near-zero across all conditions due to conservative generation settings (no few-shot, no post-processing).
-
 ## Experimental Conditions
 
 | # | Condition | Draft | Target | Method |
