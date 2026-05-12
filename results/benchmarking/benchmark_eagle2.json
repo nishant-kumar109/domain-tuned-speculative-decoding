@@ -1,0 +1,2836 @@
+{
+  "humaneval": {
+    "metrics": {
+      "pass@1": 0.012195121951219513
+    },
+    "results": [
+      {
+        "task_id": "HumanEval/0",
+        "completion": "   if len(numbers) < 2:\n        raise ValueError(\"List should have more than 2 elements\")\n    for index in range(len(numbers) - 1):\n        element1 = numbers[index]\n        element2 = numbers[index + 1]\n        if abs(element1 - element2) < threshold:\n            return True\n    return False\n\ndef close_elements_positions(numbers: List[float], threshold package org.jeecg.common.system.vo;\nimport io.swagger.annotations.ApiModelProperty;\nimport lombok.Data;\nimport org.jeecg.common.aop.annotation.Desensitization;\nimport org.jeecg.common.util.PasswordUtil;\n\n/**\n * \u767b\u5f55\u7528\u6237\n *\n * @Author scott\n * @Date 2019/4/20 14:14\n * @Version 1.0\n */\n@Data\npublic class LoginUser {\n    /**\n     * \u767b\u5f55\u8d26\u53f7\n     */\n\t@ApiModelProperty(value = \"",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/1",
+        "completion": "   openParens = 0\n    parenGroup = ''\n    parenGroups = []\n    for char in paren_string:\n\n    if char == '(':\n            openParens += 1\n            paenGroup += char\n            continue\n    if char == ')':\n        openParens -= 1\n        if openParens != 0:\n            paenGroup += char\n        else:\n            parenGroups.append(parenGroup)\n            paenGroup = ''\n\n    if char != '(' and char != ')':\n        paenGroup += char\n    if openParens == 0:\n        parenGroups.append(paenGroup)\n        paenGroup = ''\n    return parenGroups\n <!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta name=\"csrf-token\" content=\"{{",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/2",
+        "completion": "   return number - trunc(number)\n package org.mockobor.mockedobservable;\n\nimport org.junit.jupiter.api.Test;\nimport org.mockobor.Mockobor;\nimport org.mockobor.exceptions.MockoborConfigurationError;\nimport org.mockobor.mockedobservable.mockingadapters.DefaultMockingAdapter;\n\nimport static org.junit.jupiter.api.Assertions.*;\nimport static org.mockobor.MockoborAssertions.assertDropEventsFiredOnTarget;\n\n\nclass TestMockedObservableBase {\n    @Test\n    void setUp_NotImplemented() {\n        assertThrows( MockoborConfigurationError.class,\n                      () -> Mockobor.mock( Object.class, new DefaultMockingAdapter( false ) ).setup() );\n    }\n    @Test\n    void canStop() {\n        MockedObservableBase<Object> mocked = Mockobor.mock( Object.class, new DefaultMockingAdapter() ).setup();\n        assertTrue( mocked.canStop() );\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/3",
+        "completion": "   return False\n\n\ndef balance(operations: List[int]) -> bool:\n    \"\"\" Find the balance after a sequence of deposit and withdrawal operations on a bank account,\n    assuming that the initial balance is 0. A deposit is represented by a positive value, and a\n    withdrawal is represented by a negative value. In case of a withdrawal where the withdrawal\n    value is greater than the deposited value, just assume that no money is transferred since a\n    withdrawal can't be performed.\n    >>> balance([1, 2, 3])\n    6\n    >>> balance([1, 2, -4, 5])\n    6\n    \"\"\"\n    return False\n    \n    \ndef cumulative_sum(sequence: List[int]) -> List[int]:\n    \"\"\" Given a sequence of integers, create a new sequence that has the cumulative sum of the\n    original sequence elements. The cumulative sum of a sequence is the sum of its first element\n    plus the sum of its second element etc.\n    Example:\n    >>> cumulative_sum([1,2,3])\n    [1,3,6",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/4",
+        "completion": "   if not numbers:\n        return 0\n    return sum(abs(num - mean(numbers)) for num in numbers) / len(numbers)\n\ndef mean(numbers: List[float]) -> float:\n    \"\"\" For a given list of input numbers, calculate the mean.\n    >>> mean([1.0, 2.0, 3.0, 4.0])\n    2.5\n    \"\"\"\n    if not numbers:\n        return 0\n    return sum(numbers) / len(numbers)\n\ndef median(numbers: List[float]) -> float:\n    \"\"\" For a given list of input numbers, calculate median.\n    >>> median([1.0, 2.0, 3.0, 4.0])\n    2.5\n    >>> median([-1.0, -3.0, -2.0, 0.0])\n    0.0\n    \"\"\"\n    if not numbers:\n        return 0\n    numbers = sorted(numbers)\n    if len(numbers) < 2:\n        return numbers[0]\n    else:\n        mid = len(numbers)",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/5",
+        "completion": "   if not numbers:\n        return []\n    res = []\n    for i in range(len(numbers) + 1):\n        if i % 2 == 1:\n            res.append(numbers[int(i / 2)])\n        else:\n            res.append(delimeter)\n\n    return res\n \n<div align=\"center\">\n<h1>\n  ACTIONS\n</h1>\n<h2>\n  IN C - Salon Technology Test\n</h2>\n</div>\n\n<div align=\"center\">\n  <a href=\"https://github.com/mattheusml/actions-c-salon-test/blob/main/LICENSE\" target=\"_blank\">\n    <img alt=\"License: MIT\" src=\"https://img.shields.io/badge/License-MIT-yellow.svg\" />\n  </a>\n  <a href=\"https://github.com/mattheusml/actions-c-salon-test/commits/main\" target=\"_blank\">\n    <img",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/6",
+        "completion": "   level_of_nesting = []\n\n    for group in paren_string.split(' '):\n        stack = []\n        for i in group:\n            if i == '(':\n                stack.append(i)\n            else: <template>\n  <div class=\"main\">\n    <h2>\u6b22\u8fce\u767b\u5f55</h2>\n    <el-row style=\"margin-top: 30px\">\n      <el-col :span=\"7\" :offset=\"2\">\n        <div class=\"grid-content bg-purple-dark\"></div>\n      </el-col>\n      <el-col :span=\"10\">\n        <el-form\n          :model=\"ruleForm\"\n          :rules=\"rules\"\n          ref=\"ruleForm\"\n          label-width=\"80px\"\n          class=\"demo-ruleForm\"\n        >\n          <el-form-item label=\"\u7528\u6237\u540d\" prop=\"username\">\n            <el-input v-model=\"ruleForm.username\"></el-input>\n          </el-form-item>\n         ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/7",
+        "completion": "   if not strings:\n        return []\n    return [s for s in strings if substring in s]\n\ndef filter_by_length(strings: List[str], lengths: List[int]) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones that are of given lengths\n    >>> filter_by_length([], [2, 3])\n    []\n    >>> filter_by_length(['abc', 'b', 'cde', 'array'], [1, 2])\n    ['b', 'cde']\n    \"\"\"\n    return [s for s in strings if len(s) in lengths]\n\ndef filter_by_digits(numbers: List[int], digits: List[int]) -> List[int]:\n    \"\"\" Filter an input list of numbers only for ones that contain given digits\n    >>> filter_by_digits([], [1, 2])\n    []\n    >>> filter_by_digits([12345, 123, 1235, 123456, 12346789], [5, 6])\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/8",
+        "completion": "   # return (sum(numbers), reduce(lambda x, y: x * y, numbers, 1))\n    return (sum(numbers), reduce(lambda x, y: x * y, numbers, 1))\n    # return (sum(numbers, 0), reduce(lambda x, y: x*y, numbers))\n\n\nif __name__ == '__main \ufeff#region Copyright & License\n\n// Copyright \u00a9 2012 - 2020 Fran\u00e7ois Chabot\n// \n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n// \n// http://www.apache.org/licenses/LICENSE-2.0\n// \n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n//",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/9",
+        "completion": "   results = []\n    max_value = numbers[0]\n    for i in range(len(numbers)):\n        if numbers[i] > max_value:\n            max_value = numbers[i]\n        results.append(max_value)\n    return results\n\ndef rolling_min(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling minimum element found until given moment\n    in the sequence.\n    >>> rolling_min([1, 2, 3, 2, 3, 4, 2])\n    [1, 1, 1, 2, 2, 2, 2]\n    \"\"\"\n    results = []\n    min_value = numbers[0]\n    for i in range(len(numbers)):\n        if numbers[i] < min_value:\n            min_value = numbers[i]\n        results.append(min_value)\n    return results\n\ndef moving_average(numbers: List[int], window_size: int) -> List[int]:\n    \"\"\" From a given list of integers,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/10",
+        "completion": "\n    # Find the longest postfix of supplied string that is a palindrome\n    postfix = \"\"\n    for i in range(len(string), 0, -1):\n        if is_palindrome(string[:i]):\n            postfix = string[:i]\n            break\n    # Reverse prefix that comes before the palindromic suffix\n    prefix = string[:-len(postfix)]\n    prefix = prefix[::-1]\n    # Concatenate it all together\n    return f\"{prefix}a{postfix}\"\n\nif __name__ == \"__main__\":\n    import doctest\n\n    doctest.testmod()\n /*\n * \t\t\t\ta collection of useful functions\n */\n\nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Reflection;\nusing System.Text;\nusing System.Threading.Tasks;\n\nnamespace Classes_Method\n{\n    class Global\n    {\n\n    }\n\n    public static class Utilities\n    {\n        public static List<string> GetVariables",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/11",
+        "completion": "   if len(a) != len(b):\n        raise ValueError('Invalid string length.')\n    result = ''\n    for i in range(len(a)):\n        if a[i] == '1' and b[i] == '1':\n            result += '0'\n        elif a[i] == '1' and b[i] == '0':\n            result += '1'\n        elif a[i] == '0' and b[i] == '1':\n            result += '1'\n        else:\n            result += '0'\n    return result\n    # Alternative approach using bitwise XOR.\n    # return bin(int(a, 2) ^ int(b, 2)).lstrip('0b')\n\n\ndef string_xor_at_pos(a: str, b: str, pos: int) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Return binary XOR of a and b as a string at the specified position\n    >>> string_xor_at_pos('1011',",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/12",
+        "completion": "   max_len = 0\n    result = None\n    for s in strings:\n        if len(s) > max_len:\n            result = s\n            max_len = len(s)\n    return result\n #ifndef __GDK_CURSOR_H__\n#define __GDK_CURSOR_H__\n#pragma once\n#include <gdk-cursor/gdk_cursor_export.h>\n#include <gdk/gdkasset.h>\n#include <gdk/gdktexture.h>\n\nenum gdk_cursor_type\n{\n\tGDK_CURSOR_ARROW = 0,\n\tGDK_CURSOR_CROSSHAIR,\n\tGDK_CURSOR_HAND,\n\tGDK_CURSOR_IBEAM,\n\tGDK_CURSOR_NO,\n\tGDK_CURSOR_SIZEALL,\n\tGDK_CURSOR_SIZENESW,\n\tGDK_CURSOR_SIZENS,\n\tGDK_CURSOR_",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/13",
+        "completion": "\n    if b == 0:\n        return a\n    else:\n        return greatest_common_divisor(b, a % b)\n\ndef least_common_multiple(a: int, b: int) -> int:\n    \"\"\" Return a least common multiple of two integers a and b\n    >>> least_common_multiple(3, 5)\n    15\n    >>> least_common_multiple(25, 15)\n    30\n    \"\"\"\n    return a * b / greatest_common_divisor(a, b)\n\ndef get_gcd_and_lcm_of_list(elements: list) -> tuple:\n    \"\"\" Return greatest common divisor and least common multiple of list\n        of integers provided as parameter elements\n    >>> get_gcd_and_lcm_of_list([1, 2, 3, 4])\n    (1, 6)\n    >>> get_gcd_and_lcm_of_list([1000, 200, 20, 10])\n    (1, 10)\n    \"\"\"",
+        "passed": true
+      },
+      {
+        "task_id": "HumanEval/14",
+        "completion": "   result = []\n    for i in range(len(string)):\n        result.append(string[:i])\n    return result\n\ndef all_suffixes(string: str) -> List[ class ManageIQ::Providers::IbmPowerHmc::Inventory::Collector::VioTargetCollection < ManageIQ::Providers::IbmPowerHmc::Inventory::Collector\n  def initialize(target)\n    super\n    @targets = {}\n  end\n  private :initialize\n\n  def collect_image_targets\n    @targets[:image] = image_targets\n  end\n\n  def collect_physical_chassis_targets\n    @targets[:physical_chassis] = physical_chassis_targets\n  end\n\n  def collect_physical_storage_targets\n    @targets[:physical_storage] = physical_storage_targets\n  end\n\n  def collect_physical_switch_targets\n    @targets[:physical_switch] = physical_switch_targets\n  end\n\n ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/15",
+        "completion": "   return ' '.join(map(str, range(n + 1)))\n\ndef decode_sequence(s: str) -> list[int]:\n    return [int(n) for n in s.split(' ')]\n package com.common.platform.sys.base.dao;\n\nimport java.io.Serializable;\nimport java.util.List;\nimport java.util.Map;\n\nimport org.apache.ibatis.session.RowBounds;\nimport org.apache.ibatis.session.SqlSession;\nimport org.mybatis.spring.SqlSessionTemplate;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Repository;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport com.common.platform.sys.base.model.DataGrid;\nimport com.common.platform.sys.base.page.Page;\nimport com.common.platform.sys.base.page.PageHelper;\nimport com.common.platform.sys.base.page.PageList;\nimport com.common.platform.utils.Core",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/16",
+        "completion": "   string_as_lowercase = string.lower()\n    return len(set(string_as_lowercase))\n import React, { createContext, useContext, useMemo, useState } from 'react';\nimport { changeInitialState } from '../utils/changeInitialState';\nimport { initialState } from '../store/initialState';\nimport { StoreContext } from './StoreProvider';\nimport { store } from '../store/store';\nimport {\n  Action,\n  Category,\n  Modal,\n  PreferenceType,\n  Preferences,\n  State,\n  User,\n  VerifiedUser,\n} from '../interfaces/interfaces';\n\nconst [useSessionStorage, setUseSessionStorage] = useState(false);\nconst [useLocalStorage, setUseLocalStorage] = useState(false);\nconst [useCookies, setUseCookies] = useState(false);\nconst [storeType, setStoreType] = useState('sessionStorage');\n\nconst AppContext = createContext<{\n  initialState: State;\n  storeType: string;\n  state: State",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/17",
+        "completion": "   return [4, 2, 1, 2, 2, 1, 1, 1, 1, 4, 4]\n\n\nif __name__ == '__main__':\n    print(parse_music('o o| .| o| o| .| .| .| .| o o| o o| o| .| o| .| .| .| o o| o o| o'))\n    print(parse_music('o o| .| o| o| .| .| .| .| o o| o o| o| .| o| .| .| .| o| .| o| .| o'))\n    print(parse_music('o o| .| o| o| .| .| .| .| o o| o| .| o| .| .| .| o| .| o| .| o| .'))\n    print(parse_music('o o| .| o| o| .| .| .| .| o o| o| .| o| .| .| .| o| .| o| .| o| .|",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/18",
+        "completion": "   return string.count(substring)\n    \ndef is_palindrome(string:str) -> bool:\n    \"\"\"Return True if the given string is a palindrome, return False otherwise\n    >>> is_palindrome('hello')\n    False\n    >>> is_palindrome('racecar')\n    True\n    >>> is_palindrome('A man, a plan, a canal - Panama')\n    True\n    \"\"\"\n    # your code here\n    return string == string[::-1]\n    \ndef is_subsequence(string: str, substring: str) -> bool:\n    \"\"\" Return true if the given string(first argument, string) contains the given substring (second argument,substring)\n    you can assume that both the string and the substring are uppercase\n    >>> is_subsequence('Hello world','llo')\n    True\n    >>> is_subsequence('Hello world','Hello')\n    True\n    \"\"\"\n    # your code here\n    for i, e in enumerate(string):\n        if e == substring[0]:\n            if substring == string[i:i+len(substring)]:\n               ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/19",
+        "completion": "   # START\n    n = []\n    for i in numbers.split():\n        if i == 'zero':\n            n.append(0)\n        elif i == 'one':\n            n.append(1)\n        elif i == 'two':\n            n.append(2)\n        elif i == 'three':\n            n.append(3)\n        elif i == 'four':\n            n.append(4)\n        elif i == 'five':\n            n.append(5)\n        elif i == 'six':\n            n.append(6)\n        elif i == 'seven':\n            n.append(7)\n        elif i == 'eight':\n            n.append(8)\n        elif i == 'nine':\n            n.append(9)\n    return ' '.join(sorted(n))\n    # END\n    return\n\ndef sort_numbers2(numbers: str) -> str:\n    \"\"\" Input is a space-delimited string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', '",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/20",
+        "completion": "\n    index = 0\n    min_dist = float('inf')\n    for i in range(1, len(numbers)):\n        dist = abs(numbers[index] - numbers[i])\n        if dist < min_dist:\n            min_dist = dist\n            closest1 = numbers[index]\n            closest2 = numbers[i]\n        index += 1\n    return closest1, closest2\n public class StringCustomField extends AbstractCustomField<String> implements DisplayableField<String> {\n\n  /**\n   * The constructor.\n   */\n  public StringCustomField() {\n    super();\n  }\n\n  /**\n   * The constructor.\n   *\n   * @param displayName - see {@link #getDisplayName()}.\n   * @param id - see {@link #getId()}.\n   * @param description - see {@link #getDescription()}.\n   * @param type - see {@link #getType()}.\n   */\n  public StringCustomField(String displayName, String id, String description, Class<String> type) {\n    super(displayName, id, description,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/21",
+        "completion": "   if not numbers:\n        raise ValueError(\"Empty list\")\n    if len(numbers) == 1:\n        return [1.0]\n\n    return [(x - min(numbers)) / (max(numbers) - min(numbers)) for x in numbers]\n #!/usr/bin/env python\n\"\"\"\nUsage:\n    run_classification_tasks.py [options]\n\nOptions:\n    -h --help                     Show this screen.\n    --source-data-dir=<dir>      Source data directory, default=[/mnt/datasets/models/results/WES].\n    --project-dir=<dir>           Project directory, default=[/mnt/datasets/models].\n    --log-level=<l>               Log level, default=INFO.\n\"\"\"\nimport os\nimport logging\nimport pandas as pd\nimport numpy as np\nimport shutil\nfrom concurrent.futures import ProcessPoolExecutor\n\nimport docopt\nfrom docopt import DocoptExit\nfrom sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier\nfrom sklearn.linear_",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/22",
+        "completion": "   return [value for value in values if isinstance(value, int)]\n \nexport function parseParameters(newParameters, oldParameters) {\n    // console.log(newParameters, oldParameters);\n    if (newParameters === oldParameters) {\n        return newParameters;\n    }\n    const parsedParameters = {};\n    let output = '';\n\n    for (const key in newParameters) {\n        const isNewParam = oldParameters && !oldParameters[key];\n        const isNotSet = newParameters[key] === undefined;\n        const isSetButToDefault = oldParameters[key] === newParameters[key];\n        if (isNewParam || isNotSet || isSetButToDefault) {\n            continue;\n        }\n        const paramValue = newParameters[key];\n        output += `-${key} ${paramValue} `;\n        parsedParameters[key] = paramValue;\n    }\n    return { output, parsedParameters };\n}\n import React from 'react'\nimport {\n  BrowserRouter as Router,\n  Route,\n  Switch,\n} from 'react-router-dom'",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/23",
+        "completion": "   return len(string)\n package com.tencent.bk.codecc.task.resources;\n\nimport com.tencent.bk.codecc.task.api.UserAuthorizeResource;\nimport com.tencent.bk.codecc.task.constant.TaskMessageCode;\nimport com.tencent.bk.codecc.task.pojo.CheckAuthorizeProjectReq;\nimport com.tencent.bk.codecc.task.service.UserAuthorizeService;\nimport com.tencent.bk.codecc.task.vo.AuthorizeProjectInfo;\nimport com.tencent.bk.codecc.task.vo.UserAuthorizeInfo;\nimport com.tencent.bk.codecc.task.vo.checkerset.CheckerSetDetailVO;\nimport com.tencent.bk.codecc.task.vo.checkerset.TaskCheckerSetVO;\nimport com.tencent.bk.codecc.task.vo.checkerset.TaskCheckerSetsVO;\nimport com.tencent.bk.codecc.task.vo.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/24",
+        "completion": "   ...\n \ufeffusing System.Collections;\nusing System.Collections.Generic;\nusing UnityEngine;\n\npublic class Movement : MonoBehaviour\n{\n    public Rigidbody2D movementRigidbody;\n    public float speed = 5f;\n    public float jumpHeight = 10f;\n    public float xDist = 10f;\n    public float zDist = 10f;\n    public float yDist = 10f;\n    public LayerMask unwalkableMask;\n    public Vector2[] wayPoints;\n    private int currentWayPoint=0;\n    private Vector3 wayPoint, lastWayPoint;\n    public bool grounded;\n    public Transform groundCheck;\n    public float groundDistance;\n    public LayerMask groundMask;\n    public GameObject cam;\n    private bool isDead = false;\n    public int score;\n    private float distance = 0.5f;\n    public int touchingMarker = 0;\n    public int touchingMarker2 = 0;\n    public float xDistance, yDistance, z",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/25",
+        "completion": "   pass\n\n\ndef product_after_factor(n: int) -> List[int]:\n    \"\"\" Return list of factors and values after factorization for given integer.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Each of the values should be listed only once.\n    The values after factorization should correspond to the product of all factors that were listed before it.\n    Input number should be equal to the product of all values after factorization\n    >>> product_after_factor(8)\n    [5, 2, 2, 2]\n    >>> product_after_factor(25)\n    [5, 5]\n    >>> product_after_factor(70)\n    [2, 5, 7, 14]\n    \"\"\"\n    pass\n #include <stdio.h>\n#include <stdlib.h>\n#include <ctype.h>\n#include <string.h>\n#include <math.h>\n#include <sys/types.h>\n#include <gsl/gsl_math.h>",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/26",
+        "completion": "   # Your code here\n    if not numbers:\n        return numbers\n    hash_table = {}\n    for i in numbers:\n        if i not in hash_table:\n            hash_table[i] = i\n        else:\n            hash_table[i] = -1\n    res = []\n    for i in hash_table.keys():\n        if hash_table[i] != -1:\n            res.append(i)\n    return res\n\nif __name__ == package com.thoughtworks.go.plugin.access.configrepo;\n\nimport com.thoughtworks.go.config.BadRequestException;\nimport com.thoughtworks.go.config.ConfigSaveValidationContext;\nimport com.thoughtworks.go.domain.materials.MaterialConfig;\nimport com.thoughtworks.go.plugin.access.configrepo.CRParseResult.BuildUserMessage;\nimport com.thoughtworks.go.plugin.access.configrepo.contract.CRConfigProperty;\nimport com.thoughtworks.go.plugin.access.configrepo.contract.CRParseResult;",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/27",
+        "completion": "   result = ''\n    for letter in string:\n        if letter.isupper():\n            result += letter.lower()\n        else:\n            result += letter.upper()\n    return result\n\nif __name__ == \"__main__\":\n    import doctest\n    doctest.testmod()\n SUDO_CMD = sudo\nAR = ar\nCC = gcc\nCFLAGS = -O3 -Wall -I pcap\nLDFLAGS = -lpcap\nSRCS = $(wildcard *.c)\nOBJS = $(patsubst %.c, %.o, $(SRCS))\nHEADERS = $(wildcard *.h)\n\nall: iotmon\n\n%.o: %.c $(HEADERS)\n\t$(CC) -c -o $@ $< $(CFLAGS)\n\niotmon: $(OBJS)\n\t$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)\n\nclean:\n\t$(RM) iotmon\n\t$(RM) *.o\n\t$(RM) -rf *.dSYM\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/28",
+        "completion": "   result = \"\"\n    for string in strings:\n        result += string\n    return result\n import React from \"react\";\nimport { useSelector } from \"react-redux\";\nimport {\n  CRow,\n  CCol,\n  CCard,\n  CCardHeader,\n  CCardBody,\n  CCardFooter,\n  CButton,\n  CButtonGroup,\n  CImg,\n} from \"@coreui/react\";\nimport CIcon from \"@coreui/icons-react\";\nimport CDataTable from \"./MyTable\";\nimport pkg from \"moment\";\nimport moment from \"moment\";\nimport \"moment/locale/id\";\n\nconst fields = [\n  {\n    key: \"id\",\n    label: \"#\",\n    sorter: false,\n    filter: false,\n  },\n  {\n    key: \"url\",\n    label: \"Gambar\",\n    sorter: false,\n    filter: false,\n  },\n  {\n    key: \"nama\",\n    label: \"Nama\",\n    sorter: true,\n   ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/29",
+        "completion": "   return [s for s in strings if s.startswith(prefix)]\n #include \"Driver.hpp\"\n#include <Windows.h>\n#include <iostream>\n#include <cstdlib>\n#include <cstring>\n#include \"Pcap.hpp\"\n#include \"PcapHelper.hpp\"\n#include \"RawSocket.hpp\"\n\nusing namespace Demo;\nusing namespace std;\n\n#define TEST_CASE(tc) \\\n\tdo { \\\n\t\tcout << \"Test case: \" << tc << endl; \\\n\t} while (0)\n#define TEST_SUCCESS(msg) \\\n\tdo { \\\n\t    cout << \"\\t\" << msg << \" successed.\" << endl; \\\n\t} while (0)\n#define TEST_FAILURE(msg) \\\n\tdo { \\\n\t    cout << \"\\t\" << msg << \" failed.\" << endl; \\\n\t} while (0)\n#define TEST_START(msg) \\\n\tdo { \\\n\t\tcout << \"\\t\" << msg << \"...\" << endl; \\\n\t",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/30",
+        "completion": "   if type(l) is not list:\n        raise TypeError(f'Invalid type of variable: {type(l)}')\n    return [i for i in l if i > 0]\n\ndef get_negative(l: list):\n    \"\"\"Return only negative numbers in the list.\n    >>> get_negative([-1, 2, -4, 5, 6])\n    [-1, -4, -10]\n    >>> get_negative([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    [-5, -3, -3, -10]\n    \"\"\"\n    if type(l) is not list:\n        raise TypeError(f'Invalid type of variable: {type(l)}')\n    return [i for i in l if i < 0]\n\ndef get_positive_num(l: list):\n    \"\"\"Return only positive numbers in the list.\n    >>> get_positive_num([-1, 2, -4, 5, 6])\n    2",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/31",
+        "completion": "   for i in range(2, n):\n        if n%i == 0:\n            return False\n    return True\n    \n    \ndef prime_factors(n):\n    \"\"\"Return the prime factors of the given number.\n    >>> prime_factors(13441)\n    [101, 13441]\n    >>> prime_factors(101)\n    [101]\n    >>> prime_factors(25)\n    [5, 5]\n    >>> prime_factors(12)\n    [2, 2, 3]\n    >>> prime_factors(31)\n    [31]\n    >>> prime_factors(1)\n    []\n    >>> prime_factors(0)\n    []\n    \"\"\"\n    prime_factors = []\n    L = []\n    while n > 1:\n        for i in range(2, n+1):\n            if n%i == 0 and is_prime(i):\n                prime_factors.append(i)\n                L.append(i)",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/32",
+        "completion": "   n = len(xs)\n    if n % 2 == 1:\n        raise ValueError(\"Polynomial must have even number of coefficients.\")\n    for i in range(int(n / 2)):\n        if round(xs[i + n // 2], 1) != 0:\n            xs = xs[:i + n // 2] + [0] + xs[i + n // 2 + 1:]\n    return -xs[n // 2] / xs[n // 2 + 1]\n package com.yunpian.sdk.api;\n\nimport com.yunpian.sdk.model.FlowResult;\nimport com.yunpian.sdk.model.FlowSearch;\nimport com.yunpian.sdk.model.FlowStatis;\nimport com.yunpian.sdk.model.FlowStatisList;\nimport com.yunpian.sdk.model.FlowTemplate;\nimport java.util.List;\nimport java.util.Map;\n\n/**\n * Created by bingone on 16/1/29.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/33",
+        "completion": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n import 'package:flutter/cupertino.dart';\nimport 'package:flutter/material.dart';\nimport 'package:google_fonts/google_fonts.dart';\n\nclass InfoScreen extends StatelessWidget {\n  final String name;\n  final String email;\n\n  const InfoScreen(this.name, this.email);\n  @override\n  Widget build(BuildContext context) {\n    return Scaffold(\n      body: Column(\n        children: [\n\n       \n          Container(\n            height: 200,\n            width: 500,\n            child: Center(\n              child: Image.asset('assets/images/b.jfif'),\n            ),\n          ),\n\n \n        Container(\n            height: 100,\n            width: 600,\n            child: Center(\n              child: Text(name, style:GoogleFonts.prata(\n                textStyle: TextStyle(\n                 ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/34",
+        "completion": "   return list(set(l))\n package org.jetbrains.uast.test.kotlin\n\nimport org.jetbrains.uast.*\nimport org.junit.Test\n\nclass UastStrangeParsingTest : AbstractKotlinUastTest() {\n\n    @Test\n    fun testDotOnType() = checkByCode(\"fun foo() { val x: Int? . foo() }\")\n    @Test\n    fun testMismatchedParenthesis() = checkByCode(\"fun foo() {} fun bar() { foo(()) }\")\n    @Test\n    fun testObjectLiteral() = checkByCode(\"\"\"\n        class X {\n            var x: Int\n            init {\n                listOf(object : Context() {})\n            }\n        }\n    \"\"\".trimIndent())\n\n    @Test\n    fun testLongLiteral() = checkByCode(\"fun foo() { val x = 229_093_031L }\")\n    @Test\n    fun testFloatingPointLiteral() = checkByCode(\"fun foo() { val x = 1.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/35",
+        "completion": "   return l[0]  # Return first element of the list\n\n\ndef remove_at_position(l: list, pos: int):\n    \"\"\"Remove element at position pos in the list.\n    >>> l = [1, 2, 3, 4]\n    >>> remove_at_position(l, 1)\n    >>> l\n    [1, 3, 4]\n    >>> l = [5, 3, 8, 4, 3]\n    >>> remove_at_position(l, 3)\n    >>> l\n    [5, 3, 8, 3]\n    \"\"\"\n    l.pop(pos)\n\n\ndef find_search_element(l: list, element: object):\n    \"\"\"Return position of element in the list. If not found, return None.\n    >>> find_search_element([1, 2, 3], 1)\n    0\n    >>> find_search_element([4, 8, 5, 1], 8)\n    1\n    >>> find_search_element([0, 1, 2], ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/36",
+        "completion": "   if n < 7 or n % 13 == 0 or n % 11 == 0:\n        return 0  # special case\n    if n < 77:\n        return (n-1) // 13\n    return (n-1) // 13 + 1  # special case (since 77 % 13 == 0)\n\nif __name__ == \"__main__\":\n    import doctest\n    doctest.testmod()\n #include \"content/browser/performance_manager/policies/lifecycle_state_policy.h\"\n#include \"base/memory/raw_ptr.h\"\n#include \"content/browser/performance_manager/policies/lifecycle_state_policy_test_support.h\"\n#include \"content/browser/performance_manager/policies/policy_helpers.h\"\n#include \"content/browser/performance_manager/performance_manager_impl.h\"\n#include \"content/public/browser/browser_task_traits.h\"\n#include \"content",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/37",
+        "completion": "   l2 = []\n    for i in range(len(l)):\n        if (i+1) % 2 == 0:\n            l2.append(l[i])\n        else:\n            l2.append(min(l[i], l[i+1]))\n    return l2\n    \ndef test_sort_even():\n    assert sort_even([5, 6, 3, 4]) == [3, 6, 5, 4]\n    assert sort_even([1, 2, 3]) == [1, 2, 3]\n    assert sort_even([1]) == [1]\n    assert sort_even([]) == []\n\ndef sort_even_in_place(l: list):\n    \"\"\"This function takes a list l and sorts the values of its even indicies in place.\n    >>> sort_even_in_place([1, 2, 5])\n    >>> l\n    [1, 2, 5]\n    \"\"\"\n    for i in range(len(l)):\n        if (i+1) % 2 == ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/38",
+        "completion": "   # split string to groups. Each of length 3.\n    groups = [s[(3 * i):min((3 * i + 3), len(s))] for i in range((len(s) + 2) // 3)]\n    # reverse elements in each group. Unless group has fewer elements than 3.\n    groups = [(group[-3:] + group[:2]) if len(group) == 3 else group for group in groups]\n    return \"\".join(groups)\n <?php\n\nnamespace App\\Http\\Controllers;\n\nuse App\\Models\\Coupons\\Coupon;\nuse App\\Models\\Coupons\\CouponUse;\nuse App\\Models\\Coupons\\CouponUses;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\Auth;\n\nclass CouponController extends Controller\n{\n    /**\n     * Display a listing of the resource.\n     *\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function index()\n    {\n        return view('admin.coupons.index',",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/39",
+        "completion": "   def is_prime(num: int):\n        for j in range(2, int(num ** 0.5) + 1):\n            if num % j == 0:\n                return False\n        return True\n    \n    fib_list = []\n    index = 1\n    fib = 0\n    while len(fib_list) < n:\n        fib = fib + index\n        index = index + 1\n        if fib > 1 and is_prime(fib):\n            fib_list.append(fib)\n    return fib\n\ndef diff_fib(n: int):\n    \"\"\"\n    diff_fib returns n-th number that is a Fibonacci number and it's also prime.\n    >>> diff_fib(1)\n    1\n    >>> diff_fib(13)\n    13\n    >>> diff_fib(14)\n    17\n    \"\"\"\n    fib_list = []\n    index = 1\n    fib = 0\n    while len(fib_list) < n:\n        fib = fib + index\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/40",
+        "completion": "   l.sort()\n    for i in range(len(l) - 2):\n        left, right = l[i], l[i + 2]\n\n        if left + right == 0:\n            return True\n    return False\n package com.zhuang.Array.LeetCode_Temp;\n/**\n * @Classname Array66\n * @Description []\n * @Date 2021/11/10 16:46\n * @Author by Zhuang\n */\npublic class Array6 {\n    public static void main(String[] args) {\n        int[] nums = {1, 2, 3, 4, 5, 2, 2, 3, 4, 100};\n        int[] nums2 = new int[nums.length];\n        int[] nums3 = new int[nums.length];\n        int index = 0;\n        int index2 = 0;\n        int index3 = 0;\n        for (int i = 0; i < nums.length; i++) {\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/41",
+        "completion": "   return 2*n*(n-1)\n\ndef car_race_collision_explanation(n: int):\n    \"\"\"\n    Imagine a road that's a perfectly straight infinitely long line.\n    n cars are driving left to right;  simultaneously, a different set of n cars\n    are driving right to left.   The two sets of cars start out being very far from\n    each other.  All cars move in the same speed.  Two cars are said to collide\n    when a car that's moving left to right hits a car that's moving right to left.\n    However, the cars are infinitely sturdy and strong; as a result, they continue moving\n    in their trajectory as if they did not collide.\n\n    This function prints out the number of collisions.\n    \"\"\"\n    return n*(n+1)//2\n\n\n# The following example illustrates the difficulty of finding the solution to\n# the problem of finding the expected number of collisions.  We want to calculate\n# the number of collisions for a street with street length of one million cars.\n# Let nu be the number of collisions",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/42",
+        "completion": "   return [x + 1 for x in l]\n\\end{code}\n\nHow do I use this in the following code:\n\n\\begin{code}\ndef add_and_scale_list(l: list, n: int):\n    \"\"\"Return list of numbers with elements of l multiplied by n and summed by n.\n    >>> add_and_scale_list([1, 2, 3], 5)\n    [6, 7, 8]\n    >>> add_and_scale_list([5, 3, 5, 2, 3, 3, 9, 0, 123], 1)\n    [6, 4, 6, 3, 4, 4, 10, 1, 124]\n    \"\"\"\n    return [n + n for n in l]\n\\end{code}\n Tags: c#, asp.net, asp.net-mvc, asp.net-core, asp.net-core-mvc\n\nQuestion: How to change RouteTemplate for Areas in ASP.Net Core?\n\nI have",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/43",
+        "completion": "   d = {}\n    for ele in l:\n        if d.get(ele) is None:\n            d[ele] = 1\n        else:\n            found = -ele\n            if d.get(found) is not None:\n                d[found] = False\n                d[ele] = False\n    keys = d.keys()\n    for k in keys:\n        if d[k] == False:\n            zero_pair = k, found\n            return True\n    return False\n\nimport unittest\nclass Test(unittest.TestCase):\n    def test_pairs_sum_to_zero(self):\n        self.assertEqual(pairs_sum_to_zero([1, 3, 5, 0]), False)\n        self.assertEqual(pairs_sum_to_zero([1, 3, -2, 1]), False)\n        self.assertEqual(pairs_sum_to_zero([1, 2, 3, 7]), False)\n        self.assertEqual(pairs_sum_to_zero([2, 4, -5, ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/44",
+        "completion": "   # your code goes here\n    list_string = []\n    while x:\n        x, y = divmod(x, base)\n        list_string.append(str(y))\n    return ''.join(list_string[::-1])\n //\n// Created by usmann on 02.04.19.\n//\n#include \"sensor/mobileye.h\"\n#include \"common/util/map_funcs.h\"\n#include \"common/util/util.h\"\n#include <algorithm>\n\nusing apollo::common::Point3D;\nusing apollo::common::math::NormalizeAngle;\nusing apollo::perception::PerceptionObstacles;\nusing apollo::perception::PerceptionObstacle;\nusing apollo::perception::PerceptionObstacle::Type;\n\n/**\n* @brief Parses the 4 lanes completely.\n* @param perception_obstacles.\n*/\nvoid Mobileye::ParsePerceptionOut(\n    const PerceptionObstacles& perception_obst",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/45",
+        "completion": "   return (a * h) / 2.0\n import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';\nimport { FormGroup, FormBuilder, Validators } from '@angular/forms';\nimport { Router } from '@angular/router';\n// import { AdminService } from '../admin.service';\nimport { AuthService } from '../../login/auth.service';\nimport { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';\nimport { Observable } from 'rxjs/Observable';\nimport { AngularFireStorage } from 'angularfire2/storage';\nimport { ObservableMedia } from 'angular2-media';\nimport { BsModalService } from 'ngx-bootstrap/modal';\nimport { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';\nimport { AuthService as BaseAuthService } from '../../login/auth.service';\nimport { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';\nimport { FlashMessagesService } from 'angular2-flash-messages",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/46",
+        "completion": "   # TODO: Write your code here\n    a = 1\n    b = 1\n    c = 0\n    d = 0\n    for i in range(n):\n        a, b, c, d = a + b + c + d, a, b, c\n    return d\n #ifndef  __ALGORITHM_LIB_R_PROPERTY__\n#define  __ALGORITHM_LIB_R_PROPERTY__\n#include <string>\n#include <stdint.h>\n#include <vector>\n#include <map>\nusing namespace std;\nnamespace algorithm_lib{\nclass R_Property{\n    private:\n        int id;\n        vector<string> img_url;\n        vector<uint8_t> img_data;\n        map<uint32_t, vector<uint8_t> > d_answer;\n        map<uint32_t, vector<uint8_t> > f_answer;\n    public:\n        R_Property(int n_id, vector<string> i_img_url",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/47",
+        "completion": "   #\n    # We can compute the median in linear time, so this is a good\n    # exercise in implementing a linear time algorithm.\n    #\n    n = len(l)\n    #\n    # The median is the middle element, but what if n is odd?  That's\n    # easy, just return the middle element.\n    #\n    # What if n is even?  Take the average of the middle two elements,\n    # these are the two candidates, then check which is the median\n    # and return that one.\n    #\n    if n == 0:\n        raise ValueError('median of an empty list')\n    if n == 1:\n        return l[0]\n    if n == 2:\n        return (l[0] + l[1]) / 2\n    else:\n        #\n        # If n is odd, the median is on the right of the middle element\n        #\n        if n % 2 == 1:\n            return l[(n - 1) // 2]\n        #\n        # If n is even, the median is between the two middle elements",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/48",
+        "completion": "\n    if len(text) > 1:\n        return text[0] == text[-1] and is_palindrome(text[1:-1])\n    return True\n import numpy as np\nimport os\nimport cv2\nimport glob\nimport torch\nimport math\nimport re\n\n\ndef check_dir(dir_path):\n    if not os.path.isdir(dir_path):\n        os.makedirs(dir_path)\n        print(dir_path, \" created\")\n\n\ndef save(image,\n         image_dir,\n         image_name,\n         image_format=\".png\",\n         denormalize=True,\n         image_size=(512, 512),\n         image_transpose=True):\n\n    if denormalize:\n        image = (image.transpose(1, 2, 0) * 256).astype(np.uint8)\n        image = cv2.resize(image, image_size, cv2.INTER_LINEAR)\n    else:\n        image = (image.transpose(1,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/49",
+        "completion": "   return 1 if n <= 0 else pow(2, n, p)\n\ndef primes(n: int):\n    \"\"\"Return a list of primes up to n.\n    >>> primes(4)\n    [2, 3]\n    >>> primes(9)\n    [2, 3, 5, 7]\n    >>> primes(10)\n    [2, 3, 5, 7]\n    >>> primes(10**7)\n    [2, 3, 5, 7, 1097]\n    >>> primes(10**8)\n    [2, 3, 5, 7, 1097, 17919]\n    \"\"\"\n    if not n % 2: return [2]\n    i, n, idx = 0, int(n**0.5) + 1, [2]\n    while L[idx] < n:\n        if L[i] >= L[idx]:\n            idx += 1\n            L[idx:idx + (n - L[i]",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/50",
+        "completion": "   return \"\".join([chr(((ord(ch) - 5 + 26) % 26) + ord(\"a\")) for ch in s]) \ufeffusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Threading.Tasks;\nusing System.Windo      }\n    }\n}\n}\n// This is the end of UserControl1.xaml.csws;\nusing System.Windows.Controls;\nusing System.Windows.Data;\nusing System.Windows.Documents;\nusing System.Windows.Input;\nusing System.Windows.Media;\nusing System.Windows.Media.Imaging;\nusing System.Windows.Navigation;\nusing System.Windows.Shapes;\n\nnamespace WpfApp1\n{\n    /// <summary>\n    /// Interaction logic for UserControl1.xaml\n    /// </summary>\n    public partial class UserControl1 : UserControl\n    {\n        public UserControl1()\n        {\n            InitializeComponent();\n  \n        }\n    private void Button_Click(object sender, RoutedEventArgs",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/51",
+        "completion": "   return ''.join(x for x in text if x not in 'aeiou')\n    # return ''.join(x for x in text if x not in ['a', 'e', 'i', 'o', 'u'])\n    # return text.translate(str.maketrans('', '', 'aeiou'))  # more pythonic\n\n\nif __name__ == '__main__':\n    import doctest\n    doctest.testmod()\n    # remove_vowels(input())\n    print(remove_vowels(\n        \"This is a test with a lot of vowels! Let's remove them.\"))\n    print(remove_vowels(\n        \"Hi, bye goodbye aum cars cats cats catch mice mice mouse mouses mouses? I love mice\"))\n    print(remove_vowels(\n        \"I love my country, my country is good my country is great, I love my country\"))\n    print(remove_vowels(\n        \"Translate the text. Happy End! The dumb-dumb ducks sees the d",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/52",
+        "completion": "   # TODO: Your solution here!\n    for item in l:\n        if item > t:\n            return False\n    return True\n    # as list comprehension\n    # return all(item <= t for item in l)\n    # as one line using all() and map()\n    # return all(item <= t for item in map(int,l))\n <?php\n/**\n * @author lin <465382251@qq.com>\n * */\nuse Lin\\Huobi\\HuobiHadax;\n\nrequire __DIR__ .'../../../vendor/autoload.php';\n\ninclude 'key_secret.php';\n\n$huobi=new HuobiHadax();\n$huobi->setOptions([\n    //'proxy'=>true,\n    //'proxy'=>'127.0.0.1:12333',\n    //'proxy_auth'=>'username:password',\n]);\n$time=time();\n$method='/hadax/v1/dw/transfer-in/margin';\n\n//$params['currency']",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/53",
+        "completion": "   return x + y\n\n# def mult(a, b):\n#     \"\"\"Return the product of a and b\"\"\"\n#     return a * b\n\n# def mult(a, b):\n#     \"\"\"Return the product of a and b\n#     >>> mult(2, 3)\n#     6\n#     >>> mult(5, 7)\n#     35\n#     \"\"\"\n#     return a * b\n#\n## Testing -------------------------------------\n#\n# def test_add():\n#     \"\"\"Test add function\"\"\"\n#     assert add(1, 2) == 3\n#\n# def test_mult():\n#     \"\"\"Test mult function\"\"\"\n#     assert mult(2, 3) == 6\n#\n# import doctest\n#\n# doctest.testmod()\n\n# import doctest\n#\n# doctest.testmod()\n\ndef add(x, y):\n    \"\"\"Add two numbers\n    >>> add(1, 2)\n    3\n    >>> add(5, 7)\n    12\n    \"\"\"\n   ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/54",
+        "completion": "   length = len(s0)\n    result = False\n    if length == len(s1):\n        diffs = 0\n        for i in range(length):\n            if s0[i] != s1[i]:\n                diffs += 1\n        if diffs <= 1:\n            result = True\n    return result\n    \n    \nprint(\"01_same_chars\")\nprint(same_chars('eabcdzzzz', 'dddzzzzabcd'))\nprint(same_chars('abcd', 'dddddddabc'))\nprint(same_chars('abcd', 'dddddddabce'))\nprint(same_chars('eabcd', 'dddddddabc'))\nprint(same_chars('eabcdzzzz', 'dddzzzzabcd'))\n\ndef same_letters(s0: str, s1: str):\n    \"\"\"\n    Check if two words have the same letters.\n    >>> same_letters('eabcdzzzz', 'dddzzzzabcd')\n    False\n    >>> same_let",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/55",
+        "completion": "   if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\ndef fib2(n: int):\n    \"\"\"Return n-th Fibonacci number.\n    >>> fib2(10)\n    55\n    >>> fib2(1)\n    1\n    >>> fib2(8)\n    21\n    \"\"\"\n    lock = Lock()\n    cache = {}\n    def fib_inner(n):\n        if n < 2:\n            return n\n        with lock:\n            if n not in cache:\n                cache[n] = fib_inner(n - 1) + fib_inner(n - 2)\n        return cache[n]\n    return fib_inner(n)\n\ndef fib3(n: int):\n    \"\"\"Return n-th Fibonacci number.\n    >>> fib3(10)\n    55\n    >>> fib3(1)\n    1\n    >>> fib3(8)\n    21\n    \"\"\"\n    lock = Lock()\n    cache = {}\n    def fib_",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/56",
+        "completion": "   # Your code here\n    stack = []\n    open_bracket = 0\n    close_bracket = 0\n    for bracket in brackets:\n        if bracket == \"<\":\n            open_bracket += 1\n            stack.append(bracket)\n        elif bracket == \">\":\n            close_bracket += 1\n            if (len(stack) == 0):\n                return False\n            else:\n                stack = stack[0:-1]\n    if (open_bracket != close_bracket):\n        return False\n    else:\n        return True\n import UIKit\nimport StoreKit\nimport SafariServices\nimport UserNotifications\n\nclass MainTableViewController: UITableViewController {\n    \n    @IBOutlet var testButton: UIBarButtonItem!\n    var settings:Settings = Settings()\n    var data = Data()\n    var notificationService = NotificationService()\n    var appStoreVersion: Version? = nil\n    var userDefaults: UserDefaultsService!\n    var upgradeAlert: UIAlertController!\n    \n    override func viewDidLoad() {\n        super.viewDidLoad()\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/57",
+        "completion": "   # return all values are equal\n    if len(l) == 1:\n        return True\n    # check if any value is bigger then previous\n    for i in range(0, len(l) - 1):\n        if l[i] > l[i + 1]:\n            return False\n    return True\n\ndef naive(l: list):\n    \"\"\"Return True if list is monotonically increasing or decreasing using sorting.\n    >>> naive([1, 2, 4, 20])\n    True\n    >>> naive([1, 20, 4, 10])\n    False\n    >>> naive([4, 1, 0, -10])\n    True\n    \"\"\"\n    sorted_l = sorted(l)\n    # check if sorted list equal original list\n    if sorted_l == l:\n        return True\n    return False\n\ndef sorted_increasing(l: list):\n    \"\"\"Return True if list is monotonically increasing.\n    >>> sorted_increasing([1, 2, 4, 20])\n    True\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/58",
+        "completion": "   new_list = sorted([x for x in set(l1 + l2) if l1.count(x) == l2.count(x)])\n    return new_list\n\\end{code}\n Tags: ansible, ansible-playbook, ansible-2.x\n\nQuestion: How to go to the next task in Ansible playbook when the previous task fails\n\nDo we have any way to go to the next task in the playbook when the previous task fails in Ansible?\n\nAnswer: You can use the `ignore_errors` attribute on a task to specify that errors from this task should not cause the play to fail.\n\n\\begin{code}\n---\n- hosts: myhost\n  tasks:\n  - name: This will fail\n    fail:\n      msg: Task failed\n  - name: This will be performed despite the previous task\n    ignore_errors: yes\n    command: echo \"This will not fail\"\n\\end{code}\n\nComment: I tried but it is not working.I get the error as \"failed: [localhost] => {\"failed\": true, \"msg\": \"No handlers",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/59",
+        "completion": "   # Fill in your answer here\n    # Result is a list of possible prime factors \n    factors = []\n    \n    # while the number is even, take the sqrt and divide it out\n    while n % 2 == 0:\n        factors.append(2)\n        n = n // 2\n    \n    # all possible square roots of n\n    for i in range(3, int(n ** 0.5) + 1, 2):\n        while n % i == 0:\n            factors.append(i)\n            n = n // i\n    if n != 1:\n        factors.append(n)\n    return max(factors)\n #!/usr/bin/python3\n# -*- coding: utf-8 -*-\n# @Time    : 2019/5/28 17:50\n# @Author  : zhouj@liaoxx.com\n# @File    : db_mysql.py\n# @Role    : \u6267\u884cMySQL\u64cd\u4f5c\nfrom os import path\nfrom time import sleep\nimport pym",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/60",
+        "completion": "   # BEGIN SOLUTION\n    return n * (n + 1) / 2\n    # END SOLUTION\n\nprint(sum_to_n(10))\nprint(sum_to_n(3))\nprint(sum_to_n(2))\nprint(sum_to_n(1))\n\ndef sum_to_n_recursive(n: int):\n    \"\"\"sum_to_n_recursive is a function that sums numbers from 1 to n.\n    >>> sum_to_n_recursive(30)\n    465\n    >>> sum_to_n_recursive(100)\n    5050\n    >>> sum_to_n_recursive(5)\n    15\n    >>> sum_to_n_recursive(10)\n    55\n    >>> sum_to_n_recursive(1)\n    1\n    \"\"\"\n    # BEGIN SOLUTION\n    if n == 1:\n        return n\n    return n + sum_to_n_recursive(n - 1)\n    # END",
+        "passed": true
+      },
+      {
+        "task_id": "HumanEval/61",
+        "completion": "   if brackets == '':\n        return True\n    if len(brackets) % 2 != 0:\n        return False\n    left = 0\n    for i in range(len(brackets)):\n        if brackets[i] == '(':\n            left += 1\n        else:\n            left -= 1\n        if left < 0:\n            return False [![](https://img.shields.io/badge/Based%20on-Alpine_Linux-lightgrey.svg?style=flat)](https://alpinelinux.org)\n[![](https://img.shields.io/badge/Build%20Status-Dropbot%20Develop-brightgreen.svg)](https://github.com/dropbot/dropbot-docker/actions?query=workflow%3ADropbot+branch%3Adev)\n[![](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/mit-license.php)\n\n# Dropbot Docker Image\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/62",
+        "completion": "   n = len(xs)\n    result = [0] * (n - 1)\n\n    for i in range(n - 1):\n        result[i] = xs[i + 1] * (i + 1)\n\n    return result\n package com.example.android.marsrealestate\n\nimport androidx.lifecycle.LiveData\nimport androidx.lifecycle.MutableLiveData\nimport androidx.lifecycle.ViewModel\nimport com.example.android.marsrealestate.network.MarsApi\nimport com.example.android.marsrealestate.network.MarsApiFilter\nimport com.example.android.marsrealestate.network.MarsProperty\nimport kotlinx.coroutines.*\nimport retrofit2.Call\nimport retrofit2.Callback\nimport retrofit2.Response\nimport java.lang.Exception\nimport java.lang.RuntimeException\nimport kotlin.coroutines.CoroutineContext\n\nenum class MarsApiStatus { LOADING, ERROR, DONE }\n/**\n * The [ViewModel] that is attached to the [Overview",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/63",
+        "completion": "   # +\n    fib1, fib2 = 0, 0\n    if n < 3:\n        return n\n    # find the n-1st fibfib number\n    for i in range(2, n + 1):\n        fib1, fib2 = fib2, fib1 + fib2\n    return fib2\n    # -\n    # no recursion\n    # -\n    # recursion\n    if n < 3:\n        return n\n    return fibfib(n-1) + fibfib(n-2) + fibfib(n-3)\n\n\nif __name__ == \"__main__\":\n    import doctest\n    do \ufeffusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Threading.Tasks;\nusing UnityEngine;\n\nnamespace Assets.Scripts.Shooting\n{\n    public class Weapon : MonoBehaviour\n    {\n        /// <summary>\n        /// Instance of the main fire controller of the weapon\n        /// </summary>\n        private",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/64",
+        "completion": "   a_count = 0\n    e_count = 0\n    i_count = 0\n    o_count = 0\n    u_count = 0\n    y_count = 0\n    for i in s:\n        if i == 'a':\n            a_count += 1\n        elif i == 'e':\n            e_count += 1\n        elif i == 'i':\n            i_count += 1\n        elif i == 'o':\n            o_count += 1\n        elif i == 'u':\n            u_count += 1\n        elif i == 'y':\n            y_count += 1\n    if a_count != 0:\n        return a_count\n    elif e_count != 0:\n        return e_count\n    elif i_count != 0:\n        return i_count\n    elif o_count != 0:\n        return o_count\n    elif u_count != 0:\n        return u_count\n    else:\n        return y_count\n    \n    return 0\n\nif __name__ == \"__",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/65",
+        "completion": "   d = str(x)\n    if shift > len(d):\n        d = d[::-1]\n    else:\n        d = d[:-shift] + d[-shift:]\n    return d\n#print(circular_shift(12345678901234567890, 12345678901234567890))\nprint(circular_shift(12345678901234567890, 1))\nprint(circular_shift(12345678901234567890, 2))\nprint(circular_shift(12345678901234567890, 3))\nprint(circular_shift(12345678901234567890, 4))\nprint(circular_shift(12345678901234567890",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/66",
+        "completion": "   upper_digits = set(string.ascii_uppercase)\n    # print(upper_digits)\n    s = s.upper()\n    # print(s)\n    digit_sum = 0\n    for letter in s:\n        if letter in upper_digits:\n            digit_sum += ord(letter)\n    return digit_sum\n    \nprint(digitSum(\"abAB\"))\nprint(digitSum(\"abcCd\"))\nprint(digitSum(\"helloE\"))\nprint(digitSum(\"woArBld\"))\nprint(digitSum(\"aAaaaXa\"))\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    # x = 12345  # decimal.\n    # x = 0x1A   # hexadecimal.\n    # x = 0o101  # octal.\n    # x = 0b101  # binary.\n    # print(x, 'is type {}'.format(type(x)))\n\n# def indent",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/67",
+        "completion": "   lst=s.split(' ')\n    fruit=int(lst[-1])\n    apples=int(lst[0].split('and')[0])\n    oranges=int(lst[1].split('and')[0])\n    mango=fruit-(apples+oranges)\n    if mango<0:\n        mango=0\n    if mango==0:\n        return 'Nothing to Collect'\n    else:\n        return mango\n\ndef bernoulli(n):\n    \"\"\"\n    Given a number n between 0 and 2, print:\n    n equal to zero --> fizz\n    n equal to one --> buzz\n    n equal to 2 --> fizz and buzz\n    else --> nothing to say\n    for example:\n    bernoulli(0) -> 'fizz'\n    bernoulli(1) -> 'buzz'\n    bernoulli(2) -> 'fizz and buzz'\n    bernoulli(3) -> 'nothing to say'\n    \"\"\"\n    if n % 2==0:\n        if n==0:",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/68",
+        "completion": "\n    return min(arr, key=lambda x: x % 2)\n\n    smallest = None\n    smallest_index = None\n    smallest_value = None\n    for i, val in enumerate(arr):\n        if val % 2 == 0:\n            if not smallest_value or val < smallest_value:\n                if smallest_index:\n                    if i <= smallest_index:\n                        smallest = smallest_value\n                        smallest_index = i\n                        smallest_value = val\n                else:\n                    smallest_index = i\n                    smallest_value = val\n    return [smallest_value, smallest_index]\n\nprint(pluck([4,2,3]))\nprint(pluck([1,2,3]))\nprint(pluck([]))\nprint(pluck([5, 0, 3, 0, 4, 2]))\n\n# ----------------------------------------------------------------------\n#                                                                Ruby =)\n# --------------------------------- #include \"config.h\"\n#include \"CachedRawResource.h\"\n\n#include \"CachedResourceClientW",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/69",
+        "completion": "\n    size = len(lst)\n    frequency = [0] * size\n\n    for i in range(0, size):\n        frequency[lst[i] - 1] = frequency[lst[i] - 1] + 1\n    \n    for i in range(0, size): <?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nclass CreateSalesTable extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('sales', function (Blueprint $table) {\n            $table->id();\n            $table->unsignedBigInteger('client_id');\n            $table->foreign('client_id')->references('id')->on('clients');\n            $table->unsignedBigInteger('product_id');\n            $table->foreign('product_id')->references('id')->on('products');\n            $table->",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/70",
+        "completion": "\n    min_item = lst[0]\n    lst.remove(min_item)\n    lst.sort()\n    lst.insert(0, min_item)\n    return lst\n @extends('layout.base')\n\n@section('content')\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-12\">\n                    <h2>Edit Profile</h2>\n                \n                <hr>\n\n                <div class=\"panel panel-default\">\n                    <div class=\"panel-body\">\n                        <form action=\"{{ route('profiles.update', $user->id) }}\" method=\"POST\">\n                            {{ csrf_field() }}\n                            {{ method_field('PUT') }}\n\n                            <div class=\"form-group{{ $errors->has('name') ? ' has-error' : '' }}\">\n                                <label for=\"name\" class=\"control-label\">Name</label>\n                                <input type=\"text\" name=\"name\" id=\"name\" class=\"form-control\"\n                                       value=\"",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/71",
+        "completion": "   if a < 0 or b < 0 or c < 0:\n        return -1\n    elif a + b <= c or a + c <= b or b + c <= a:\n        return -1\n    else:\n        return 0.5 * (a + b + c) * abs(c - b - a) / abs(c)\n\ndef test_triangle_area(a, b, c, expected):\n    actual = triangle_area(a, b, c)\n    assert actual == expected, f'triangle_area({a}, {b}, {c}) must be {expected}, not {actual}'\n    \ntest_triangle_area(3, 4, 5, 6.0)\ntest_triangle_area(1, 2, 10, -1)\ntest_triangle_area(1, 2, 3, 2.0)\ntest_triangle_area(2, 3, 4, 4.0)\ntest_triangle_area(4, 3, 5, 6.0)\ntest_triangle_area(1, 2, ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/72",
+        "completion": "   # if all(q[0]==q[-1]) and sum(q)<=w:\n    #     return True\n    # else:\n    #     return False\n\ndef say_hello(name):\n    '''\n    Write a function that returns the string \"Hello\".\n    '''\n    # return 'Hello'\n    if name=='':\n        return 'Hello'\n    else:\n        return 'Hello '+name\n    \n    \ndef will_it_fit(name):\n    '''\n    Write a function that returns the string \"It fits\".\n    '''\n    # return 'It fits'\n    if name=='':\n        return 'It fits'\n    else:\n        return 'It fits '+name\n    \n    \ndef count_to_three(number):\n    '''\n    Write a function that returns 1 if number is 0, and returns number+1 if number isn't 0.\n    '''\n    # if number==0:\n    #     return 1\n    # else:\n    #     return number+1\n    return number+1\n    \n    \ndef remove_",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/73",
+        "completion": "   # We are only interested in the maximum and minimum values.\n    min_val = min(arr)\n    max_val = max(arr)\n\n    # If the minimum element is greater than half of the biggest element, we can't make a palindromic array.\n    if min_val > max_val // 2:\n        return -1\n\n    # If the maximum element is greater than half of the smallest element, we can change the maximum element to half of the smallest element to make it palindromic.\n    if min_val + 1 < max_val:\n        return 1\n\n    # If not, we have to check all the integers in the array and calculate the sum of the number of changes.\n    sum_of_changes = 0\n    for i in range(len(arr) - 1):\n        # If the current element is greater than half of the next element, we change the current element to half of the next element.\n        if arr[i] > arr[i + 1] // 2:\n            sum_of_changes += 1\n            arr[i] = arr[i",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/74",
+        "completion": "   for i in range(len(lst1)):\n        counter = 0\n        for j in range(len(lst2)):\n            if (len(lst1[i]) < len(lst2[j])):\n                counter = counter +1\n            \n        if (counter == len(lst2)):\n            return lst1\n        else:\n            continue\n    return lst2\n    \nprint(total_match(['hi', 'admin'], ['hI', 'Hi']))\n\n#Total Match\n#Write a function that accepts two lists of strings and returns the list that has total number of chars in the all strings of the list less than the other list.\n#\n#Examples\n#total_match([], []) \u279e []\n#total_match(['hi', 'admin'], ['hI', 'Hi']) \u279e ['hI', 'Hi']\n#total_match(['hi', 'admin'], ['hi', 'hi', 'admin', 'project']) \u279e ['hi', 'admin']\n#total_match(['hi', 'admin'], ['hI', 'hi', 'hi']) \u279e ['hI",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/75",
+        "completion": "   for i in range(1, a):\n        if a % i == 0:\n            if is_prime(i) == True:\n                j = a / i\n                if j > 1:\n                    if is_prime(j) == True:\n                        if is_prime(j - i) == True:\n                            return True\n                        else:\n                            return False\n    return False\ndef is_prime(a):\n    \"\"\"Write a function that returns true if the given number is prime and false otherwise.\n    Knowing that (a) is less then 10.\n    Example:\n    is_prime(5) == True\n    \"\"\"\n    if a > 1:\n        for i in range(2, a):\n            if a % i == 0:\n                return False\n    else:\n        return False\n        return False\n        return False\n        return False\n    return True\n    return True\n    return True\ndef is_even(a):\n    \"\"\"Write a function that returns true if the given number is even and false otherwise.\n    Knowing that (a) is more then",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/76",
+        "completion": "\n    if n ** int(x) == x:\n        return True\n    else:\n        return False\n        # raise NotImplementedError()\n <?php\n\nnamespace App\\Models;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Campaign extends Model\n{\n    protected $table = 'campaigns';\n    protected $fillable = [\n        'contest_id', 'product_id','product_quantity','product_price','product_vip_price','product_material','product_description','user_id','status', 'product_sample_photo', 'product_main_photo', 'product_code',\n    ];\n\n    public function product()\n    {\n        return $this->hasOne('App\\Models\\Product', 'id', 'product_id');\n    }\n    public function user()\n    {\n        return $this->hasOne('App\\Models\\User', 'id', 'user_id');\n    }\n}\n import React from 'react'\nimport { render } from '@testing-library/react'\nimport { Editable, EditingStyle }",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/77",
+        "completion": "   return a**(1/3) == round(a**(1/3),2)\n\ndef iscube_alternative(a):\n    '''\n    Write a function that takes an integer a and returns True \n    if this ingeger is a cube of some integer number.\n    Note: you may assume the input is always valid.\n    Examples:\n    iscube(1) ==> True\n    iscube(2) ==> False\n    iscube(-1) ==> True\n    iscube(64) ==> True\n    iscube(0) ==> True\n    iscube(180) ==> False\n    '''\n    return a == round(a**(1/3))**3\n\ndef iscube_int(a):\n    '''\n    Write a function that takes an integer a and returns True \n    if this ingeger is a cube of some integer number.\n    Note: you may assume the input is always valid.\n    Examples:\n    iscube(1) ==> True\n    iscube(2) ==> False\n    iscube(-1) ==> True",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/78",
+        "completion": "   # your code goes here\n    # return 100\n    res = 0\n    for i in num:\n        if i == '1' or '3' or '7' or 'B' or 'D':\n            res += 1\n    return res\n\ndef hex_key2(num):\n    \"\"\"You have been tasked to write a function that receives \n    a hexadecimal number as a string and counts the number of hexadecimal \n    digits that are primes (prime number, or a prime, is a natural number \n    greater than 1 that is not a product of two smaller natural numbers).\n    Hexadecimal digits are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.\n    Prime numbers are 2, 3, 5, 7, 11, 13, 17,...\n    So you have to determine a number of the following digits: 2, 3, 5, 7, \n    B (=",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/79",
+        "completion": "   binary = str(bin(decimal))\n    # remove first character which is '0b'\n    binary = binary[2::]\n    return 'db' + binary + 'db'\n\nif __name__ == '__main__':\n    print(\"Example:\")\n    print(decimal_to_binary(15))\n    # 'db11 require 'test_helper'\n\nclass TestBase < EvalTo\n  def initialize(val)\n    @val = val\n  end\nend\nclass Test < EvalTo\n  def initialize(val)\n    @val = val\n  end\nend\nclass TestEvalTo < Minitest::Test\n  include EvalTo\n\n  def test_eval\n    assert_equal(4, eval_safe(\"2 * 2\"))\n    assert_equal(nil, eval_safe(\"nil\"))\n    assert_equal(nil, eval_safe(\"'a' * 2\"))\n    assert_equal(nil, eval_safe(\"'a' * 2\"))\n  end\n  def test_eval_with_class\n    assert_equal(",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/80",
+        "completion": "   if len(s) < 3:\n        return False\n    i = 0\n    while i <= len(s)-3:\n        if s[i] == s[i+1] == s[i+2]:\n            return False\n        i += 1\n    return True\n import React, { Component } from 'react'\n\n// import {connect} from 'react-redux'\n// import {getLoginInfo} from '../../actions/loginActions'\n// import {login} from '../../actions/loginActions'\n\nclass Auth extends Component {\n  constructor(props) {\n    super(props)\n  }\n  state = {\n    username: '',\n    password: '',\n  }\n  handleChange = event => {\n    event.preventDefault()\n    const { name, value } = event.target\n    this.setState({\n      [name]: value,\n    })\n  }\n\n  submitLogin = event => {\n    event.preventDefault()\n    // alert(this.state.username)\n    // alert(this.state.password)\n    // console.log('submit')\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/81",
+        "completion": "   letter_grade_dictionary = {4.0: \"A+\", 3.7: \"A\", 3.3: \"A-\", 3: \"B+\", \\\n                               2.7: \"B\", 2.3: \"B-\", 2: \"C+\", 1.7: \"C\", \\\n                               1.3: \"C-\", 1: \"D+\", 0.7: \"D\", 0: \"E\"}\n    \n    for i in range(len(grades)):\n        if grades[i] == 4.0:\n            grades[i] = \"A+\"\n        elif grades[i] > 3.7:\n            grades[i] = \"A\"\n        elif grades[i] > 3.3:\n            grades[i] = \"A-\"\n        elif grades[i] > 3:\n            grades[i] = \"B+\"\n        elif grades[i] > 2.7:\n            grades[i] = \"B\"\n        elif grades[i] > ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/82",
+        "completion": "   # Implement me\n    output = False\n    #s = 0\n    if len(string) == 1:\n        output = False\n    elif len(string) == 2:\n        output = True\n    else:\n        if len(string)%2 == 0:\n            output = False\n        else:\n            for x in range(3, len(string) ** 0.5, 2):\n                if len(string)%x == 0:\n                    output = False\n                    break\n                /**\n *\n * @author Marcus Chang\n *\n * @brief Provides simple map for simulation\n *\n */\n\n#ifndef _SIMPLE_MAP_H_\n#define _SIMPLE_MAP_H_\n#include \"layermap.h\"\n#include \"gvgl.h\"\n#include \"gvtypes.h\"\n/**\n * @brief class of simple map\n *\n */\nclass SimpleMap : public LayerMap\n{\n    public:\n        SimpleMap(WCData wcd, WCData gvd,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/83",
+        "completion": "   pass\n import UIKit\nimport SnapKit\n\nclass ProfileView: UIView {\n\n    override init(frame: CGRect) {\n        super.init(frame: frame)\n        \n        backgroundColor = UIColor.white\n        self.addSubview(profileView)\n    }\n    \n    lazy var profileView: UIView = {\n        let view = UIView()\n        view.backgroundColor = UIColor.white\n        view.layer.cornerRadius = 20\n        view.layer.borderColor = UIColor.red.cgColor\n        view.layer.borderWidth = 1\n        return view\n    }()\n    \n    required init?(coder aDecoder: NSCoder) {\n        fatalError(\"init(coder:) has not been implemented\")\n    }\n    \n} \ufeffusing TMPro;\nusing UnityEngine;\n\npublic class SetLetterFontSize : MonoBehaviour\n{\n    public FontSizeChoice[] FontSizeChoices;\n    private TMP_Text text;\n    private bool isBox;\n    private bool _letterIcon;\n    private bool",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/84",
+        "completion": "   power = 1\n    res = 0\n    while N > 0:\n        rem = N % 2\n        res += rem * power\n        N //= 2\n        power *= 2\n    return str(res)\n\ndef sumOfDigits /*\n * Do not modify this file. This file is generated from the cognito-idp-2016-04-18.normal.json service model.\n */\nusing System;\nusing System.Collections.Generic;\nusing System.Xml.Serialization;\nusing System.Text;\nusing System.IO;\nusing System.Net;\nusing System.Net.Http;\nusing System.s a new instance of the ListUserPoolsResult class.\n        /// </summary>\n        /// <param name=\"userPools\">The user pools from the response to list users.</param>\n        /// <param name=\"nextToken\">An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</param>\n        public ListUserPoolsResult(List< string> userPools",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/85",
+        "completion": "   if(len(lst) == 0):\n        return\n    sum = 0\n    for i in range(0,len(lst),2):\n        sum += lst[i]\n    return sum\n\nprint(add([4, 2, 6, 7]))\nprint(add([1, 4, 2, 6, 7]))\nprint(add([1, 1, 4, 2, 6, 7]))\nprint(add([1, 1, 1, 4, 2, 6, 7]))\nprint(add([1, 1, 1, 1, 4, 2, 6, 7]))\nprint(add([1, 1, 1, 1, 1, 4, 2, 6, 7]))\nprint(add([1, 1, 1, 1, 1, 1, 4, 2, 6, 7]))\nprint(add([1, 1, 1, 1, 1, 1, 1, 4, 2, 6",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/86",
+        "completion": "   return ' '.join( ''.join(sorted(f)) for f in s.split() )\n var request = require('request')\nvar supertest = require('supertest')\nvar helper = require('../helper')\n\ndescribe('Testing 404 for no content', function() {\n    var server\n\n    before(function() {\n        server = helper.start(helper.getfixture('404'))\n    })\n    after(function() {\n        server.close()\n    })\n    it('404 handler should add response.body to error', function(done) {\n        var request = supertest(server)\n        request.get('/?error=404').expect(404).end(function(err, res) {\n            res.body.should.have.property('message')\n            res.body.message.should.match(/Did not find document/)\n            done()\n        })\n    })\n}) @php\n    $entity_model = config('breadcrumbs.entity_model');\n    $breadcrumbs = config('b",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/87",
+        "completion": "   \n    data = []\n    if not lst:\n        return data\n    for i in range(len(lst)):\n        for j in range(len(lst[i])):\n            if lst[i][j] == x:\n                data.append((i, j))\n                \n    return sorted(data, key=lambda x: x[0])\n    \ndef get_row(lst, x):\n    \"\"\"\n    You are given a 2 dimensional data, as a nested lists,\n    which is similar to matrix, however, unlike matrices,\n    each row may contain a different number of columns.\n    Given lst, and integer x, find integers x in the list,\n    and return list of tuples, [(x1, y1), (x2, y2) ...] such that\n    each tuple is a coordinate - (row, columns), starting with 0.\n    Sort coordinates initially by rows in ascending order.\n    Also, sort coordinates of the row by columns in descending order.\n    \n    Examples:\n    get_row([\n      [1,2,3,4,5,6],\n     ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/88",
+        "completion": "   if not array: return []\n\n    def sum_value(index):\n        \"\"\"\n        Return the sum of value of array[0] and array[index]\n        \"\"\"\n        return array[0] + array[index]\n    sorted_list = sorted(range(len(array)), key=lambda x: sum_value(x))\n\n    return [array[i] for i in sorted_list]\n //\n//  URLRequestExtension.swift\n//  TQIBank\n//\n//  Created by Roberth Diorges on 10/01/22.\n//\nimport Foundation\n\nextension URLRequest {\n    \n    func buildURLRequest(url: String, method: String) -> URLRequest {\n        var request = URLRequest(url: URL(string: url)!,\n                             cachePolicy: .useProtocolCachePolicy,\n                             timeoutInterval: 60.0)\n        request.httpMethod = method\n        return request\n    }\n    \n    func addHeaders() -> URLRequest {\n        var request = self\n        request.addValue(\"application/json\", for",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/89",
+        "completion": "   if len(s) < 1 or s == None:\n        return \"\"\n    shifted_alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']\n    x = s[len(s) - 1]\n    if x.isalpha():\n        for i in range(42):\n            if x == s[len(s) - 1]:\n                s = s.replace(x,shifted_alphabet[i])\n        return s\n    else:\n        for i in range(42):\n            if x == s[len(s) - 1]:\n                s = s.replace(x,shifted_alphabet[i])\n        return s\n    \ndef decrypt(s):\n    \"\"\"Create a function decrypt that takes a string as an argument and\n    returns a string decrypted",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/90",
+        "completion": "   lst.sort()\n    if len(lst) >= 2:\n        return lst[1]\n    else:\n        return None\n\ndef first_duplicate(lst):\n    \"\"\"\n    You are given a list of integers.\n    Write a function first_duplicate() that returns the first duplicate in the list.\n    Return None if there is no duplicate.\n    \n    first_duplicate([1, 2, 3, 4]) == None\n    first_duplicate([1, 2, 3, 2]) == 2\n    first_duplicate([1, 1, 1, 3, 3, 4, 4]) == 1\n    \"\"\"\n    if len(lst) == 0: return None\n    seen = set()\n    for e in lst:\n        if e in seen:\n            return e\n        else:\n            seen.add(e)\n    return None\n        \ndef array_count(lst):\n    \"\"\"\n    You are given a list of sorted numbers.\n    Write a function array_count() that returns an array with elements that count the numbers of",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/91",
+        "completion": "   result = 0\n    sentence = \"\"\n    # your code here\n    # you can use a for loop to iterate through all characters in the given string\n    for i in range(len(S)):\n        if S[i] == '.':\n            print(sentence)\n            if sentence.lower().startswith('i'):\n                result += 1\n            sentence = \"\"\n        elif S[i] == '?':\n            print(sentence)\n            if sentence.lower().startswith('i'):\n                result += 1\n            sentence = \"\"\n        elif S[i] == '!':\n            print(sentence)\n            if sentence.lower().startswith('i'):\n                result += 1\n            sentence = \"\"\n        else:\n            sentence += S[i]\n    if sentence.lower().startswith('i'):\n        result += 1\n    return result\n\n#print(is_bored(\"The sky is blue. The sun is shining. I love this weather\"))\n\ndef find_anagram(S):\n    \"\"\"\n    Given a string, find all anagrams of the string.\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/92",
+        "completion": "   if x+y==z and x==int(x) and y==int(y) and z==int(z):\n        return True\n    else:\n        return False\n    \nprint(any_int(5, 2, 7))\nprint(any_int(3, 2, 2))\nprint(any_int(3, -2, 1))\nprint(any_int(3.6, -2.2, 2))\nprint(any_int(3, -2, 1))\nprint(any_int(3, -2, 1.1))\nprint(any_int(3, 3, 6))\nprint(any_int(1000, 2, 1030))\n# print(any_int(3.0, 2.0, 2))\n# print(any_int(3, 2, 2.0))\n# print(any_int(3.5, 2.0, 4.8))\n# https://www.codewars.com/kata/any-int/train/python",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/93",
+        "completion": "   return message\n\ndef decode(message):\n    \"\"\"\n    Write a function that takes a message, and decodes in such a \n    way that it interchanges case of all letters, replaces all letters \n    that were swapped with vow \ufeffusing System;\nusing System.Collections.Generic;\nusing System.Text;\nusing System.Windows.Forms;\nusing System.Drawing;\nusing System.ComponentModel;\nusing System.IO;\n\nnamespace DatAdmin\n{\n    public static class BitmapEx\n    {\n        public static void SaveImage(Bitmap bmp, string file)\n        {\n            if (bmp.RawFormat.Equals(ImageFormat.Png))\n            {\n                bmp.Save(file, ImageFormat.Png);\n            }\n            else\n            {\n                bmp.Save(file, ImageFormat.Jpeg);\n            }\n        }\n\n        public static Bitmap LoadImage(string file)\n        {\n            return Image.FromFile(file);\n        }\n\n        public static Bitmap GetBitmap(this HtmlImage img)\n        {\n            Bitmap result",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/94",
+        "completion": "\n    # Step 1: find sum of largest prime value in a list\n    #         (n)\n\n    # Step 2:\n    #         n = n / 10\n    #         check if n%10 != 0\n    #         check if n%10 != 0\n    #         return the sum of its digits\n    #         if n % 10 == 0:\n    #             same as step 3\n\n    # Step 3:\n    #         n = n / 10\n    #         check if n%10 != 0\n    #         check if n%10 != 0\n    #         return the sum of its digits\n    #         if n % 10 == 0:\n    #             same as step 3\n\n    # Step 4:\n    #         n = n / 10\n    #         check if n%10 != 0\n    #         check if n%10 != 0\n    #         return the sum of its digits\n    #         if n % 10 == 0:\n    #             same as step ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/95",
+        "completion": "   if dict == {}:\n        return False\n    else:\n        if all([item == item.lower() for item in dict.keys()]):\n            return True\n        elif all([item == item.upper() for item in dict.keys()]):\n            return True\n        else:\n            return False\n    \n    \n    #pass\n    \ncheck_dict_case1 = test.check(check_dict_case, \"check_dict_case({'a':'apple', 'b':'banana'}) should return True.\")\ncheck_dict_case2 = test.check(check_dict_case, \"check_dict_case({'a':'apple', 'A':'banana', 'B':'banana'}) should return False.\")\ncheck_dict_case3 = test.check(check_dict_case, \"check_dict_case({'a':'apple', 8:'banana', 'a':'apple'}) should return False.\")\ncheck_dict_case4 = test.check(check_dict_case, \"check_dict_case({'Name':'John', 'Age':'36', 'City':'Houston",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/96",
+        "completion": "\ndef main():\n    print(count_up_to(5))\n    print(count_up_to(1))\n    print(count_up_to(5))\n    print(count_up_to(18))\n    print(count_up_to(20))\n    print( <?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\DB;\nuse App\\Models\\Payment;\nuse Carbon\\Carbon;\n\nclass PaymentController extends Controller\n{\n    public function index() {\n        return view('payment.index');\n    }\n    public function getList(Request $req)\n    {\n        $dat = DB::table('tenant_payment')\n        ->join('tenant','tenant.tenant_id','=','tenant_payment.tenant_id')\n        ->get();\n        $payment = array();\n        foreach($dat as $k=>$v)\n        {\n            $payment[$k] = (array)$v;\n        }\n        //",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/97",
+        "completion": "   if a > 0:\n        a = a % 10\n    else:\n        a = abs(a) % 10\n    if b > 0:\n        b = b % 10\n    else:\n        b = abs(b) % 10\n    if (a == 0) or (b == 0):\n        return 0\n    else:\n        return a * b\n package com.lambdaschool.javacountries;\n\nimport org.junit.Test;\nimport org.junit.runner.RunWith;\nimport org.springframework.boot.test.context.SpringBootTest;\nimport org.springframework.test.context.junit4.SpringRunner;\n\n@RunWith(SpringRunner.class)\n@SpringBootTest\npublic class JavacountriesApplicationTests\n{\n\n    @Test\n    public void contextLoads()\n    {\n    }\n}\n /*\n * Generated by asn1c-0.9.29 (http://lionet.info/asn1c)\n * From ASN.1 module",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/98",
+        "completion": "   vowels = 'AEIOU'\n    count = 0\n    s = s.upper()\n    for i, char in enumerate(s):\n        if char in vowels and i % 2 == 0:\n            count += 1\n    return count\n <?php\ndefined('BASEPATH') OR exit('No direct script access allowed');\n$this->view('header.php') ?>\n<div class=\"container\">\n<br>\n<br>\n</div>\n\t\t\t\t\n<div class=\"container\">\n\t<div class=\"row\">\n\t\t<div class=\"col-md-12\">\n\t\t<h4>Informasi</h4>\n\t\t<hr>\n\t\t<?php \n\t\tif ($this->session->flashdata('alert')) {\n\t\t\techo '<div class=\"alert alert-danger\">';\n\t\t\techo '  <strong>'. $this->session->flashdata('alert') .'</strong>';\n\t\t\techo '</div>';\n\t\t}\n\t\t?>\n\t\t<table class=\"table table-",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/99",
+        "completion": "   # Define a function that returns a tuple with the value and the\n    # distance from the value to the integer closest to it.\n    def closest_of_tuple(value):\n        closest_dist = 100\n        closest_int = -1\n\n        for i in range(value):\n            dist = abs(i - value)\n            if dist < closest_dist:\n                closest_dist = dist\n                closest_int = i\n        return (closest_dist, closest_int)\n\n    # Call closest_of_tuple() and get back a tuple.\n    value, closest_int = closest_of_tuple(value)\n    if value == closest_int:\n        return closest_int\n    elif value > closest_int:\n        return closest_int + 1\n    else:\n        return closest_int - 1\n const path = require('path');\nconst { Command } = require('commander');\nconst fs = require('fs');\nconst { promisify } = require('util');\nconst glob = promisify(require('glob'));\n\nconst packageJson = require('../package.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/100",
+        "completion": "   def _make_a_pile(n, acc):\n        size = n + 1\n        if n == 1:\n            return acc + [1]\n        else:\n            return _make_a_pile(n // 2 * 2 + 1 if n % 2 == 0 else n + 1, acc + [size])\n    return _make_a_pile(n, [])\n\ndef max_collatz_length_v1(n):\n    \"\"\"\n    Given a positive integer n, you have to find the number of steps to get to\n    one using the following sequence of operations:\n        - If number is even, divide by 2\n        - If number is odd, multiply by 3 and add 1\n    Return the maximum number of steps in a list, where element at index i\n    represents the maximum steps for number (i+1).\n    Examples:\n    >>> max_collatz_length_v1(8)\n    [3, 6, 13, 30, 70, 192, 506, 162",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/101",
+        "completion": "   return list(filter(bool, s.split()))\n # -*- coding: utf-8 -*-\nfrom __future__ import absolute_import, print_function, unicode_literals\nfrom rest_framework.permissions import BasePermission, SAFE_METHODS\nfrom . import config\n\n\ndef is_lib_service_or_safe_request(request):\n    \"\"\"\n    Is this a \"safe\" request?\n    Taken from rest_framework's permissions.py:\n    \"\"\"\n    return request.method in SAFE_METHODS\n\n\ndef no_auth(self, request, view):\n    # Ignore request\n    return True\nno_auth.short_description = 'Permit access to any logged in user'\n\n\nclass DefaultIsAuthenticatedPermission(BasePermission):\n    \"\"\"\n    Sentry's default permission\n    \"\"\"\n    short_description = 'Permit access to any logged in user'\n\n    def has_permission(self, request, view):\n        if config.default_auth == 'no':\n            # Ignore request\n            return",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/102",
+        "completion": "   if x > y:\n        return -1\n    else:\n        if x%2:\n            return 2*int(x/2)*2\n        else:\n            return x\n\nif __name__=='__main__':\n    import doctest\n\n    doctest.testmod()\n    # These are tests written in standard python style.\n    # if your function works, the test case returns True,\n    # otherwise it returns False and print out the reason why. \n    \n    print(choose_num(12, 15))\n    print(choose_num(13, 12))\n    print(choose_num(10, 20))\n    print(choose_num(10, 20))\n    print(choose_num(10, 20))\n    print(choose_num(11, 20))\n    print(choose_num(10, 20))\n    print(choose_num(2, 7))\n    print(choose_num(1, 3))\n    print(choose_num(1, ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/103",
+        "completion": "\n    if n > m:\n        return -1\n    r_avg = np.around((n + m) / 2).astype(int)\n    return '{0:b}'.format(r_avg)\n    \ndef main():\n    print(rounded_avg(1, 5))\n    print(rounded_avg(7, 5))\n    print(rounded_avg(10, 20))\n    print(rounded_avg(20, 33))\n    print(rounded_avg(2, 7))\n    print(rounded_avg(7, 2))\n    print(rounded_avg(20, 10))\n    print(rounded_avg(34, 20))\n    print(rounded_avg(33, 4))\n    package com.dtstack.flinkx.hbase.option;\n/**\n * @company: www.dtstack.com\n * @author: toutian\n * @create: 2019/7/4",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/104",
+        "completion": "   x.sort()\n    return [x for x in x if 1 in str(x)]\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n    x.sort()\n    return [y for y in x if 1 in str(y)]\ndef unique_digits(z):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n    \n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 14",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/105",
+        "completion": "   names = [\"\", \"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\"]\n    result = []\n\n    if len(arr) == 0:\n        return result\n\n    for x in sorted(arr):\n        if 1 <= x <= 9:\n            result.append(names[x])\n        elif x == -1:\n            result.append(\"\")\n        else:\n            result.append(names[x % 10])\n    \n    return result\n\ndef by_length2(arr):\n    \"\"\"\n    Given an array of integers, sort the integers that are between 1 and 9 inclusive,\n    reverse the resulting array, and then replace each digit by its corresponding name from\n    \"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\".\n    \n    For example:\n      arr = [2, 1, 1, 4, 5, 8, 2, 3]   \n            -> sort",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/106",
+        "completion": "\ndef test_f():\n    assert f(1) == [1]\n    assert f(2) == [1, 2]\n    assert f(3) == [1, 2, 6]\n    assert f(4) == [1, 2, 6, 24]\n    assert f(5) == [1, 2, 6, 24, 15]\n    assert f(10) == [1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800]\n    assert f(6) == [1, 2, 6, 24, 120, 720]\n\nif __name__ == '__main__':\n    test_f()\n\n# %%\n\ndef f(n):\n    res = list(range(n))\n    fact = lambda x: 1 if x < 2 else x * fact(x - 1)\n    for i in range",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/107",
+        "completion": "\n    ans = set((n,n-1))\n    for i in range(n-1):\n        ans.add(2*i+1)\n        ans.add(2*i+2)\n    return tuple(map(len, [ans & {i for i in range(1, n+1)}, ans & {i for i in range(1, n+1) if i%2==1}]))\n\nif __name__ == \"__main__\":\n    class TestData():\n        def __init__(self):\n            self.data = [\n                    (3, (1,2)),\n                    (12, (4,6)),\n                    (1, (1,1)),\n                    (10, (2,3)),\n                    (15, (2,4)),\n            ]\n        def has_next(self):\n            return self.idx + 1 < len(self.data)\n\n        def get_next(self):\n            if self.has_next():\n                self.idx += 1\n                return self.data[self.idx]\n\n    t",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/108",
+        "completion": "   return len([n for n in arr if sum(map(int, str(n))) > 0])\n <?php\n\nnamespace App\\Models;\nuse DB;\nuse Illuminate\\Database\\Eloquent\\Model;\nuse Illuminate\\Support\\Facades\\Input;\nuse App\\Http\\Requests;\nuse Carbon\\Carbon;\n\nclass Media extends Model\n{\n\tprotected $table = 'media';\n\t\n    protected $fillable = ['name', 'link', 'status', 'category_id'];\n    \n    public function categories()\n    {\n        return $this->belongsTo('App\\Models\\Category');\n    }\n\n    public static function getAll()\n    {\n    \t$media = DB::table('media')\n    \t\t->where('status', 1)\n    \t\t->orderBy('created_at', 'desc')\n    \t    ->get();\n\n    \treturn $media;\n    }\n    \n    public function addMedia($request)\n    {\t    \t\n    \t$date = Carbon::now();\n        $this->name",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/109",
+        "completion": "   non_decreasing = True\n    arr = sorted(arr)\n    while non_decreasing:\n        key_index = arr.index(min(arr))\n        if key_index == 0:\n            break\n        elif key_index == len(arr) - 1:\n            arr.pop(0)\n            non_decreasing = False\n            break\n        else:\n            new_num_1 = arr[key_index - 1]\n            new_num_2 = arr[key_index]\n            if new_num_1 > new_num_2:\n                arr[key_index-1] = new_num_2\n                arr[key_index] = new_num_1\n            else:\n                break\n    else:\n        non_decreasing = False\n    if non_decreasing:\n        return True\n    else:\n        return False\n    pass\n\ndef remove_balanced_pair(arr):\n    \"\"\"You are given an array of N integers arr[1], arr[2], ....., arr[N]. \n    The number of elements in",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/110",
+        "completion": "   # If any even number is found in lst1, then change the return value to NO\n\n import { Injectable } from '@angular/core';\nimport { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angular/http';\nimport { Observable } from 'rxjs/Rx';\n\n@Injectable()\nexport class SponsorsService {\n  constructor(private http: Http) { }\n  getSponsors(): Observable<any>{\n  \treturn this.http.get('/api/sponsors')\n    .map((res: Response) => res.json());\n  }\n}\n import React, { useState, useEffect } from \"react\";\nimport { api } from \"../services/api\";\nimport { formatPrice } from \"../utils/format\";\nimport logoImg from \"../assets/images/logo.svg\";\n\ninterface Product {\n  id: number;\n  title: string;\n  image: string;\n  price: number;\n  description: string;\n  priceFormatted: string;\n}\nexport const ProductContext = React.createContext({}",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/111",
+        "completion": "   # start coding here\n    d = {}\n    for i in range(len(test)):\n        if test[i] == ' ':\n            continue\n        elif test[i] not in d:\n            d[test[i]] = 0\n        d[test[i]] += 1\n    maxVal = max(d.values())\n    ret = []\n    for i in d:\n        if d[i] == maxVal:\n            ret.append(i)\n    return dict((i, d[i]) for i in ret)\n package com.darwin.photolandhk.viewModel\n\nimport androidx.lifecycle.LiveData\nimport androidx.lifecycle.ViewModel\nimport com.darwin.photolandhk.model.Photo\n\nclass PhotoViewModel : ViewModel() {\n    private val repository = PhotoRepository()\n    var listPhotos: LiveData<List<Photo>> = repository.getPhotos()\n\n    fun getPhotoById(id: Int): LiveData<Photo> {\n        return repository.getPhotoById(id)\n    }\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/112",
+        "completion": "   x = 0\n    rest = \"\"\n    while x < len(s) :\n        for j in c :\n            if s[x] == j :\n                x += 1\n                break\n        else :\n            rest += s[x]\n            x += 1\n    y = 0\n    while y < len(rest) :\n        if rest[y] != rest[len(rest) \ufeffusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing BoltOn.Cache;\nusing BoltOn.Cqrs;\nusing BoltOn.Data.EF;\nusing BoltOn.Other;\nusing BoltOn.Tests.Cqrs.Fakes;\nusing BoltOn.Utilities;\nusing EFCore.BoltOn.Data;\nusing EFCore.BoltOn.Data.EF;\nusing EFCore.BoltOn.Data.Interfaces;\nusing Moq;\nusing Xunit;\nusing FakeItEasy;\nusing MicrosDbContextOptions<AppDbContext>())\n            };\n            var",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/113",
+        "completion": "   arr=[]\n    for word in lst:\n        odd=0\n        for char in word:\n            if int(char)%2 != 0:\n                odd+=1\n        arr.append(\"the number of odd elements \"+str(odd)+\"n the str\"+str(odd)+\"ng \"+str(odd)+\" of the \"+str(odd)+\"nput.\")\n    return arr\n\ndef even_count(lst):\n    \"\"\"Given a list of strings, where each string consists of only digits, return a list.\n    Each element i of the output should be \"the number of even elements in the\n    string i of the input.\" where all the i's should be replaced by the number\n    of even digits in the i'th string of the input.\n\n    >>> even_count(['1234567'])\n    [\"the number of even elements 6n the str6ng 6 of the 6nput.\"]\n    >>> even_count(['3',\"111 package com.github.ksoichiro.android.observablescrollview;\n\nimport android.support.v7",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/114",
+        "completion": "\ufeff#if UNITY_EDITOR\nusing UnityEngine;\nusing UnityEditor;\nusing System;\nusing System.Linq;\nusing System.Collections.Generic;\nusing System.Text;\nusing System.Collections;\n\nnamespace O3DWB\n{\n    [Serializable]\n    public class ObjectPlacementPathTileSetDatabaseView : EntityDatabaseView\n    {\n        #region Private Variables\n        [SerializeField]\n        private ObjectPlacementPathTileSetDatabaseViewCategoryView _categoryView;\n        #endregion\n\n        #region Public Properties\n        public override Type EntityType { get { return typeof(ObjectPlacementPathTileSet); } protected set { } }\n        public ObjectPlacementPathTileSetDatabaseViewCategoryView CategoryView { get { return _categoryView; } protected set { _categoryView = value; }  }\n        #endregion\n    }\n\n    [Serializable]\n    public class ObjectPlacementPathTileSetDatabaseViewCategoryView : EntityDatabaseViewCategoryView\n    {\n        private ObjectPlacementPathTileSetDatabaseView _objectPlacementPathTileSet",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/115",
+        "completion": "\n    # iterate over the grid of wells\n    # 1. count the number of buckets needed per row\n    # 2. add the number of buckets to a total\n    # 3. if total is greater than bucket_capacity, keep iterating\n    # 4. if total is less than or equal to bucket_capacity, we're done\n    # 5. return -1 if it is not possible to emptied the grid\n    n = len(grid)\n    if n == 0:\n        return 0\n\n    # Determining number of buckets needed per row\n    # 1. check each column of the row to see if there's a 1\n    # 2. return the number of 1s in a row\n    def numBuckets(grid, row):\n        countBuckets = 0\n        for column in grid[row]:\n            if column == 1:\n                countBuckets += 1\n        return countBuckets\n    \n    # Determining number of buckets to use\n    # 1. generate a list of the total number of",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/116",
+        "completion": "   # sort between 2 func using lambda\n    def func(x, y):\n        if len(bin(x)) != len(bin(y)):\n            return len(bin(y)) - len(bin(x))\n        return x - y\n    return sorted(list(map(int, arr)), <?php\n\nnamespace App\\Http\\Controllers;\n\nuse App\\Models\\Course;\nuse App\\Models\\Lesson;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\Storage;\n\nclass LessonController extends Controller\n{\n    /**\n     * Display a listing of the resource.\n     *\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function index()\n    {\n        //\n    }\n\n    /**\n     * Show the form for creating a new resource.\n     *\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function create()\n    {\n        //\n    }\n    public function createLesson(Course $course)\n    {\n        return view('dashboard.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/117",
+        "completion": "   #TODO: Implement this\n\n\ndef letters_only(s):\n    \"\"\"Given a string s, you have been tasked to implement a function that returns \n    a list containing all the letters contained in this string, in order these letters \n    appear in the string. If the string s is empty then the function should return an \n    empty list.\n    Note: you may assume the input string contains only letters and spaces.\n    Examples:\n    letters_only(\"Mary had a little lamb\") ==> [\"M\", \"a\", \"r\", \"y\", \"h\", \"a\", \"d\", \n                                                \"a\", \"l\", \"i\", \"t\", \"i\", \"v\", \"e\", \n                                                \"l\", \"a\", \"m\"]\n    letters_only(\"simple white space\") ==> [\"s\", \"w\"]\n    \"\"\"\n    #TODO: Implement this\n import React from 'react'\nimport { View, TouchableOpacity, Text, StyleSheet } from 'react-native'\nimport { Actions } from 'react-native-router-flux'\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/118",
+        "completion": "   vowels = \"aeiouAEIOU\"\n    left = 0\n    right = len(word) - 1\n    while left < right:\n        if word[left] in vowels and word[right] in vowels:\n            return \"\"\n        elif word[left] not in vowels and word[right] in vowels:\n            return word[left+1]\n        elif word[left] in vowels and word[right] not in vowels:\n            if left + 2 >= len(word):\n                return \"\"\n            else:\n                return word[left+2]\n        left += 1\n        right -= 1\n    if left == right:\n        return \"\"\n\n\ndef get_longest_word(text):\n    \"\"\"Given a text of words separated by spaces, your task is to return the longest word.\n    If there are two or more words with the same length, return the one that appears first.\n    \n    Example:\n    get_longest_word(\"is2 Thi1s T4est 3a\")  # => 'This",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/119",
+        "completion": "   if (lst[0][0] == '(') != (lst[1][0] == '('):\n        return 'No'\n    return 'Yes'\n\ndef self_pow(num):\n    '''\n    Implement the function\n    def self_pow(num)\n    which returns a list with the sequence of powers of the given number\n    starting with 0 and ending with the given number.\n    The values in the list must be integers.\n\n    Examples:\n    self_pow(2) == [0, 1, 2]\n    self_pow(3) == [0, 1, 2, 3]\n    '''\n    return [int(x) for x in str(num**len(str(num)))]\n\ndef float_to_bin(num, precision):\n    '''\n    You're given a number and binary precision.\n    You have to convert this number to a float number with this precision.\n    So if you have a number 2.3456789123456789123456789123",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/120",
+        "completion": "   if k == 0 or k > len(arr):\n        return []\n    if k == len(arr):\n        return sorted(arr)\n\n    left = 0\n    right = k - 1\n    max_index = 0\n    for i in range(k):\n        max_index = arr.index(max(arr[left:right + 1]))\n        result.append(arr[max_index])\n        del arr[max_index]\n        left += 1\n        right += 1\n    return result\n\nresult = []\nmaximum([-3, 2, 1, 2, -1, -2, 1], 1)\nprint(result)\n\n# Time: O(n + k)\n# Space: O(k)\n# Difficulty: medium\n # CockroachDB Developer Guide\n\n## Overview\n\nThis guide is for CockroachDB developers who are looking to \ncontribute, whether it be a documentation update, a bugfix, or an addition to \nthe codebase.\n\nIt covers a variety of tasks,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/121",
+        "completion": "   \n    # Write your code here\n    sum = 0\n    flag = False\n    for i in range(len(lst)):\n        if (not flag) and (lst[i] % 2 != 0):\n            flag = True\n        elif (flag) and (lst[i] % 2 == 0):\n            flag = False\n            sum += lst[i]\n    return sum\n\n# SOLUTION\n\ndef solution(lst):\n    \"\"\"Given a non-empty list of integers, return the sum of all of the odd numbers that are in even positions.\n\n    Examples\n    >>>solution([5, 8, 7, 1])\n    12\n    >>>solution([3, 3, 3, 3, 3])\n    9\n    >>>solution([30, 13, 24, 321])\n    0\n    \"\"\"\n    \n    # Write your code here\n    sum = 0\n    flag = False\n    for i in range(len(lst)):\n        if (not flag) and (lst[i] % ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/122",
+        "completion": "\n    l = len(arr)\n    s = 0\n    for i in range(k):\n        b = arr[i] % 10\n        # if b >= 1 and b <= 9:\n        #     s += b\n        if i == 0:\n            s += b\n        elif b != 0:\n            s += b\n    return s\n @extends('layouts.tu.master')\n@section('content')\n<section class=\"section\">\n    <div class=\"section-header\">\n        <h1>TUTUP IURAN</h1>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-12\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <h4>TUTUP IURAN</h4>\n                </div>\n                <div class=\"card-body\">\n                    <div class=\"table-responsive\">\n                        <table id=\"example\" class=\"display nowrap\" style=\"width:100%\">\n                            <thead>\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/123",
+        "completion": "   collatz_seq = []\n    collatz_seq.append(n)\n    while n != 1:  # pragma: no cover\n        n = next_collatz_num(n)\n        collatz_seq.append(n)\n    return sorted(collatz_seq)\n\ndef next_collatz_num(n):\n    \"\"\"\n    The Collatz conjecture is a conjecture in mathematics that concerns a sequence defined\n    as follows: start with any positive integer n. Then each term is obtained from the \n    previous term as follows: if the previous term is even, the next term is one half of \n    \nimport { Trigger } from \"w3ts/index\";\nimport { PlayerStateFactory } from \"../../../services/PlayerState\";\nimport { TriggerAction } from \"../actions/TriggerAction\";\nimport { SpellCastTrigger } from \"../SpellCastTrigger\";\nimport { PlayerState } from \"../../../shared/gamestate/PlayerState\";\nimport { SpellCastInfo } from \"../SpellCastInfo\";\nimport { PlayerStateFactory } from \"../../../",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/124",
+        "completion": "   return\n\n\nif __name__ == \"__main__\":\n <?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass PagesController extends Controller\n{\n    //\n    public function index()\n    {\n        $title = 'Welcome to 26th Degree Website';\n        // return view('pages.index', compact('title'));\n        return view('pages.index')->with('title',$title);\n    }\n    public function about()\n    {\n        $title = 'About Us';\n        return view('pages.about')->with('title',$title);\n    }\n    public function services()\n    {\n        $data = array(\n            'title' => 'Services',\n            'services' => ['Web Designing','Programming','tle, $services));\n    }\n}\n// $data = array(\n//         'title' => 'Services',\n//         'services' => ['Web Designing','Programming','Relationship']\n//     );\n//    return view('pages.services')->with($data);",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/125",
+        "completion": "   if txt.find(' ') != -1:\n        return [i.strip() for i in txt.split(' ')]\n    elif txt.find(',') != -1:\n        return [i.strip() for i in txt.split(',')]\n    else:\n        return sum([ord(i) for i in txt if i.islower()])\n\n#split_words(\"Hello world!\") \ufffd\ufffd package io.fabric8.launcher.service.git;\n\nimport java.io.File;\nimport java.io.IOException;\nimport java.net.URI;\nimport java.util.List;\nimport java.util.Optional;\nimport java.util.concurrent.TimeUnit;\nimport java.util.function.Predicate;\nimport java.util.stream.Stream;\nimport java.util.stream.StreamSupport;\n\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.fasterxml.jackson.databind.node.ArrayNode;\nimport com.fasterxml.jackson.databind.node.ObjectNode;\nimport io.fab",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/126",
+        "completion": "   if len(lst) <= 1:\n        return True\n    else:\n        for index in range(len(lst)):\n            if index + 1 >= len(lst):\n                break\n            if lst[index] > lst[index + 1]:\n                return False\n    return True\n    \n    # ...\n    return lst.sort()\n    # ...\n    \n    # ...\n    lst.sort()\n    for index in range(len(lst) - 1):\n        if lst[index] == lst[index + 1]:\n            return False\n    return True\n    # ...\n    \n    # ...\n    lst.sort()\n    if len(lst) > 1:\n        for index in range(len(lst) - 1):\n            if lst[index + 1] < lst[index]:\n                return False\n        return True\n    elif len(lst) == 1:\n        return True\n    return False\n    # ...\n    \n    # ...\n    lst.sort()\n    for index in range(len(lst) - 1):\n        if lst[index]",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/127",
+        "completion": "   min1 = interval1[0]\n    max1 = interval1[1]\n    min2 = interval2[0]\n    max2 = interval2[1]\n\n    if max1 >= min2 and max2 >= min1:\n        start = max(min1, min2)\n        end = min(max1, max2)\n        return \"YES\" if (end - start) % 2 == 1 else \"NO\"\n\n    return \"NO\"\n import Foundation\n\n/// Implementation of `SecurePersistence` using an encrypted user defaults.\npublic final class UserDefaultsSecurePersistence: SecurePersistence {\n\tprivate let defaults: UserDefaults\n\n\t/// Initializer.\n\t///\n\t/// - parameter defaults: An instance of `UserDefaults` used to securely store the data.\n\tpublic init(defaults: UserDefaults = .standard) {\n\t\tself.defaults = defaults\n\t}\n\n\tpublic func set(_ value: Data, forKey key: String) throws {\n\t\tif let decryptedData = try? decrypt(value) {\n\t\t\tdefaults",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/128",
+        "completion": "   if len(arr) == 0:\n        return None\n    prod_prod_signs = 1\n    prod_magnitudes = 1\n    for element in arr:\n        if element == 0:\n            prod_prod_signs = 0\n            prod_magnitudes = 0\n        elif element > 0:\n            prod_prod_signs *= 1\n            prod_magnitudes *= element\n        else:\n            prod_prod_signs *= -1\n            prod_magnitudes *= -element\n    return prod_magnitudes * prod_prod_signs\n\nif __name__ == \"__main__\":\n    import doctest\n    doctest.testmod()\n package org.apache.spark.sql.delta.sources\n\nimport org.apache.spark.sql.delta.{DeltaErrors, DeltaTableIdentifier}\nimport org.apache.spark.sql.delta.metering.DeltaLogging\nimport org.apache.spark.sql.delta.schema.SchemaUtils\nimport org.apache.spark.sql.delta.util.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/129",
+        "completion": "\n    def dfs(row, col, k):\n        if k == 1:\n            return (grid[row][col],)\n        if row > 0:\n            tuple_ = dfs(row - 1, col, k - 1)\n            if tuple_[0] < grid[row][col]:\n                return (grid[row][col],) + tuple_\n        if col > 0:\n            tuple_ = dfs(row, col - 1, k - 1)\n            if tuple_[0] < grid[row][col]:\n                return (grid[row][col],) + tuple_\n        return (grid[row][col],)\n    return dfs(len(grid) - 1, len(grid[0]) - 1, k - 1)\n import { ConfigPlugin, createRunOncePlugin } from '@expo/config-plugins';\nimport { withDangerousMod, withProjectBuildGradle } from '@expo/config-plugins/build/AndroidConfig';\nimport {\n  getMainApplication,\n  setMainApplicationRootActivity,\n} from",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/130",
+        "completion": "   output = [1, 3]\n    for _ in range(n):\n        last = output[-1]\n        previous_to_last = output[-2]\n        output.append(last + previous_to_last)\n    return output\n    \ndef tri2(n):\n    \"\"\"\n    You are given a non-negative integer number n, you have to a return a list of the \n    first n + 1 numbers of the Tribonacci sequence.\n    \"\"\"\n    x, y, z = 1, 1, 1\n    output = [x, y, z]\n    for num in range(n):\n        x, y, z = x + y + z, x, z\n        output.append(x)\n    return output\n    \ndef tri3(n):\n    \"\"\"\n    You are given a non-negative integer number n, you have to a return a list of the \n    first n + 1 numbers of the Tribonacci sequence.\n    \"\"\"\n    if n == 1:\n        return [1, 3]\n    if n == 2:\n        return [",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/131",
+        "completion": "   if n % 2 == 0:\n        return 0\n    else:\n        digits = []\n        l = []\n        while n > 0:\n            digits.append(n % 10)\n            n = int(n/10)\n        for i in digits:\n            if i % 2 != 0:\n                l.append(i)\n        # print(l)\n        result = 1\n        for i in l:\n            result = result * i\n        return result\n\nif __name__ == \"__main__\":\n    print(digits(1))\n    print(digits(4))\n    print(digits(235))\n    # How to print a array:\n    # for i in digits(235):\n    #     print(i, end = \",\")\n    # print()\n    # to do:\n    # 1\u3001\u4e00\u884c\u8f93\u5165\u4e00\u4e2a\u6570\u5b57\uff0c\u4e00\u884c\u8f93\u51fa\u7ed3\u679c\n    # 2\u3001100\u4e2a\u6570\u8f93\u5165\uff0c100\u4e2a\u7ed3\u679c\u8f93\u51fa\n\n# \u8865\u5145\uff1a",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/132",
+        "completion": "   if len(string) == 0:\n        return False\n    result = 0\n    for c in string:\n        if c == '[':\n            result += 1\n        elif result > 0 and c == ']':\n            result -= 1\n    if result > 0:\n        return False\n    else:\n        return True\n package com.example.android.miwok;\nimport android.media.AudioManager;\nimport android.media.MediaPlayer;\nimport android.provider.UserDictionary;\nimport android.support.v7.app.AppCompatActivity;\nimport android.os.Bundle;\nimport android.view.View;\nimport android.widget.AdapterView;\nimport android.widget.ListView;\n\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.List;\nimport java.util.Objects;\n\npublic class FamilyActivity extends AppCompatActivity {\n    private MediaPlayer mediaPlayer;\n    private AudioManager mAudioManager;\n\n    private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudio",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/133",
+        "completion": "\n    return sum(i*i for i in map(lambda x : math.ceil(x), lst))\n # -*- coding: utf-8 -*-\n'''\n    :codeauthor: :email:`Rahul Handay <rahulha@saltstack.com>`\n'''\n# Import python libs\nfrom __future__ import absolute_import, print_function, unicode_literals\n\n# Import Salt Testing Libs\nfrom tests.support.unit import skipIf, TestCase\nfrom tests.support.mock import (\n    NO_MOCK,\n    NO_MOCK_REASON,\n    MagicMock,\n    patch\n)\nfrom salt.exceptions import SaltInvocationError\nfrom salt.ext.six.moves import range\n\n# Import Salt libs\nimport salt.ext.domodproxy\nfrom salt.ext.domodproxy import Domod\n\n# Patch modules to avoid local connections\nMOD_REQUIREMENTS_PREFIX = 'salt.utils.{module}.'.format(module=__name__)\nif salt.utils.platform.is_linux():",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/134",
+        "completion": "   # Your code goes here\n    if txt[-1].isalpha() and txt[-2] == ' ':\n        return True\n    else:\n        return False\n\nprint(check_if_last_char_is_a_letter(\"apple pie\"))\nprint(check_if_last_char_is_a_letter(\"apple pi e\"))\nprint(check_if_last_char_is_a_letter(\"apple pi e \"))\nprint(check_if_last_char_is_a_letter(\"\"))\n\ndef check_if_last_char_is_a_letter(txt):\n    '''\n    Create a function that returns True if the last character\n    of a given string is a non-alphabetical character and is not\n    a part of a word, and False otherwise.\n    Note: \"word\" here mean a group of characters separated by space.\n    \n    Examples:\n    check_if_last_char_is_a_letter(\"apple pie\") \u27a1\ufe0f False\n    check_if_last_char_is_a_letter(\"apple pi-e\") \u27a1",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/135",
+        "completion": "   arr = sorted(arr)\n    result = -1\n    for i in range(1, len(arr)):\n        if arr[i-1] >= arr[i]:\n            result = i\n\n    return result\n use std::collections::HashMap;\nuse std::fmt::Debug;\nuse std::str::FromStr;\n\nuse crate::Lexer;\nuse crate::Parser;\nuse crate::Parsers;\nuse crate::Token;\nuse crate::TokenKind;\nuse crate::Tokens;\n\npub fn lex(tok: Vec<Token>) -> Vec<Token> {\n    let mut lexer = Lexer::new(tok);\n    lexer.lex()\n}\n\npub fn parse<T, U>(\n    source: &str,\n    tok: Vec<Token>,\n    parsers: &HashMap<u8, (impl Parsers<T, U>, impl Debug)>,\n) -> (T, Vec<Token>)\nwhere\n    T: Debug,\n    U: Debug,\n{\n    let lexed = lex(tok);\n   ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/136",
+        "completion": "   positives = []\n    negatives = []\n    for x in lst:\n        if x > 0:\n            positives.append(x)\n        if x < 0:\n            negatives.append(x)\n    return max(negatives), min(positives)\n\n\ndef count_freq(lst):\n    '''\n    Create a function that returns a dictionary where the keys are\n    the elements of a lis, and the values are the number of times\n    each element appears in the list.\n    Examples:\n    count_freq([1, 2, 3, 4, 5]) returns { 1: 1, 2: 1, 3: 1, 4: 1, 5: 1 }\n    count_freq([1, 2, 1, 2, 1]) returns { 1: 3, 2: 2 }\n    count_freq([1, 1, 1, 1, 1]) returns { 1: 5 }\n    count_freq([]) returns {}\n    count_f",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/137",
+        "completion": "\n    if type(a) != type(b):\n        print(\"different type of variables\")\n        return None\n    if a == b:\n        return None\n    if a > b:\n        return a\n    else:\n        return b\n #include <iostream>\n#include <fstream>\n#include \"Person.h\"\n#include \"Address.h\"\nusing namespace std;\nint main()\n{\n\tint age;\n\tcout << \"Enter age: \";\n\tcin >> age;\n\tdouble salary;\n\tcout << \"Enter salary: \";\n\tcin >> salary;\n\tstring firstName, lastName;\n\tAddress address;\n\tcout << \"Enter first name: \";\n\tcin >> firstName;\n\tcout << \"Enter last name: \";\n\tcin >> lastName;\n\tcout << \"Enter street name: \";\n\tcin >> address.streetName;\n\tcout << \"Enter street number: \";\n\tcin >> address.streetNumber;\n\tcout << \"Enter country: \";\n\tcin >> address.country;\n\tPerson person(age, salary, firstName",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/138",
+        "completion": "   if n == 0:\n        return False\n    if n % 2 == 1:\n        return False\n    x = 8\n    while x <= n // 2:\n        if n - x == x:\n            return True\n        x += 2\n    return False\n\nprint(is_equal_to_sum_even(0))\nprint(is_equal_to_sum_even(4))\nprint(is_equal_to_sum_even(6))\nprint(is_equal_to_sum_even(8))\nprint(is_equal_to_sum_even(64))\nprint(is_equal_to_sum_even(66))\nprint(is_equal_to_sum_even(88))\nprint(is_equal_to_sum_even(108))\nprint(is_equal_to_sum_even(\"5\"))\nprint(is_equal_to_sum_even( ---\nuid: System.Net.HttpListenerResponse\n---\n package com.bugvm.apple.avfoundation;\n\n/*<imports>",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/139",
+        "completion": "   brazilian_factorial = 1\n    for i in range(n, 0, -1):\n        brazilian_factorial *= i\n    return brazilian_factorial\n\n# =================================================\nprint('Problem 6: ' + str(special_factorial(4)))\n# =================================================\n# Problem 7\n# Narcissistic numbers are numbers whose representation in n digits\n# is the same as the sum of the powers of the digits in each place in\n# the representation. For example, 153 in the decimal system is 1^3 + 5^3 + 3^3\n# = 1^3 + 125 + 27.\n\ndef narcissistic_num(n):\n    \"\"\"Takes a positive integer and returns whether the number is narcissistic.\n    Returns:\n        True if the number is a narcissistic,\n        False otherwise.\n    \"\"\"\n    str_n = str(n)\n    narcissistic = str_n == str(sum(int(i)**len(str_n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/140",
+        "completion": "   return text.replace(\" \", \"_\").replace(\"  \", \"-\")\n\nif __name__ == \"__main__\":\n    import doctest\n    doctest.testmod() require 'formula'\n\nclass Pwsafe < Formula\n  homepage 'http://pwsafe.org/'\n  url 'http://pwsafe.org/pwsafe-2.1.1.tar.gz'\n  sha1 '80bd2961b7e7b5d7b9bb0e8e7d2b5b3b2e8e8d7b'\n\n  def install\n    system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",\n                          \"--prefix=#{prefix}\"\n    system \"make install\"\n  end\nend\n <?php\ndefined('BASEPATH') OR exit('No direct script access allowed');\n?><!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>404 Page Not Found</title>\n<style type=\"text",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/141",
+        "completion": "   valid_names = ['txt', 'exe', 'dll']\n    file_name_list = file_name.split('.')\n    if not file_name or not file_name.strip():\n        return False\n    if len(file_name_list) != 2:\n        return False\n    if len(file_name.strip().replace(' ', '')) > 3:\n        return False\n    if not file_name[0].isalpha():\n        return False\n    if not re.match('txt|exe|dll', file_name_list[1]):\n        return False\n    return True\n\ntest_case_1 = \"example.txt\"\ntest_case_2 = \"example.exe\"\ntest_case_3 = \"example.dll\"\ntest_case_4 = \"example\"\ntest_case_5 = \"1example.dll\"\ntest_case_6 = \"123example.txt\"\ntest_case_7 = \"te.exe\"\ntest_case_8 = \"te.txt\"\ntest_case_9 = \"te.dll\"\ntest_case_1",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/142",
+        "completion": "   lst_sum = 0\n    for i, x in enumerate(lst):\n        if (i + 1) % 3 == 0:\n            lst_sum += x ** 3\n        elif (i + 1) % 4 == 0:\n            lst_sum += x ** 2\n    return lst_sum\n# ----------------------------------------------\ndef main():\n    test_cases = [\n        ([1,2,3], 6),\n        ([], 0),\n        ([-1,-5,2,-1,-5], -126)\n    ]\n\n    for test_case in test_cases:\n        arr = test_case[0]\n        expected = test_case[1]\n        result = sum_squares(arr)\n        if expected == result:\n            print('Passed test for ' + str(arr))\n        else:\n            print('Did not pass test for ' + str(arr))\n            print('The result was ' + str(result))\n            print('but it was expected to be ' + str(expected))\n    print('Completed test for sum_",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/143",
+        "completion": "   return ' '.join(word for word in sentence.split() if word.isalpha() and all(i % 2 != 0 for i in len(word)))\n\n    # Or:\n    # return ' '.join(x for x in sentence.split() if all(x.isalpha() and i % 2 != 0 for i in len(x)))\n    # return ' '.join(x for x in sentence. \ufeffusing Microsoft.VisualStudio.TestTools.UnitTesting;\nusing System;\nusing System.Collections.Generic;\nusing System.IO;\nusing System.Linq;\nusing System.Runtime.Serialization;\nusing System.Runtime.Serialization.Formatters.Binary;\nusing System.Text;\nusing System.Threading.Tasks;\nusing WinterDom.BizTalk.Pipelines.Manifest;\nusing WinterDom.BizTalk.RuleEngine;\n\nnamespace WinterDom.BizTalk.Pipelines.RuleEngine.Tests\n{\n    [TestClass]\n    public class UnitTest1\n    {\n        [TestMethod]\n        public void TestMethod",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/144",
+        "completion": "\n    x = x.split('/')\n    n = n.split('/')\n    xnum = int(x[0])\n    xdenom = int(x[1])\n    nnum = int(n[0])\n    ndenom = int(n[1])\n    if xnum * nnum == xdenom * ndenom:\n        return True\n    else:\n        return False\n\ndef simplifyHelper(x, n):\n    \"\"\"Helper function to simplify\"\"\"\n    x = x.split('/')\n    n = n.split('/')\n    xnum = int(x[0])\n    xdenom = int(x[1])\n    nnum = int(n[0])\n    ndenom = int(n[1])\n\ndef test():\n    \"\"\"Basic testing.\"\"\"\n    import doctest\n    doctest.testmod()\n    print 'All tests passed.'\n package com.googlecode.wicket.jquery.ui.samples.jqueryui.tabs;\n\nimport org.apache.wicket.markup.html.panel.FeedbackPanel;\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/145",
+        "completion": "   # Note: do not use the built-in sort() function!\n    # Hint: slice assignment is your friend\n    s = sorted(nums, key=lambda x: sum(map(int, str(abs(x)))))\n    for i in range(len(s)):\n        nums[i] = s[i]\n    return nums\n\nprint(order_by_points([1, 11, -1, -11, -12]))\nprint(order_by_points([]))\nprint(order_by_points([1, 11, -1, -1, -12]))\nprint(order_by_points([-1, -11, -1, 1, 11]))\nprint(order_by_points([-1, 1, -1, 1, -12]))\nprint(order_by_points([-1, 1, 1]))\nprint(order_by_points([1, 11, -1, -1, -12, -12]))\nprint(order_by_points([-1, -1",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/146",
+        "completion": "\n###\n\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array that are greater than 10 and both \n    first and last digits of a number are odd (1, 3, 5, 7, 9).\n    For example:\n    specialFilter([15, -73, 14, -15]) => 1 \n    specialFilter([33, -2, -3, 45, 21, 109]) => 2\n    \"\"\"\n    filtered=0\n    for i in range(len(nums)):\n        if nums[i]>10:\n            if (nums[i] / 10) % 10 < 5 and (nums[i] / 1) % 10 < 5:\n                filtered+=1\n                \n    return filtered\n                \n###\n\ndef specialFilter(nums):\n    \"\"\"Write a function that takes an array of numbers as input and returns \n    the number of elements in the array",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/147",
+        "completion": "   max_triples = 0\n    for i in range(1, n - 1):\n        for j in range(1 + i, n - 1):\n            for k in range(j + 1, n):\n                if (i * i + j * j + k * k) % 3 == 0:\n                    max_triples += 1\n    return max_triples\n @extends('master')\n@section('content')\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-sm-4\" style=\"margin-top: 10px\">\n            <div class=\"card\" style=\"width: 18rem;\">\n                <img src=\"...\" class=\"card-img-top\" alt=\"...\">\n                <div class=\"card-body\">\n                    <h5 class=\"card-title\">Card title</h5>\n                    <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n                    <a href=\"#\" class=\"btn btn",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/148",
+        "completion": "   try:\n        planet1 = int(planet1)\n        planet2 = int(planet2)\n        if planet1 > planet2:\n            planet1, planet2 = planet2, planet1\n        \n        planet = list(range(planet1, planet2+1))\n        planet.insert(0, planets.index(planet1)+1)\n        planet.remove(planets.index(planet2)+1)\n        if len(planet) == 0:\n            return ()\n        else:\n            return sorted(planet, key=lambda x : x-1)\n        \n    except ValueError:\n        return ()  \n    \nif __name__ == \"__main__\":\n    planets = (\"Mercury\", \"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\", \"Uranus\", \"Neptune\")\n    print(bf(planets[6], planets[7]))\n    print(bf(planets[6], \"Mercury\"))\n    print(bf(planets[2], \"Venus\"))",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/149",
+        "completion": "   # Create a list of numbers from the list of strings\n    numbers = []\n    for i in lst:\n        number = len(i)\n        numbers.append(number)\n    # Sort the list of numbers\n    numbers.sort()\n    # Create a list of strings which is in order based on the order of the list of numbers\n    ordered_words = []\n    for i in numbers:\n        for j in lst:\n            if len(j) == i:\n                ordered_words.append(j)\n    # Return sorted list\n    ordered_words.sort()\n    return ordered_words\n    \nprint(sorted_list_sum([\"aa\", \"a\", \"aaa\"]))\nprint(sorted_list_sum([\"ab\", \"a\", \"aaa\", \"cd\"]))\nprint(sorted_list_sum([\"a\", \"aa\", \"aaa\"]))\nprint(sorted_list_sum([\"aabbbbabbbaaabbbabbaaaaabbaaabaaaabaaaabaaaabaaaabbaaaabbaaa\"]))\nprint(sorted_list_sum([\"aabbb",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/150",
+        "completion": "   # Your code here\n    if n % 2 == 0:\n        return x\n    else:\n        return y\n    \n    # End of code\n    \n# -----------------------------------\n# Calls  main  to start the execution\n# -----------------------------------\n\nif __name__ == \"__main__\":\n \ufeffusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Threading.Tasks;\nusing Hatzap.Models;\nusing Hatzap.Shaders;\nusing OpenTK;\nusing OpenTK.Graphics.OpenGL4;\n\nnamespace Hatzap_Editor\n{\n    class GraphicalVertex : IEquatable<GraphicalVertex>\n    {\n        public VertexPositionNormalTexture VertexData { get; private set; }\n        public int Index { get; private set; }\n        public GraphicalVertex(VertexPositionNormalTexture vertex, int index)\n        {\n            VertexData = vertex;\n            Index = index;\n        }\n\n        #region IEquatable<GraphicalVertex> Members",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/151",
+        "completion": "\n    return sum(list(filter(lambda x: x!=0, map(lambda x: x**2, [abs(i)%2!=1 and i or 0 for i in lst]))))\n\nprint(double_the_difference([1, 3, 2, 0]))\nprint(double_the_difference([-1, -2, 0]))\nprint(double_the_difference([9, -2]))\nprint(double_the_difference([0]))\nprint(double_the_difference([]))\nprint(double_the_difference([1, 1, 1, 1, 1])) package com.gauravk.bubblebarsample.ui;\n// Created by Gaurav Kumar on 18/11/18.\n\nimport android.Manifest;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.pm.PackageManager;\nimport android.database.Cursor;\nimport android.database.SQLException;\nimport android.database.sqlite.SQLiteDatabase;\nimport android.net",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/152",
+        "completion": "   result = list()\n    for i in range(len(guess)):\n /**\n * @file GnssData.hpp\n * @brief Projet Conception de Circuit integr\u00e9s 2020\n * @auhtor Groupe A\n * @version 1.0\n * \n * \\fn float getLat()\n * \\brief Retourne la valeur de la latitude\n * \n * \\fn float getLon()\n * \\brief Retourne la valeur de la longitude\n * \n * \\fn float getAltitude()\n * \\brief Retourne la valeur de l'altitude\n * \n * \\fn float getLatitudeOfOrigin()\n * \\brief Retourne la valeur de la latitude du centre de la projection\n * \n * \\fn float getLongitudeOfOrigin()\n * \\brief Retourne la valeur de la longitude du centre de la projection\n * \n * \\fn float getFalseEasting()\n * \\brief Retourne la valeur de l'erreur d'easting\n * \n * \\fn float",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/153",
+        "completion": "   # Your code here\n    if extensions == []:\n        return ''\n    # print(extensions)\n    maxi = 0\n    maxi_i = 0\n    for i in range(len(extensions)):\n        current_strength = _letter_strength(extensions[i])\n        if current_strength > maxi:\n            maxi = current_strength\n            maxi_i = i\n    # print(current_strength)\n    # print(maxi_i)\n    return str(class_name) + '.' + str(extensions[maxi_i])\n\ndef _letter_strength(extension):\n    total = 0\n    for i in range(len(extension)):\n        if extension[i].isupper():\n            total += 1\n    sm = 0\n    for i in range(len(extension)):\n        if extension[i].islower():\n            sm += 1\n    return (total - sm) / len(extension)\n\nprint (Strongest_Extension('class', ['A', 'ATT', 'AA', 'aat']))\nprint (",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/154",
+        "completion": "\ndef cycpattern_check(a, b):\n    a = a.lower()\n    b = b.lower()\n    for i in range(len(b)):\n        if (a.find(b[i:]+ \ufeffusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Threading.Tasks;\nusing Microsoft.AspNetCore.Mvc;\nusing Microsoft.AspNetCore.Mvc.RazorPages;\n\nnamespace CooperSystem.Web.Pagines.Catalogos\n{\n    public class ProdModel : PageModel\n    {\n        public void OnGet()\n        {\n        }\n    }\n}utos /*************************GO-LICENSE-START*********************************\n * Copyright 2014 ThoughtWorks, Inc.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *    http://www.apache.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/155",
+        "completion": "   e = 0\n    o = 0\n    for x in str(num):\n        if int(x) % 2 == 0:\n            e += 1\n        else:\n            o += 1\n    return (e, o)\n #include \"qemu/osdep.h\"\n#include \"qemu-common.h\"\n#include \"qapi/error.h\"\n#include \"qemu/cutils.h\"\n#include \"cpu.h\"\n#include \"qemu/timer.h\"\n#include \"kvm.h\"\n#include \"sysemu/sysemu.h\"\n#include \"sysemu/numa.h\"\n#include \"qemu/error-report.h\"\n#include \"qemu/bitmap.h\"\n#include \"trace.h\"\n#include \"exec/exec-all.h\"\n#include \"exec/cpu_ldst.h\"\n#include \"exec/cpu_ldst.h\"\n#include \"tcg/tcg.h\"\n#include \"tcg/tcg-op.h\"\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/156",
+        "completion": "   int_array = [100,  90,  50, 40, 10,  9,  5,  4,   1]\n    roman_array = ['c', 'x', 'l', 'v', 'i', 'x', 'l', 'v', 'i']\n    roman_number = ''\n    while number > 0:\n        index = number // int_array[0]\n        while index:\n            roman_number += roman_array[0]\n            number -= int_array[0]\n        int_array.pop(0)\n        roman_array.pop(0)\n        number = number // int_array[0]\n    return roman_number.lower()\n    \ndef mini_roman_to_int(roman_number):\n    \"\"\"\n    Given a string of roman numerals, return the integer they represent.\n    Restrictions: the string contains valid roman numerals only\n\n    Examples:\n    >>> mini_roman_to_int('xix') == 19\n    >>> mini_roman_to_int('clii",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/157",
+        "completion": "\n    if (a**2) == (b**2) + (c**2):\n        return True\n    else:\n        return False\nprint(right_angle_triangle(3, 4, 5))\n\ndef left_angle_triangle(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return True if the three\n    sides form a left-angled triangle, False otherwise.\n    A left-angled triangle is a triangle in which one angle is right angle or \n    90 degree.\n    Example:\n    left_angle_triangle(3, 4, 5) == False\n    left_angle_triangle(0.5, 0.4, 0.4) == False\n    left_angle_triangle(0.5, 0.4, 0.6) == True\n    '''\n    if (a**2) == (b**2) + (c**2):\n        return True\n    else:\n        return False\nprint(left_angle_triangle(3, 4, 5))\n\ndef right_angled_triangle",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/158",
+        "completion": "   max_word = \"\"\n    max_chars = 0\n    for word in words:\n        count = 0\n        for c in word:\n            if not word.count(c):\n                count += 1\n        if len(word) > max_chars:\n            max_word = word\n            max_chars = count\n        elif len(word) == max_chars and word < max_word:\n            max_word = word\n            max_chars = count\n    return max_word\n\nprint(find_max([\"name\", \"of\", \"string\"])) \ufeffusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing System.Threading.Tasks;\nusing Rebus.Config;\nusing Rebus.Routing.TypeBased;\n\nnamespace Rebus.Config\n{\n    public static class HandlerActivatorConfigExtensions\n    {\n        public static OptionsConfigurer<TRouter> RegisterHandlers(this OptionsConfigurer<TRouter> configurer, params Type[] handlerTypes)\n        {\n            configurer.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/159",
+        "completion": "   if remaining >= need:\n        return [number + need, remaining - need]\n    else:\n        if number == need:\n            return [number + remaining, 0]\n        elif number > need:\n            return [need, 0]\n        else:\n            return [number, remaining]\n package com.amazing.fragments;\nimport android.app.Activity;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.support.v4.app.Fragment;\nimport android.text.TextUtils;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.widget.EditText;\nimport android.widget.ImageButton;\nimport android.widget.TextView;\nimport android.widget.Toast;\n\nimport com.amazing.R;\nimport com.amazing.activity.LoginActivity;\nimport com.amazing.activity.MessageActivity;\nimport com.amazing.activity.RegisterActivity;\nimport com.amazing.activity.T",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/160",
+        "completion": "\n    # The addition of the expression.\n    expression = operand[0]\n    for i in range(1, len(operand)):\n        operator_index = i % len(operator)\n        expression += operator[operator_index] + str(operand[i])\n    return eval(expression)\n\n    # To optimize, consider building a stack to store the operands and operators.\n    # This way, the previous element of the stack could be used.\n    # Use eval to evaluate the expression.\n    # You need to \"reduce\" the expression through the operators.\n\ndef do_algebra_optimized(operator, operand):\n    \"\"\"\n    Given two lists operator, and operand. The first list has basic algebra operations, and \n    the second list is a list of integers. Use the two given lists to build the algebric \n    expression and return the evaluation of this expression.\n\n    The basic algebra operations:\n    Addition ( + ) \n    Subtraction ( - ) \n    Multiplication ( * ) \n    Floor division ( // ) \n    Exponentiation ( ** ) \n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/161",
+        "completion": "\n    s = list(s)\n    s_len = len(s)\n    result = list()\n    result_len = 0\n    uppercase_flag = False\n    lowercase_flag = False\n    for i in range(s_len):\n        if s[i].isalpha():\n            if s[i].isupper():\n                uppercase_flag = True\n            else:\n                lowercase_flag = True\n        if uppercase_flag:\n            result.append(s[i].upper())\n            result_len += 1\n            if s_len == result_len:\n                result.append(s[i].lower())\n                result_len += 1\n            uppercase_flag = False\n        elif lowercase_flag:\n            result.append(s[i].lower())\n            result_len += 1\n            if s_len == result_len:\n                result.append(s[i].upper())\n                result_len += 1\n            lowercase_flag = False\n        else:\n            result.append(s[i])\n            result_len += 1\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/162",
+        "completion": "   return hashlib.md5(bytes(text,encoding='utf-8')).hexdigest()\n\ndef find_matches(source_list, target_list):\n    \"\"\"\n    Given two text strings, source and target, find all words in source that are anagrams of any word in target.  Return a list of the 'anagrams' found.\n\n    >>> find_matches('marcy wore a cap', 'ready married cap') == ['cap']\n    \"\"\"\n    matches = []\n    for word1 in source_list:\n        for word2 in target_list:\n            if string_to_md5(word1) == string_to_md5(word2):\n                matches.append(word1)\n    return matches\n\t\ndef find_anagrams(sentence):\n    \"\"\"\n    Given a text string, sentence, return a list of all the words in sentence that are anagrams of each other.\n\n    >>> find_anagrams('marcy wore a cap') == ['cap']\n    \"\"\"\n    words = sentence.split(' ')\n    words = [word.lower() for word in",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/163",
+        "completion": "   if a != 0 and b != 0:\n        if 0 < a < b:\n            i = a\n            while i < b:\n                if i % 2 == 0:\n                    numbers.append(i)\n                    i += 1\n    return numbers\n\nnumbers = []\na = int(raw_input(\"Enter the first number: \"))\nb = int(raw_input(\"Enter the second number: \"))\ngenerate_integers(a, b)\nif numbers == []:\n    print \"No even numbers found.\"\nelse:\n    print \"The even numbers are\", numbers\n\\end{code}\n\nAnswer: In your `generate_integers()` function you've defined `numbers` as a global variable, but still refer to it as `num` in your `if` statement.\n\nThis works:\n\n\\begin{code}\ndef generate_integers(a, b):\n    \"\"\"\n    Given two positive integers a and b, return the even digits between a\n    and b, in ascending order.\n\n    For example:\n    generate_integers(2, 8",
+        "passed": false
+      }
+    ]
+  },
+  "mbpp": {
+    "metrics": {
+      "pass@1": 0.002
+    },
+    "results": [
+      {
+        "task_id": "11",
+        "passed": false
+      },
+      {
+        "task_id": "12",
+        "passed": false
+      },
+      {
+        "task_id": "13",
+        "passed": false
+      },
+      {
+        "task_id": "14",
+        "passed": false
+      },
+      {
+        "task_id": "15",
+        "passed": false
+      },
+      {
+        "task_id": "16",
+        "passed": false
+      },
+      {
+        "task_id": "17",
+        "passed": false
+      },
+      {
+        "task_id": "18",
+        "passed": false
+      },
+      {
+        "task_id": "19",
+        "passed": false
+      },
+      {
+        "task_id": "20",
+        "passed": false
+      },
+      {
+        "task_id": "21",
+        "passed": false
+      },
+      {
+        "task_id": "22",
+        "passed": false
+      },
+      {
+        "task_id": "23",
+        "passed": false
+      },
+      {
+        "task_id": "24",
+        "passed": false
+      },
+      {
+        "task_id": "25",
+        "passed": false
+      },
+      {
+        "task_id": "26",
+        "passed": false
+      },
+      {
+        "task_id": "27",
+        "passed": false
+      },
+      {
+        "task_id": "28",
+        "passed": false
+      },
+      {
+        "task_id": "29",
+        "passed": false
+      },
+      {
+        "task_id": "30",
+        "passed": false
+      },
+      {
+        "task_id": "31",
+        "passed": false
+      },
+      {
+        "task_id": "32",
+        "passed": false
+      },
+      {
+        "task_id": "33",
+        "passed": false
+      },
+      {
+        "task_id": "34",
+        "passed": false
+      },
+      {
+        "task_id": "35",
+        "passed": false
+      },
+      {
+        "task_id": "36",
+        "passed": false
+      },
+      {
+        "task_id": "37",
+        "passed": false
+      },
+      {
+        "task_id": "38",
+        "passed": false
+      },
+      {
+        "task_id": "39",
+        "passed": false
+      },
+      {
+        "task_id": "40",
+        "passed": false
+      },
+      {
+        "task_id": "41",
+        "passed": false
+      },
+      {
+        "task_id": "42",
+        "passed": false
+      },
+      {
+        "task_id": "43",
+        "passed": false
+      },
+      {
+        "task_id": "44",
+        "passed": false
+      },
+      {
+        "task_id": "45",
+        "passed": false
+      },
+      {
+        "task_id": "46",
+        "passed": false
+      },
+      {
+        "task_id": "47",
+        "passed": false
+      },
+      {
+        "task_id": "48",
+        "passed": false
+      },
+      {
+        "task_id": "49",
+        "passed": false
+      },
+      {
+        "task_id": "50",
+        "passed": false
+      },
+      {
+        "task_id": "51",
+        "passed": true
+      },
+      {
+        "task_id": "52",
+        "passed": false
+      },
+      {
+        "task_id": "53",
+        "passed": false
+      },
+      {
+        "task_id": "54",
+        "passed": false
+      },
+      {
+        "task_id": "55",
+        "passed": false
+      },
+      {
+        "task_id": "56",
+        "passed": false
+      },
+      {
+        "task_id": "57",
+        "passed": false
+      },
+      {
+        "task_id": "58",
+        "passed": false
+      },
+      {
+        "task_id": "59",
+        "passed": false
+      },
+      {
+        "task_id": "60",
+        "passed": false
+      },
+      {
+        "task_id": "61",
+        "passed": false
+      },
+      {
+        "task_id": "62",
+        "passed": false
+      },
+      {
+        "task_id": "63",
+        "passed": false
+      },
+      {
+        "task_id": "64",
+        "passed": false
+      },
+      {
+        "task_id": "65",
+        "passed": false
+      },
+      {
+        "task_id": "66",
+        "passed": false
+      },
+      {
+        "task_id": "67",
+        "passed": false
+      },
+      {
+        "task_id": "68",
+        "passed": false
+      },
+      {
+        "task_id": "69",
+        "passed": false
+      },
+      {
+        "task_id": "70",
+        "passed": false
+      },
+      {
+        "task_id": "71",
+        "passed": false
+      },
+      {
+        "task_id": "72",
+        "passed": false
+      },
+      {
+        "task_id": "73",
+        "passed": false
+      },
+      {
+        "task_id": "74",
+        "passed": false
+      },
+      {
+        "task_id": "75",
+        "passed": false
+      },
+      {
+        "task_id": "76",
+        "passed": false
+      },
+      {
+        "task_id": "77",
+        "passed": false
+      },
+      {
+        "task_id": "78",
+        "passed": false
+      },
+      {
+        "task_id": "79",
+        "passed": false
+      },
+      {
+        "task_id": "80",
+        "passed": false
+      },
+      {
+        "task_id": "81",
+        "passed": false
+      },
+      {
+        "task_id": "82",
+        "passed": false
+      },
+      {
+        "task_id": "83",
+        "passed": false
+      },
+      {
+        "task_id": "84",
+        "passed": false
+      },
+      {
+        "task_id": "85",
+        "passed": false
+      },
+      {
+        "task_id": "86",
+        "passed": false
+      },
+      {
+        "task_id": "87",
+        "passed": false
+      },
+      {
+        "task_id": "88",
+        "passed": false
+      },
+      {
+        "task_id": "89",
+        "passed": false
+      },
+      {
+        "task_id": "90",
+        "passed": false
+      },
+      {
+        "task_id": "91",
+        "passed": false
+      },
+      {
+        "task_id": "92",
+        "passed": false
+      },
+      {
+        "task_id": "93",
+        "passed": false
+      },
+      {
+        "task_id": "94",
+        "passed": false
+      },
+      {
+        "task_id": "95",
+        "passed": false
+      },
+      {
+        "task_id": "96",
+        "passed": false
+      },
+      {
+        "task_id": "97",
+        "passed": false
+      },
+      {
+        "task_id": "98",
+        "passed": false
+      },
+      {
+        "task_id": "99",
+        "passed": false
+      },
+      {
+        "task_id": "100",
+        "passed": false
+      },
+      {
+        "task_id": "101",
+        "passed": false
+      },
+      {
+        "task_id": "102",
+        "passed": false
+      },
+      {
+        "task_id": "103",
+        "passed": false
+      },
+      {
+        "task_id": "104",
+        "passed": false
+      },
+      {
+        "task_id": "105",
+        "passed": false
+      },
+      {
+        "task_id": "106",
+        "passed": false
+      },
+      {
+        "task_id": "107",
+        "passed": false
+      },
+      {
+        "task_id": "108",
+        "passed": false
+      },
+      {
+        "task_id": "109",
+        "passed": false
+      },
+      {
+        "task_id": "110",
+        "passed": false
+      },
+      {
+        "task_id": "111",
+        "passed": false
+      },
+      {
+        "task_id": "112",
+        "passed": false
+      },
+      {
+        "task_id": "113",
+        "passed": false
+      },
+      {
+        "task_id": "114",
+        "passed": false
+      },
+      {
+        "task_id": "115",
+        "passed": false
+      },
+      {
+        "task_id": "116",
+        "passed": false
+      },
+      {
+        "task_id": "117",
+        "passed": false
+      },
+      {
+        "task_id": "118",
+        "passed": false
+      },
+      {
+        "task_id": "119",
+        "passed": false
+      },
+      {
+        "task_id": "120",
+        "passed": false
+      },
+      {
+        "task_id": "121",
+        "passed": false
+      },
+      {
+        "task_id": "122",
+        "passed": false
+      },
+      {
+        "task_id": "123",
+        "passed": false
+      },
+      {
+        "task_id": "124",
+        "passed": false
+      },
+      {
+        "task_id": "125",
+        "passed": false
+      },
+      {
+        "task_id": "126",
+        "passed": false
+      },
+      {
+        "task_id": "127",
+        "passed": false
+      },
+      {
+        "task_id": "128",
+        "passed": false
+      },
+      {
+        "task_id": "129",
+        "passed": false
+      },
+      {
+        "task_id": "130",
+        "passed": false
+      },
+      {
+        "task_id": "131",
+        "passed": false
+      },
+      {
+        "task_id": "132",
+        "passed": false
+      },
+      {
+        "task_id": "133",
+        "passed": false
+      },
+      {
+        "task_id": "134",
+        "passed": false
+      },
+      {
+        "task_id": "135",
+        "passed": false
+      },
+      {
+        "task_id": "136",
+        "passed": false
+      },
+      {
+        "task_id": "137",
+        "passed": false
+      },
+      {
+        "task_id": "138",
+        "passed": false
+      },
+      {
+        "task_id": "139",
+        "passed": false
+      },
+      {
+        "task_id": "140",
+        "passed": false
+      },
+      {
+        "task_id": "141",
+        "passed": false
+      },
+      {
+        "task_id": "142",
+        "passed": false
+      },
+      {
+        "task_id": "143",
+        "passed": false
+      },
+      {
+        "task_id": "144",
+        "passed": false
+      },
+      {
+        "task_id": "145",
+        "passed": false
+      },
+      {
+        "task_id": "146",
+        "passed": false
+      },
+      {
+        "task_id": "147",
+        "passed": false
+      },
+      {
+        "task_id": "148",
+        "passed": false
+      },
+      {
+        "task_id": "149",
+        "passed": false
+      },
+      {
+        "task_id": "150",
+        "passed": false
+      },
+      {
+        "task_id": "151",
+        "passed": false
+      },
+      {
+        "task_id": "152",
+        "passed": false
+      },
+      {
+        "task_id": "153",
+        "passed": false
+      },
+      {
+        "task_id": "154",
+        "passed": false
+      },
+      {
+        "task_id": "155",
+        "passed": false
+      },
+      {
+        "task_id": "156",
+        "passed": false
+      },
+      {
+        "task_id": "157",
+        "passed": false
+      },
+      {
+        "task_id": "158",
+        "passed": false
+      },
+      {
+        "task_id": "159",
+        "passed": false
+      },
+      {
+        "task_id": "160",
+        "passed": false
+      },
+      {
+        "task_id": "161",
+        "passed": false
+      },
+      {
+        "task_id": "162",
+        "passed": false
+      },
+      {
+        "task_id": "163",
+        "passed": false
+      },
+      {
+        "task_id": "164",
+        "passed": false
+      },
+      {
+        "task_id": "165",
+        "passed": false
+      },
+      {
+        "task_id": "166",
+        "passed": false
+      },
+      {
+        "task_id": "167",
+        "passed": false
+      },
+      {
+        "task_id": "168",
+        "passed": false
+      },
+      {
+        "task_id": "169",
+        "passed": false
+      },
+      {
+        "task_id": "170",
+        "passed": false
+      },
+      {
+        "task_id": "171",
+        "passed": false
+      },
+      {
+        "task_id": "172",
+        "passed": false
+      },
+      {
+        "task_id": "173",
+        "passed": false
+      },
+      {
+        "task_id": "174",
+        "passed": false
+      },
+      {
+        "task_id": "175",
+        "passed": false
+      },
+      {
+        "task_id": "176",
+        "passed": false
+      },
+      {
+        "task_id": "177",
+        "passed": false
+      },
+      {
+        "task_id": "178",
+        "passed": false
+      },
+      {
+        "task_id": "179",
+        "passed": false
+      },
+      {
+        "task_id": "180",
+        "passed": false
+      },
+      {
+        "task_id": "181",
+        "passed": false
+      },
+      {
+        "task_id": "182",
+        "passed": false
+      },
+      {
+        "task_id": "183",
+        "passed": false
+      },
+      {
+        "task_id": "184",
+        "passed": false
+      },
+      {
+        "task_id": "185",
+        "passed": false
+      },
+      {
+        "task_id": "186",
+        "passed": false
+      },
+      {
+        "task_id": "187",
+        "passed": false
+      },
+      {
+        "task_id": "188",
+        "passed": false
+      },
+      {
+        "task_id": "189",
+        "passed": false
+      },
+      {
+        "task_id": "190",
+        "passed": false
+      },
+      {
+        "task_id": "191",
+        "passed": false
+      },
+      {
+        "task_id": "192",
+        "passed": false
+      },
+      {
+        "task_id": "193",
+        "passed": false
+      },
+      {
+        "task_id": "194",
+        "passed": false
+      },
+      {
+        "task_id": "195",
+        "passed": false
+      },
+      {
+        "task_id": "196",
+        "passed": false
+      },
+      {
+        "task_id": "197",
+        "passed": false
+      },
+      {
+        "task_id": "198",
+        "passed": false
+      },
+      {
+        "task_id": "199",
+        "passed": false
+      },
+      {
+        "task_id": "200",
+        "passed": false
+      },
+      {
+        "task_id": "201",
+        "passed": false
+      },
+      {
+        "task_id": "202",
+        "passed": false
+      },
+      {
+        "task_id": "203",
+        "passed": false
+      },
+      {
+        "task_id": "204",
+        "passed": false
+      },
+      {
+        "task_id": "205",
+        "passed": false
+      },
+      {
+        "task_id": "206",
+        "passed": false
+      },
+      {
+        "task_id": "207",
+        "passed": false
+      },
+      {
+        "task_id": "208",
+        "passed": false
+      },
+      {
+        "task_id": "209",
+        "passed": false
+      },
+      {
+        "task_id": "210",
+        "passed": false
+      },
+      {
+        "task_id": "211",
+        "passed": false
+      },
+      {
+        "task_id": "212",
+        "passed": false
+      },
+      {
+        "task_id": "213",
+        "passed": false
+      },
+      {
+        "task_id": "214",
+        "passed": false
+      },
+      {
+        "task_id": "215",
+        "passed": false
+      },
+      {
+        "task_id": "216",
+        "passed": false
+      },
+      {
+        "task_id": "217",
+        "passed": false
+      },
+      {
+        "task_id": "218",
+        "passed": false
+      },
+      {
+        "task_id": "219",
+        "passed": false
+      },
+      {
+        "task_id": "220",
+        "passed": false
+      },
+      {
+        "task_id": "221",
+        "passed": false
+      },
+      {
+        "task_id": "222",
+        "passed": false
+      },
+      {
+        "task_id": "223",
+        "passed": false
+      },
+      {
+        "task_id": "224",
+        "passed": false
+      },
+      {
+        "task_id": "225",
+        "passed": false
+      },
+      {
+        "task_id": "226",
+        "passed": false
+      },
+      {
+        "task_id": "227",
+        "passed": false
+      },
+      {
+        "task_id": "228",
+        "passed": false
+      },
+      {
+        "task_id": "229",
+        "passed": false
+      },
+      {
+        "task_id": "230",
+        "passed": false
+      },
+      {
+        "task_id": "231",
+        "passed": false
+      },
+      {
+        "task_id": "232",
+        "passed": false
+      },
+      {
+        "task_id": "233",
+        "passed": false
+      },
+      {
+        "task_id": "234",
+        "passed": false
+      },
+      {
+        "task_id": "235",
+        "passed": false
+      },
+      {
+        "task_id": "236",
+        "passed": false
+      },
+      {
+        "task_id": "237",
+        "passed": false
+      },
+      {
+        "task_id": "238",
+        "passed": false
+      },
+      {
+        "task_id": "239",
+        "passed": false
+      },
+      {
+        "task_id": "240",
+        "passed": false
+      },
+      {
+        "task_id": "241",
+        "passed": false
+      },
+      {
+        "task_id": "242",
+        "passed": false
+      },
+      {
+        "task_id": "243",
+        "passed": false
+      },
+      {
+        "task_id": "244",
+        "passed": false
+      },
+      {
+        "task_id": "245",
+        "passed": false
+      },
+      {
+        "task_id": "246",
+        "passed": false
+      },
+      {
+        "task_id": "247",
+        "passed": false
+      },
+      {
+        "task_id": "248",
+        "passed": false
+      },
+      {
+        "task_id": "249",
+        "passed": false
+      },
+      {
+        "task_id": "250",
+        "passed": false
+      },
+      {
+        "task_id": "251",
+        "passed": false
+      },
+      {
+        "task_id": "252",
+        "passed": false
+      },
+      {
+        "task_id": "253",
+        "passed": false
+      },
+      {
+        "task_id": "254",
+        "passed": false
+      },
+      {
+        "task_id": "255",
+        "passed": false
+      },
+      {
+        "task_id": "256",
+        "passed": false
+      },
+      {
+        "task_id": "257",
+        "passed": false
+      },
+      {
+        "task_id": "258",
+        "passed": false
+      },
+      {
+        "task_id": "259",
+        "passed": false
+      },
+      {
+        "task_id": "260",
+        "passed": false
+      },
+      {
+        "task_id": "261",
+        "passed": false
+      },
+      {
+        "task_id": "262",
+        "passed": false
+      },
+      {
+        "task_id": "263",
+        "passed": false
+      },
+      {
+        "task_id": "264",
+        "passed": false
+      },
+      {
+        "task_id": "265",
+        "passed": false
+      },
+      {
+        "task_id": "266",
+        "passed": false
+      },
+      {
+        "task_id": "267",
+        "passed": false
+      },
+      {
+        "task_id": "268",
+        "passed": false
+      },
+      {
+        "task_id": "269",
+        "passed": false
+      },
+      {
+        "task_id": "270",
+        "passed": false
+      },
+      {
+        "task_id": "271",
+        "passed": false
+      },
+      {
+        "task_id": "272",
+        "passed": false
+      },
+      {
+        "task_id": "273",
+        "passed": false
+      },
+      {
+        "task_id": "274",
+        "passed": false
+      },
+      {
+        "task_id": "275",
+        "passed": false
+      },
+      {
+        "task_id": "276",
+        "passed": false
+      },
+      {
+        "task_id": "277",
+        "passed": false
+      },
+      {
+        "task_id": "278",
+        "passed": false
+      },
+      {
+        "task_id": "279",
+        "passed": false
+      },
+      {
+        "task_id": "280",
+        "passed": false
+      },
+      {
+        "task_id": "281",
+        "passed": false
+      },
+      {
+        "task_id": "282",
+        "passed": false
+      },
+      {
+        "task_id": "283",
+        "passed": false
+      },
+      {
+        "task_id": "284",
+        "passed": false
+      },
+      {
+        "task_id": "285",
+        "passed": false
+      },
+      {
+        "task_id": "286",
+        "passed": false
+      },
+      {
+        "task_id": "287",
+        "passed": false
+      },
+      {
+        "task_id": "288",
+        "passed": false
+      },
+      {
+        "task_id": "289",
+        "passed": false
+      },
+      {
+        "task_id": "290",
+        "passed": false
+      },
+      {
+        "task_id": "291",
+        "passed": false
+      },
+      {
+        "task_id": "292",
+        "passed": false
+      },
+      {
+        "task_id": "293",
+        "passed": false
+      },
+      {
+        "task_id": "294",
+        "passed": false
+      },
+      {
+        "task_id": "295",
+        "passed": false
+      },
+      {
+        "task_id": "296",
+        "passed": false
+      },
+      {
+        "task_id": "297",
+        "passed": false
+      },
+      {
+        "task_id": "298",
+        "passed": false
+      },
+      {
+        "task_id": "299",
+        "passed": false
+      },
+      {
+        "task_id": "300",
+        "passed": false
+      },
+      {
+        "task_id": "301",
+        "passed": false
+      },
+      {
+        "task_id": "302",
+        "passed": false
+      },
+      {
+        "task_id": "303",
+        "passed": false
+      },
+      {
+        "task_id": "304",
+        "passed": false
+      },
+      {
+        "task_id": "305",
+        "passed": false
+      },
+      {
+        "task_id": "306",
+        "passed": false
+      },
+      {
+        "task_id": "307",
+        "passed": false
+      },
+      {
+        "task_id": "308",
+        "passed": false
+      },
+      {
+        "task_id": "309",
+        "passed": false
+      },
+      {
+        "task_id": "310",
+        "passed": false
+      },
+      {
+        "task_id": "311",
+        "passed": false
+      },
+      {
+        "task_id": "312",
+        "passed": false
+      },
+      {
+        "task_id": "313",
+        "passed": false
+      },
+      {
+        "task_id": "314",
+        "passed": false
+      },
+      {
+        "task_id": "315",
+        "passed": false
+      },
+      {
+        "task_id": "316",
+        "passed": false
+      },
+      {
+        "task_id": "317",
+        "passed": false
+      },
+      {
+        "task_id": "318",
+        "passed": false
+      },
+      {
+        "task_id": "319",
+        "passed": false
+      },
+      {
+        "task_id": "320",
+        "passed": false
+      },
+      {
+        "task_id": "321",
+        "passed": false
+      },
+      {
+        "task_id": "322",
+        "passed": false
+      },
+      {
+        "task_id": "323",
+        "passed": false
+      },
+      {
+        "task_id": "324",
+        "passed": false
+      },
+      {
+        "task_id": "325",
+        "passed": false
+      },
+      {
+        "task_id": "326",
+        "passed": false
+      },
+      {
+        "task_id": "327",
+        "passed": false
+      },
+      {
+        "task_id": "328",
+        "passed": false
+      },
+      {
+        "task_id": "329",
+        "passed": false
+      },
+      {
+        "task_id": "330",
+        "passed": false
+      },
+      {
+        "task_id": "331",
+        "passed": false
+      },
+      {
+        "task_id": "332",
+        "passed": false
+      },
+      {
+        "task_id": "333",
+        "passed": false
+      },
+      {
+        "task_id": "334",
+        "passed": false
+      },
+      {
+        "task_id": "335",
+        "passed": false
+      },
+      {
+        "task_id": "336",
+        "passed": false
+      },
+      {
+        "task_id": "337",
+        "passed": false
+      },
+      {
+        "task_id": "338",
+        "passed": false
+      },
+      {
+        "task_id": "339",
+        "passed": false
+      },
+      {
+        "task_id": "340",
+        "passed": false
+      },
+      {
+        "task_id": "341",
+        "passed": false
+      },
+      {
+        "task_id": "342",
+        "passed": false
+      },
+      {
+        "task_id": "343",
+        "passed": false
+      },
+      {
+        "task_id": "344",
+        "passed": false
+      },
+      {
+        "task_id": "345",
+        "passed": false
+      },
+      {
+        "task_id": "346",
+        "passed": false
+      },
+      {
+        "task_id": "347",
+        "passed": false
+      },
+      {
+        "task_id": "348",
+        "passed": false
+      },
+      {
+        "task_id": "349",
+        "passed": false
+      },
+      {
+        "task_id": "350",
+        "passed": false
+      },
+      {
+        "task_id": "351",
+        "passed": false
+      },
+      {
+        "task_id": "352",
+        "passed": false
+      },
+      {
+        "task_id": "353",
+        "passed": false
+      },
+      {
+        "task_id": "354",
+        "passed": false
+      },
+      {
+        "task_id": "355",
+        "passed": false
+      },
+      {
+        "task_id": "356",
+        "passed": false
+      },
+      {
+        "task_id": "357",
+        "passed": false
+      },
+      {
+        "task_id": "358",
+        "passed": false
+      },
+      {
+        "task_id": "359",
+        "passed": false
+      },
+      {
+        "task_id": "360",
+        "passed": false
+      },
+      {
+        "task_id": "361",
+        "passed": false
+      },
+      {
+        "task_id": "362",
+        "passed": false
+      },
+      {
+        "task_id": "363",
+        "passed": false
+      },
+      {
+        "task_id": "364",
+        "passed": false
+      },
+      {
+        "task_id": "365",
+        "passed": false
+      },
+      {
+        "task_id": "366",
+        "passed": false
+      },
+      {
+        "task_id": "367",
+        "passed": false
+      },
+      {
+        "task_id": "368",
+        "passed": false
+      },
+      {
+        "task_id": "369",
+        "passed": false
+      },
+      {
+        "task_id": "370",
+        "passed": false
+      },
+      {
+        "task_id": "371",
+        "passed": false
+      },
+      {
+        "task_id": "372",
+        "passed": false
+      },
+      {
+        "task_id": "373",
+        "passed": false
+      },
+      {
+        "task_id": "374",
+        "passed": false
+      },
+      {
+        "task_id": "375",
+        "passed": false
+      },
+      {
+        "task_id": "376",
+        "passed": false
+      },
+      {
+        "task_id": "377",
+        "passed": false
+      },
+      {
+        "task_id": "378",
+        "passed": false
+      },
+      {
+        "task_id": "379",
+        "passed": false
+      },
+      {
+        "task_id": "380",
+        "passed": false
+      },
+      {
+        "task_id": "381",
+        "passed": false
+      },
+      {
+        "task_id": "382",
+        "passed": false
+      },
+      {
+        "task_id": "383",
+        "passed": false
+      },
+      {
+        "task_id": "384",
+        "passed": false
+      },
+      {
+        "task_id": "385",
+        "passed": false
+      },
+      {
+        "task_id": "386",
+        "passed": false
+      },
+      {
+        "task_id": "387",
+        "passed": false
+      },
+      {
+        "task_id": "388",
+        "passed": false
+      },
+      {
+        "task_id": "389",
+        "passed": false
+      },
+      {
+        "task_id": "390",
+        "passed": false
+      },
+      {
+        "task_id": "391",
+        "passed": false
+      },
+      {
+        "task_id": "392",
+        "passed": false
+      },
+      {
+        "task_id": "393",
+        "passed": false
+      },
+      {
+        "task_id": "394",
+        "passed": false
+      },
+      {
+        "task_id": "395",
+        "passed": false
+      },
+      {
+        "task_id": "396",
+        "passed": false
+      },
+      {
+        "task_id": "397",
+        "passed": false
+      },
+      {
+        "task_id": "398",
+        "passed": false
+      },
+      {
+        "task_id": "399",
+        "passed": false
+      },
+      {
+        "task_id": "400",
+        "passed": false
+      },
+      {
+        "task_id": "401",
+        "passed": false
+      },
+      {
+        "task_id": "402",
+        "passed": false
+      },
+      {
+        "task_id": "403",
+        "passed": false
+      },
+      {
+        "task_id": "404",
+        "passed": false
+      },
+      {
+        "task_id": "405",
+        "passed": false
+      },
+      {
+        "task_id": "406",
+        "passed": false
+      },
+      {
+        "task_id": "407",
+        "passed": false
+      },
+      {
+        "task_id": "408",
+        "passed": false
+      },
+      {
+        "task_id": "409",
+        "passed": false
+      },
+      {
+        "task_id": "410",
+        "passed": false
+      },
+      {
+        "task_id": "411",
+        "passed": false
+      },
+      {
+        "task_id": "412",
+        "passed": false
+      },
+      {
+        "task_id": "413",
+        "passed": false
+      },
+      {
+        "task_id": "414",
+        "passed": false
+      },
+      {
+        "task_id": "415",
+        "passed": false
+      },
+      {
+        "task_id": "416",
+        "passed": false
+      },
+      {
+        "task_id": "417",
+        "passed": false
+      },
+      {
+        "task_id": "418",
+        "passed": false
+      },
+      {
+        "task_id": "419",
+        "passed": false
+      },
+      {
+        "task_id": "420",
+        "passed": false
+      },
+      {
+        "task_id": "421",
+        "passed": false
+      },
+      {
+        "task_id": "422",
+        "passed": false
+      },
+      {
+        "task_id": "423",
+        "passed": false
+      },
+      {
+        "task_id": "424",
+        "passed": false
+      },
+      {
+        "task_id": "425",
+        "passed": false
+      },
+      {
+        "task_id": "426",
+        "passed": false
+      },
+      {
+        "task_id": "427",
+        "passed": false
+      },
+      {
+        "task_id": "428",
+        "passed": false
+      },
+      {
+        "task_id": "429",
+        "passed": false
+      },
+      {
+        "task_id": "430",
+        "passed": false
+      },
+      {
+        "task_id": "431",
+        "passed": false
+      },
+      {
+        "task_id": "432",
+        "passed": false
+      },
+      {
+        "task_id": "433",
+        "passed": false
+      },
+      {
+        "task_id": "434",
+        "passed": false
+      },
+      {
+        "task_id": "435",
+        "passed": false
+      },
+      {
+        "task_id": "436",
+        "passed": false
+      },
+      {
+        "task_id": "437",
+        "passed": false
+      },
+      {
+        "task_id": "438",
+        "passed": false
+      },
+      {
+        "task_id": "439",
+        "passed": false
+      },
+      {
+        "task_id": "440",
+        "passed": false
+      },
+      {
+        "task_id": "441",
+        "passed": false
+      },
+      {
+        "task_id": "442",
+        "passed": false
+      },
+      {
+        "task_id": "443",
+        "passed": false
+      },
+      {
+        "task_id": "444",
+        "passed": false
+      },
+      {
+        "task_id": "445",
+        "passed": false
+      },
+      {
+        "task_id": "446",
+        "passed": false
+      },
+      {
+        "task_id": "447",
+        "passed": false
+      },
+      {
+        "task_id": "448",
+        "passed": false
+      },
+      {
+        "task_id": "449",
+        "passed": false
+      },
+      {
+        "task_id": "450",
+        "passed": false
+      },
+      {
+        "task_id": "451",
+        "passed": false
+      },
+      {
+        "task_id": "452",
+        "passed": false
+      },
+      {
+        "task_id": "453",
+        "passed": false
+      },
+      {
+        "task_id": "454",
+        "passed": false
+      },
+      {
+        "task_id": "455",
+        "passed": false
+      },
+      {
+        "task_id": "456",
+        "passed": false
+      },
+      {
+        "task_id": "457",
+        "passed": false
+      },
+      {
+        "task_id": "458",
+        "passed": false
+      },
+      {
+        "task_id": "459",
+        "passed": false
+      },
+      {
+        "task_id": "460",
+        "passed": false
+      },
+      {
+        "task_id": "461",
+        "passed": false
+      },
+      {
+        "task_id": "462",
+        "passed": false
+      },
+      {
+        "task_id": "463",
+        "passed": false
+      },
+      {
+        "task_id": "464",
+        "passed": false
+      },
+      {
+        "task_id": "465",
+        "passed": false
+      },
+      {
+        "task_id": "466",
+        "passed": false
+      },
+      {
+        "task_id": "467",
+        "passed": false
+      },
+      {
+        "task_id": "468",
+        "passed": false
+      },
+      {
+        "task_id": "469",
+        "passed": false
+      },
+      {
+        "task_id": "470",
+        "passed": false
+      },
+      {
+        "task_id": "471",
+        "passed": false
+      },
+      {
+        "task_id": "472",
+        "passed": false
+      },
+      {
+        "task_id": "473",
+        "passed": false
+      },
+      {
+        "task_id": "474",
+        "passed": false
+      },
+      {
+        "task_id": "475",
+        "passed": false
+      },
+      {
+        "task_id": "476",
+        "passed": false
+      },
+      {
+        "task_id": "477",
+        "passed": false
+      },
+      {
+        "task_id": "478",
+        "passed": false
+      },
+      {
+        "task_id": "479",
+        "passed": false
+      },
+      {
+        "task_id": "480",
+        "passed": false
+      },
+      {
+        "task_id": "481",
+        "passed": false
+      },
+      {
+        "task_id": "482",
+        "passed": false
+      },
+      {
+        "task_id": "483",
+        "passed": false
+      },
+      {
+        "task_id": "484",
+        "passed": false
+      },
+      {
+        "task_id": "485",
+        "passed": false
+      },
+      {
+        "task_id": "486",
+        "passed": false
+      },
+      {
+        "task_id": "487",
+        "passed": false
+      },
+      {
+        "task_id": "488",
+        "passed": false
+      },
+      {
+        "task_id": "489",
+        "passed": false
+      },
+      {
+        "task_id": "490",
+        "passed": false
+      },
+      {
+        "task_id": "491",
+        "passed": false
+      },
+      {
+        "task_id": "492",
+        "passed": false
+      },
+      {
+        "task_id": "493",
+        "passed": false
+      },
+      {
+        "task_id": "494",
+        "passed": false
+      },
+      {
+        "task_id": "495",
+        "passed": false
+      },
+      {
+        "task_id": "496",
+        "passed": false
+      },
+      {
+        "task_id": "497",
+        "passed": false
+      },
+      {
+        "task_id": "498",
+        "passed": false
+      },
+      {
+        "task_id": "499",
+        "passed": false
+      },
+      {
+        "task_id": "500",
+        "passed": false
+      },
+      {
+        "task_id": "501",
+        "passed": false
+      },
+      {
+        "task_id": "502",
+        "passed": false
+      },
+      {
+        "task_id": "503",
+        "passed": false
+      },
+      {
+        "task_id": "504",
+        "passed": false
+      },
+      {
+        "task_id": "505",
+        "passed": false
+      },
+      {
+        "task_id": "506",
+        "passed": false
+      },
+      {
+        "task_id": "507",
+        "passed": false
+      },
+      {
+        "task_id": "508",
+        "passed": false
+      },
+      {
+        "task_id": "509",
+        "passed": false
+      },
+      {
+        "task_id": "510",
+        "passed": false
+      }
+    ]
+  }
+}

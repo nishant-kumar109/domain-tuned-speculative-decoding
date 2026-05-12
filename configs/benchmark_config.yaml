@@ -1,0 +1,32 @@
+# Benchmark Config — HumanEval + MBPP
+
+conditions:
+  - name: "baseline_generic"
+    draft_adapter: null
+    method: "speculative"
+  - name: "domain_tuned"
+    draft_adapter: "./checkpoints/tinyllama-qlora-code"
+    method: "speculative"
+  - name: "medusa"
+    method: "medusa"
+    medusa_heads: 4
+  - name: "eagle2"
+    method: "eagle2"
+
+humaneval:
+  num_samples_per_task: 10     # for Pass@10
+  max_new_tokens: 256
+  temperature: 0.8
+  top_p: 0.95
+  timeout: 10                  # seconds per execution
+
+mbpp:
+  num_samples_per_task: 10
+  max_new_tokens: 256
+  temperature: 0.8
+  top_p: 0.95
+  timeout: 10
+
+output:
+  results_dir: "./results"
+  save_generations: true

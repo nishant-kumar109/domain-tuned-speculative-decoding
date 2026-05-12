@@ -1,0 +1,2836 @@
+{
+  "humaneval": {
+    "metrics": {
+      "pass@1": 0.006097560975609756
+    },
+    "results": [
+      {
+        "task_id": "HumanEval/0",
+        "completion": "   for i in range(len(numbers)-1):\n        for j in range(i+1, len(numbers)):\n            if abs(numbers[i]-numbers[j]) <= threshold:\n                return True\n    return False\n\n\nif __name__ == \"__main__\":\n    import doctest\n\n    doctest.testmod(verbose=True)\n import { gql } from 'apollo-server';\n\nexport default gql`\n\n  type User {\n    id: ID\n    password: String\n    username: String\n    name: String\n    email: String\n    createdAt: String\n    updatedAt: String\n  }\n\n  type Query {\n    users(\n      filter: UserFilter\n      limit: Int\n      offset: Int\n    ): UserConnection!\n    user(\n      id: ID!\n    ): User\n    me: User\n  }\n\n  type Mutation {\n    updateUsers(\n      filter: UserFilter\n      update: UserUpdateInput\n      limit: Int\n      offset: Int\n    ): UserConnection!\n    updateUser(\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/1",
+        "completion": "\n    groups = []\n    last_close_bracket = 0\n\n    for index, char in enumerate(paren_string):\n\n        if char == '(':\n            last_close_bracket = index + 1\n\n        if char == ')':\n            groups.append(paren_string[last_close_bracket:index + 1])\n\n    return groups\n\n\ndef main():\n    \"\"\" Testing function for separate_paren_groups\n    >>> separate_paren_groups('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n\n    print(separate_paren_groups('( ) (( )) (( )( ))'))\n\n\nif __name__ == '__main__':\n    main()\n #pragma once\n\n#include \"o2/Events/IEvent.h\"\n\nnamespace o2\n{\n\tclass IEventDispatch;\n\n\t// ---------------------\n\t// Event handler function\n\t// ---------------------\n\ttypedef void (*EventFunction)(IEvent*);\n\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/2",
+        "completion": "\n    number_str = str(number)\n\n    # parsing only first 3 digits\n    index_first_dot = number_str.index(\".\")\n    return number_str[index_first_dot + 1:]\n\n\ndef decimal_places(number: float) -> int:\n    \"\"\" Return the number of decimal places in the number\n    >>> decimal_places(0.5)\n    1\n    >>> decimal_places(0.1)\n    1\n    >>> decimal_places(0.05)\n    2\n    >>> decimal_places(100.05)\n    2\n    \"\"\"\n\n    decimal_part = truncate_number(number)\n    decimal_part_str = str(decimal_part)\n\n    numerator_str = decimal_part_str.split('.')[0]\n    denominator_str = decimal_part_str.split('.')[1]\n\n    return len(numerator_str) + len(denominator_str)\n\n\ndef main() -> None:\n    print(truncate_number(0.5))\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/3",
+        "completion": "\n    balance = 0\n    for operation in operations:\n        balance += operation\n        if balance < 0:\n            return True\n\n    return False\n\n\ndef balance_check(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account falls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> balance_check([1, 2, 3])\n    False\n    >>> balance_check([1, 2, -4, 5])\n    True\n    \"\"\"\n\n    balance = 0\n    for operation in operations:\n        balance += operation\n        if balance < 0:\n            return True\n\n    return False\n\n\ndef check_if_exists(A: List[int]) -> bool:\n    \"\"\" You're given a list of integers. Your task is to check if any of the list elements is present\n    in the list. If so, return True. Otherwise, return False.\n   ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/4",
+        "completion": "   if len(numbers) <= 1:\n        return 0.0\n    return abs(sum(numbers)) / len(numbers)\n\n\ndef median_absolute_deviation(numbers: List[float]) -> float:\n    \"\"\" For a given list of input numbers, calculate Median Absolute Deviation\n    around the median of this dataset.\n    Median Absolute Deviation is the absolute difference between each element\n    and a centerpoint (median in this case):\n    MAD = | x - x_median |\n    >>> median_absolute_deviation([1.0, 2.0, 3.0, 4.0])\n    2.0\n    \"\"\"\n\n    # Compute \"median\" of dataset\n    med = median(numbers)\n\n    # Compute absolute differences of dataset to median\n    diffs = abs(numbers - med)\n\n    # Compute median of absolute differences\n    med_diff = median(diffs)\n\n    # Compute MAD by subtracting median of absolute differences from\n    # absolute differences\n    return med_diff\n\n\ndef median(numbers: List",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/5",
+        "completion": "   return [x for x in numbers] + [None] * (len(numbers) - 1)  # If i am not being inclusive, I get one less than desired\n    # return [x for x in numbers] + [None] * (len(numbers) - 1)\n\n\n package com.sethchhim.kuboo_client.extension\n\nimport com.sethchhim.kuboo_client.model.EnumSource\n\nfun String.toEnumSource(): EnumSource {\n    return when (this) {\n        \"ED2K\" -> EnumSource.ED2K\n        \"FTP\" -> EnumSource.FTP\n        \"SFTP\" -> EnumSource.SFTP\n        \"MIRROR\" -> EnumSource.MIRROR\n        \"NETWORK\" -> EnumSource.NETWORK\n        \"REMOTE\" -> EnumSource.REMOTE\n        \"SQL\" -> EnumSource.SQL\n        \"ZIP\" -> EnumSource.ZIP\n        \"TORRENT\" -> EnumSource.TORRENT\n        \"UN",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/6",
+        "completion": "   ...\n\n\nif __name__ == '__main__':\n    main()\n\n\n# %%\n# credits: https://stackoverflow.com/a/44070726\nfrom typing import List\n\n\ndef parse_nested_parens(paren_string: str) -> List[int]:\n    values = []\n    prev_lev = 0\n    for c in paren_string:\n        if c == '(':\n            if prev_lev < 0:\n                values.append(-1)\n            else:\n                values.append(prev_lev + 1)\n            prev_lev += 1\n        elif c == ')':\n            if prev_lev < 0:\n                values.append(-1)\n            else:\n                values.append(prev_lev)\n            prev_lev -= 1\n        else:\n            values.append(-1)\n    return values\n\n\n# %%\n# credits: https://stackoverflow.com/a/44070726\nfrom typing import List\n\n\ndef parse_nested_parens(paren_string",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/7",
+        "completion": "   return [s for s in strings if substring in s]\n\n\ndef filter_by_substring_with_condition(strings: List[str], substring: str, condition: bool) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones that contain given substring and also matches with given condition\n    >>> filter_by_substring_with_condition([], 'a', True)\n    []\n    >>> filter_by_substring_with_condition(['abc', 'bacd', 'cde', 'array'], 'a', True)\n    ['abc', 'bacd', 'array']\n    >>> filter_by_substring_with_condition(['abc', 'bacd', 'cde', 'array'], 'a', False)\n    ['bacd']\n    \"\"\"\n    return [s for s in strings if substring in s and condition]\n\n\ndef filter_by_substring_with_condition_and_case(strings: List[str], substring: str, condition: bool) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones that contain given substring and also matches with given condition\n    >>> filter",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/8",
+        "completion": "   answer = 0, 1\n    for num in numbers:\n        answer = (answer[0] + num, answer[1] * num)\n    return answer\n\n\ndef max_of_each_row(table: List[List[int]]) -> List[int]:\n    \"\"\"A simplified version of the maximum subarray problem. Given a table of integers,\n    return a list of the maximum numbers in each row.\n    >>> max_of_each_row([])\n    []\n    >>> max_of_each_row([[1, 2, 3]]])\n    [3]\n    >>> max_of_each_row([[1, 1, 2], [3, 4, 5], [6, 7, 8]])\n    [3, 5, 8]\n    \"\"\"\n    answer = []\n    for row in table:\n        max_row = 0\n        for num in row:\n            if num > max_row:\n                max_row = num\n        answer.append(max_row)\n    return answer\n\n\ndef average_of_each_row",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/9",
+        "completion": "   result = []\n    for i in xrange(len(numbers)-1):\n        cur_max = numbers[i]\n        for j in range(i, len(numbers)):\n            if numbers[j] > cur_max:\n                cur_max = numbers[j]\n        result.append(cur_max)\n    return result\n\n\ndef rolling_min(numbers: List[int]) -> List[int]:\n    \"\"\" From a given list of integers, generate a list of rolling minimum element found until given moment\n    in the sequence.\n    >>> rolling_min([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 2, 2, 2, 2, 1]\n    \"\"\"\n    result = []\n    for i in xrange(len(numbers)-1):\n        cur_min = numbers[i]\n        for j in range(i, len(numbers)):\n            if numbers[j] < cur_min:\n                cur_min = numbers[j]\n        result.append(cur_min)\n    return result\n\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/10",
+        "completion": "   if not string:\n        return string\n    for i in range(len(string), 0, -1):\n        if is_palindrome(string[:i]):\n            break\n    return string + string[:i-1][::-1]\n\n\ndef test_is_palindrome():\n    assert is_palindrome(\" \")\n    assert is_palindrome(\"a\")\n    assert is_palindrome(\"ac\")\n    assert is_palindrome(\"bac\")\n    assert is_palindrome(\"abcba\")\n    assert is_palindrome(\"abcbaa\")\n    assert is_palindrome(\"acba\")\n    assert not is_palindrome(\"a c\")\n    assert not is_palindrome(\"a b c\")\n\n\ndef test_make_palindrome():\n    assert make_palindrome(\"\") == \"\"\n    assert make_palindrome(\"x\") == \"x\"\n    assert make_palindrome(\"ac\") == \"catac\"\n    assert make_palindrome(\"bac\") == \"catac\"\n    assert make",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/11",
+        "completion": "   assert len(a) == len(b)\n\n    result = ''\n    for i in range(len(a)):\n        if a[i] != b[i]:\n            result += '1'\n        else:\n            result += '0'\n\n    return result\n\n\ndef string_xor_2(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor_2('010', '110')\n    '100'\n    \"\"\"\n    assert len(a) == len(b)\n\n    result = []\n    for i in range(len(a)):\n        if a[i] != b[i]:\n            result.append('1')\n        else:\n            result.append('0')\n\n    return ''.join(result)\n\n\nclass Solution:\n    \"\"\"\n    Given two strings s and t, write a function to determine if t is an anagram of s.\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/12",
+        "completion": "   if len(strings) == 0:\n        return None\n    return max(strings, key=len)\n\n\n# 2. Accepts a list of integers and returns the length of the longest sequence of every integer in\n#   the list.\n# >>> longest_sequence([1, 3, 5, 7])\n# 3\n# >>> longest_sequence([3, 5, 7, 9])\n# 2\n# >>> longest_sequence([7, 6, 5, 3, 1])\n# 1\n# >>> longest_sequence([1, 1, 1, 1, 1], 1)  # return the length of the longest sequence of 1\n# 1\n\n\ndef longest_sequence(sequence: List[int], number: int = 0) -> int:\n    \"\"\"\n\n    >>> longest_sequence([1, 3, 5, 7])\n    3\n    >>> longest_sequence([3, 5, 7, 9])\n    2\n    \"\"\"\n    tmp = 0\n    for elmt in sequence:\n        if el",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/13",
+        "completion": "   larger_integer = max(a, b)\n    smaller_integer = min(a, b)\n    while smaller_integer != 0:\n        remainder = larger_integer % smaller_integer\n        larger_integer = smaller_integer\n        smaller_integer = remainder\n\n    return larger_integer\n\n\ndef factor_lists(a: int, b: int) -> list:\n    \"\"\" Return a list of divisors of a and b\n    >>> factor_lists(5, 25)\n    [[5, 5], [25], [5, 5, 5]]\n    >>> factor_lists(3, 5)\n    [[3, 3], [5]]\n    \"\"\"\n    factors = []\n    integer_list = list(range(1, greatest_common_divisor(a, b) + 1))\n\n    for i in integer_list:\n        if a % i == 0 and b % i == 0:\n            factors.append([i, i])\n            if a % i == 0 and b % i != 0:\n                factors.append([i, b])",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/14",
+        "completion": "   return [string[0]] + [string[0:i + 1] for i in range(len(string) - 1)]\n\n\ndef all_suffixes(string: str) -> List[str]:\n    \"\"\" Return list of all suffixes from shortest to longest of the input string\n    >>> all_suffixes('abc')\n    ['c', 'bc', 'abc']\n    \"\"\"\n    return [string[len(string) - 1]] + [string[len(string) - i:len(string)] for i in range(len(string))]\n\n\ndef all_substrings(string: str) -> List[str]:\n    \"\"\" Return list of all substrings from shortest to longest of the input string\n    >>> all_substrings('abc')\n    ['a', 'b', 'c','ab', 'bc', 'abc']\n    \"\"\"\n    return [string[i: j + 1] for i in range(len(string)) for j in range(i, len(string))]\n\n\ndef recurse_substrings(string: str, result: List[str], length",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/15",
+        "completion": "   return ' '.join(str(i) for i in range(n + 1))\n\n\n# A few tests \nprint(string_sequence(5))\nprint(string_sequence(0))\nprint(string_sequence(1))\nprint(string_sequence(3))\nprint(string_sequence(6))\n\n# Some more tests \nfrom nbdev.export import notebook2script\nnotebook2script(__file__)\n import Bikeshed from \"https://raw.githubusercontent.com/agnivade/bikeshed/master/bikeshed.ts\";\nexport const renderMarkdown = (markdown: string, prefix?: string) => {\n  const bikeshed = new Bikeshed();\n  bikeshed\n    .render(markdown)\n    .then((result) => {\n      const root = document.createElement(\"div\");\n      root.innerHTML = result;\n      root.className = \"markdown\";\n      if (prefix) {\n        root.prepend(document.createElement(\"h1\").append(document.createTextNode(prefix)));\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/16",
+        "completion": "   # Write your code here\n    str_len = len(string)\n    if str_len == 0:\n        return 0\n    count = 0\n    for ch in string:\n        if ch not in string[string.index(ch)+1:str_len]:\n            count += 1\n    return count\n\n\nprint(count_distinct_characters('xyzXYZ'))\nprint(count_distinct_characters('Jerry'))\n\nstring = 'xyzKWOWXY'\n# print(count_distinct_characters(string))\n\n# print(count_distinct_characters('Jerry'))\n\nprint(count_distinct_characters('xxxx'))\nprint(count_distinct_characters(''))\n\nprint(count_distinct_characters('abcd'))\nprint(count_distinct_characters('abc'))\nprint(count_distinct_characters('z'))\nprint(count_distinct_characters('abcdzz'))\n\nprint(count_distinct_characters('abcdefgh'))\nprint(count_distinct_characters",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/17",
+        "completion": "   music_list = []\n    for i in music_string:\n        if i == 'o':\n            music_list.append(4)\n        elif i == 'o|':\n            music_list.append(2)\n        elif i == '|.':\n            music_list.append(1)\n        else:\n            break\n    return music_list\n\n\ndef get_bpm(music: List[int]) -> int:\n    \"\"\" Given a list of beats, return the approximate beats per minute.\n\n    >>> get_bpm([4, 2, 1, 2, 2, 1, 1, 1, 1, 4, 4])\n    92\n    >>> get_bpm([4, 4, 4, 4, 4])\n    480\n    \"\"\"\n    beat_count = 0\n    bpm = 0\n    for beat in music:\n        beat_count += beat\n        if beat_count > 16:\n            beat_count -= 16\n            bpm += 1\n    return bpm",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/18",
+        "completion": "   if len(string) == 0 or len(substring) == 0:\n        return 0\n    elif len(string) < len(substring):\n        return 0\n    else:\n        return string.count(substring)\n package com.example.wenda01.fragments.sevenths;\n\nimport android.content.Context;\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.support.annotation.NonNull;\nimport android.support.annotation.Nullable;\nimport android.support.v4.app.Fragment;\nimport android.support.v7.widget.LinearLayoutManager;\nimport android.support.v7.widget.RecyclerView;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.widget.TextView;\n\nimport com.example.wenda01.R;\nimport com.example.wenda01.activities.FaqDetailActivity;\nimport com.example.wenda01.beans.Question;\nimport com.example.wenda01.utils.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/19",
+        "completion": "   numbers = numbers.split()\n    numbers.sort()\n    return \" \".join(numbers)\n\n\ndef sort_words(words: str) -> str:\n    \"\"\" Input is a space-delimited string of words, each word being a valid choice from 'a' to 'z'.\n    Return the string with words sorted from smallest to largest.\n    >>> sort_words('z y x w v u t s r q p o n m l k j i h g f e d c b a')\n    'a b c d e f g h i j k l m n o p q r s t u v w x y z'\n    \"\"\"\n    words = words.split()\n    words.sort(key=lambda x: x.lower())\n    return \" \".join(words)\n\n\ndef sort_strings(strings: str) -> str:\n    \"\"\" Input is a space-delimited string of words, each word being a valid choice from 'a' to 'z'.\n    Return the string with words sorted from smallest to largest.\n    >>> sort_strings('z y x w v u t s r q p o n m",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/20",
+        "completion": "   # first get the index of the smallest number\n    min_index = numbers.index(min(numbers))\n    # find the smallest number (which is the first number)\n    small_num = numbers[min_index]\n    # find the second smallest number\n    second_smallest_num = numbers[min_index + 1]\n\n    # subtract the smallest number\n    sub_small_num = small_num - second_smallest_num\n    # subtract the second smallest number\n    sub_second_smallest_num = second_smallest_num - small_num\n    # set the main variable to be the smallest number and find that position in the list\n    second_smallest_num_index = numbers.index(min(numbers))\n\n    # if the difference between a number and the smallest number is greater than the difference between a\n    # number and the second smallest number then the second smallest number is the smaller of the two\n    if sub_small_num > sub_second_smallest_num:\n        return small_num, numbers[second_smallest_num_index]\n    # if the difference between a number and",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/21",
+        "completion": "   min_num = min(numbers)\n    max_num = max(numbers)\n    if min_num == max_num:\n        return [0.0] * len(numbers)\n    return [x / (max_num - min_num) for x in numbers]\n\n\nclass Deque(object):\n    \"\"\" Deque, a double-ended queue.\n        New values added via append_right() and pop_left() or pop_right()\n    \"\"\"\n\n    def __init__(self):\n        \"\"\" Initialize the Deque objects\n        \"\"\"\n        self.values = []\n\n    def append_right(self, value):\n        \"\"\" Append value at the right of the Deque\n        \"\"\"\n        self.values.append(value)\n\n    def pop_left(self):\n        \"\"\" Pop value from the left of the Deque\n        \"\"\"\n        if len(self.values) > 0:\n            return self.values.pop(0)\n        else:\n            return None\n\n    def pop_right(self):\n        \"\"\" Pop value from the right of the Deque\n        \"\"\"\n        if",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/22",
+        "completion": "   return [x for x in values if isinstance(x, int)]\n\n\ndef filter_strings(values: List[Any]) -> List[str]:\n    \"\"\" Filter given list of any python values only for strings\n    >>> filter_strings(['a', 3.14, 5])\n    ['a']\n    >>> filter_strings([1, 2, 3, 'abc', {}, []])\n    ['abc']\n    \"\"\"\n    return [x for x in values if isinstance(x, str)]\n\n\ndef filter_numbers(values: List[Any]) -> List[float]:\n    \"\"\" Filter given list of any python values only for numbers\n    >>> filter_numbers(['a', 3.14, 5])\n    [3.14, 5]\n    >>> filter_numbers([1, 2, 3, 'abc', {}, []])\n    [1, 2, 3]\n    \"\"\"\n    return [x for x in values if isinstance(x, float)]\n\n\ndef map_integers(values: List[Any], transformer: Callable[[int], Any]) ->",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/23",
+        "completion": "   return len(string)\n\ndef longest_word(strings: list) -> str:\n    \"\"\" Return longest word in given list, used to test for longest string.\n    >>> longest_word([])\n    ''\n    >>> longest_word(['abc'])\n    'abc'\n    >>> longest_word(['abc', 'def', 'ghi'])\n    'abc'\n    >>> longest_word(['jkl', 'mno', 'pqr'])\n    'pqr'\n    \"\"\"\n    long_word = ''\n    for s in strings:\n        if len(s) > len(long_word):\n            long_word = s\n    return long_word\n\n\ndef stringify_list(nums: list) -> str:\n    \"\"\" Convert list to string, used to test for concatenation.\n    >>> stringify_list([])\n    ''\n    >>> stringify_list([1])\n    '1'\n    >>> stringify_list([1, 2, 3])\n    '123'\n    >>> stringify_list([1, 2, 3, 4])\n   ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/24",
+        "completion": "   for d in range(2, n):\n        if n % d == 0:\n            return d\n\n\ndef is_palindrome(n: int) -> bool:\n    \"\"\" Check if a number is a palindrome\n    >>> is_palindrome(321)\n    True\n    \"\"\"\n    return n == n[::-1]\n\n\ndef is_perfect_square(n: int) -> bool:\n    \"\"\" Check if a number is a perfect square\n    >>> is_palindrome(6)\n    True\n    \"\"\"\n    return n == sqrt(n) * sqrt(n)\n\n\ndef largest_palindrome_from_product(n: int) -> int:\n    \"\"\" Given a number n, find the largest palindrome made from the product of two n-digit numbers.\n    >>> largest_palindrome_from_product(3)\n    9009\n    \"\"\"\n    return largest_divisor(n * largest_divisor(n))\n\n\ndef largest_palindrome_from_product_of_two_prime(n:",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/25",
+        "completion": "   factors = []\n    sqrt = int(n ** 0.5) + 1\n    for i in range(2, sqrt, 1):\n        while n % i == 0:\n            factors.append(i)\n            n = int(n / i)\n    if n > 1:\n        factors.append(n)\n    return factors\n\n\nif __name__ == '__main__':\n    import doctest\n\n    doctest.testmod()\n import { Node, NodeType } from 'prosemirror-model'\nimport { NodeEncoder } from '../interfaces'\nimport { TraversalDirection } from '../utils/traverse'\nimport { getMarksFromNode } from './marks'\nimport { getMarksFromParent } from './marks-from-parent'\nimport { getNodeType } from './node-type'\nimport { getTextFromNode } from './text'\n\nexport function getNodeEncoder(node: Node): NodeEncoder {\n  const type = getNodeType(node)\n  if (type == NodeType.PROSEM",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/26",
+        "completion": "   return [n for n in numbers if numbers.count(n) == 1]\n\n\ndef remove_duplicates_by_addition(numbers: List[int]) -> List[int]:\n    \"\"\" From a list of integers, remove all elements that occur more than once.\n    Keep order of elements left the same as in the input.\n    >>> remove_duplicates_by_addition([1, 2, 3, 2, 4])\n    [1, 3, 4]\n    \"\"\"\n    return [n for n in numbers if n + numbers.count(n) == len(numbers)]\n\n\ndef remove_duplicates_by_list_comprehension(numbers: List[int]) -> List[int]:\n    \"\"\" From a list of integers, remove all elements that occur more than once.\n    Keep order of elements left the same as in the input.\n    >>> remove_duplicates_by_list_comprehension([1, 2, 3, 2, 4])\n    [1, 3, 4]\n    \"\"\"\n    return [n for i, n in",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/27",
+        "completion": "   return ''.join(map(lambda x: x.upper() if x.islower() else x.lower(), string))\n\n\ndef skip_even_chars(string: str) -> str:\n    \"\"\" For a given string, return the string without the even numbered characters.\n    >>> skip_even_chars('Hello')\n    'Hll'\n    \"\"\"\n    return ''.join(map(lambda x: x.lower() if x.islower() else x.upper(), string))\n\n\ndef flip_lower_case(string: str) -> str:\n    \"\"\" For a given string, flip the lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_lower_case('Hello')\n    'HeLlo'\n    \"\"\"\n    return ''.join(map(lambda x: x.upper() if x.islower() else x.lower(), string))\n\n\ndef add_chars(string: str) -> str:\n    \"\"\" For a given string, add the number of characters before and after the string as a string.\n    >>> add_chars('Hello')\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/28",
+        "completion": "   return ''.join(strings)\n\n\ndef is_ascii_digit(c: str) -> bool:\n    \"\"\" Check if a character is an ASCII digit\n    >>> is_ascii_digit('0')\n    True\n    >>> is_ascii_digit('a')\n    False\n    >>> is_ascii_digit('\ud83d\udc0d')\n    False\n    \"\"\"\n    return ord('0') <= ord(c) <= ord('9')\n\n\ndef is_ascii_uppercase_letter(c: str) -> bool:\n    \"\"\" Check if a character is an ASCII uppercase letter\n    >>> is_ascii_uppercase_letter('A')\n    True\n    >>> is_ascii_uppercase_letter('a')\n    False\n    >>> is_ascii_uppercase_letter('\ud83d\udc0d')\n    False\n    \"\"\"\n    return ord('A') <= ord(c) <= ord('Z')\n\n\ndef is_ascii_lowercase_letter(c: str) -> bool:\n    \"\"\" Check if a character is an ASCII lowercase letter\n    >>> is_as",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/29",
+        "completion": "   result = []\n    for string in strings:\n        if string.startswith(prefix):\n            result.append(string)\n    return result\n\n\ndef filter_by_prefix_len(strings: List[str], length: int) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones <%@ page contentType=\"text/html;charset=UTF-8\" %>\n<%@ include file=\"/WEB-INF/views/include/taglib.jsp\"%>\n<%@ page import =\"com.szcxsl.oa.common.utils.CommonUtils\"%>\n<html>\n<head>\n\t<title>\u56e2\u961f\u89c4\u5212\u8ba1\u5212</title>\n\t<meta name=\"decorator\" content=\"default\"/>\n<style type=\"text/css\">\n\t#dailytable tr td {\n\t\tborder: 1px solid #C0C0C0;\n\t}\n\t#body {\n\t\tmargin: 0px;\n\t}\n\t#dailytable{\n\t\tborder-collapse:collapse;\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/30",
+        "completion": "   return [element for element in l if element > 0]\n\ndef get_negative(l: list):\n    \"\"\"Return only negative numbers in the list.\n    >>> get_negative([-1, 2, -4, 5, 6])\n    [-1, -4, -5, -6]\n    >>> get_negative([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    [-5, -3, -5, -3, -10]\n    \"\"\"\n    return [element for element in l if element < 0]\n\ndef get_positive_and_negative(l: list):\n    \"\"\"Return only positive and negative numbers in the list.\n    >>> get_positive_and_negative([-1, 2, -4, 5, 6])\n    [-1, 2, -4, 5, 6]\n    >>> get_positive_and_negative([5, 3, -5, 2, -3, 3, 9, ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/31",
+        "completion": "   if n == 1:\n        return False\n    \n    for i in range(2, n):\n        if n % i == 0:\n            return False\n    return True\n\n\ndef main():\n    print('Wave 2.1')\n    print('Question 10')\n    \n    #for i in range(1000000):\n    #    if is_prime(i):\n    #        print(i, end=' ')\n    #        if i > 1000:\n    #            break\n    #\n    #    #print(i)\n    #print()\n    #print(is_prime(10))\n    #print(is_prime(1))\n    #print(is_prime(100))\n    #print(is_prime(500))\n    #print(is_prime(1000))\n    #print(is_prime(10000))\n    #print(is_prime(1000000))\n    #print(is_prime(10000000))",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/32",
+        "completion": "   if len(xs) % 2 != 0:\n        xs = xs[:-1]\n    p = [x for x in xs[:-1]]\n    q = [x for x in xs[:-2]]\n    if len(p) == 0:\n        return 0\n    elif len(p) == 1:\n        return -p[0] / q[0]\n    else:\n        return - poly(p, 1) / poly(q, 1)\n\n\ndef find_zero_in_unit_interval(xs: list):\n    \"\"\" In the given polynomial, find zeros in the unit interval.\n    The function returns a list of zeros in the unit interval.\n    A zero is a root of the polynomial, if the polynomial has a\n    root between zero and one.\n    >>> find_zero_in_unit_interval([1, 2, 3, 4, 5]) # f(x) = 1 + 2x + 3x^2 + 4x^3 + 5x^4\n    [0.0666666666",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/33",
+        "completion": "   return [x for x in l if (not x % 3) or (x % 3 == 1)] + [y for t in l for z in [x for x in t if x % 3 == 0] for y in t if y == z]\n\n\ndef reverse_sort_third(l: list):\n    \"\"\"This function takes a list l and returns a list l' such that\n    l' is identical to l in the indicies that are not divisible by three, while its values at the indicies that are divisible by three are equal\n    to the values of the corresponding indicies of l, but reversed.\n    >>> reverse_sort_third([1, 2, 3])\n    [1, 2, 3]\n    >>> reverse_sort_third([5, 6, 3, 4, 8, 9, 2])\n    [9, 8, 4, 3, 6, 5, 2]\n    \"\"\"\n    return [x for x in l if (not x % 3) or (x % 3 == 1)] + [y",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/34",
+        "completion": "   return sorted(set(l))\n\n\ndef unique_sorted(l: list):\n    \"\"\"Return sorted unique elements in a list\n    >>> unique_sorted([5, 3, 5, 2, 3, 3, 9, 0, 123])\n    [0, 2, 3, 5, 9, 123]\n    \"\"\"\n    return list(sorted(set(l)))\n\n\ndef unique_unsorted(l: list):\n    \"\"\"Return unsorted unique elements in a list\n    >>> unique_unsorted([5, 3, 5, 2, 3, 3, 9, 0, 123])\n    [0, 2, 3, 5, 9, 123]\n    \"\"\"\n    return list(set(l))\n\n\ndef unique_sorted_uniq(l: list):\n    \"\"\"Return sorted unique elements in a list and reorder original\n    Also it is more effective than unique_sorted if the list is not sorted\n    >>> unique_sorted_uniq([5, 3,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/35",
+        "completion": "   import math\n    max_i = 0\n    for i in range(1, len(l)):\n        if max_i < l[i].abs:\n            max_i = l[i]\n    return max_i\n\n\ndef min_element(l: list):\n    \"\"\"Return minimum element in the list.\n    >>> min_element([1, 2, 3])\n    1\n    >>> min_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    -10\n    \"\"\"\n    import math\n    max_i = 0\n    for i in range(1, len(l)):\n        if max_i > l[i].abs:\n            max_i = l[i]\n    return max_i\n\n\ndef unique_elements(l: list):\n    \"\"\"Return unique elements in the list.\n    >>> unique_elements([1, 2, 3])\n    [1, 2, 3]\n    >>> unique_elements([5, 3",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/36",
+        "completion": "   return #ifndef EE_LIB_PE_EXECUTIONTARGET_FUNCTION_H\n#define EE_LIB_PE_EXECUTIONTARGET_FUNCTION_H\n\n#include <eepp/core/core.hpp>\n\n#include <eepp/graphics/pixeldiff.hpp>\n#include <eepp/graphics/pixelsurface.hpp>\n\n#include <eepp/ui/uicomponents.hpp>\n\n#include <eepp/ui/helper/uinthelper.hpp>\n\n#include <eepp/ui/uicontrol.hpp>\n\n#include <eepp/ui/uiwidget.hpp>\n\n#include <eepp/ui/uitheme.hpp>\n\n#include <eepp/ui/uiwindow.hpp>\n\n#include <eepp/ui/uimenu.hpp>\n\n#include <eepp/ui/uicheckbox.hpp>\n#include <eepp/ui/uilistbox.hpp>\n\n#include <eepp/ui/uis",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/37",
+        "completion": "   l1 = []\n    l2 = []\n    for i in l:\n        if i%2 == 0:\n            l1.append(i)\n        else:\n            l2.append(i)\n    l1.sort()\n    for i in range(0, len(l2)):\n        if i%2 == 0:\n            l2.append(l1[i])\n        else:\n            l2.append(l2[i])\n    return l2\n\n\ndef plate_noise(l: list, n: int) -> list:\n    \"\"\"This function takes the list l and the integer n and returns the same list, but with the first n\n    elements of the list removed.\n    >>> plate_noise([1,2,3,4], 3)\n    [3,4]\n    \"\"\"\n    if n<0:\n        return l\n    l2 = l[n:]\n    return l2\n\n\ndef bubble_sort(l: list) -> list:\n    \"\"\"This function takes the list l and returns the same list, but having the elements sorted",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/38",
+        "completion": "   # split string to groups of three chars. Each group has length smaller or equal 3.\n    groups = [s[(3 * i):min((3 * i + 3), len(s))] for i in range((len(s) + 2) // 3)]\n    # construct string from cycled groups.\n    return \"\".join(groups)\n\n\ndef encode(s):\n    \"\"\"\n    takes as input string without special characters.\n    returns string with special characters encoded with cyclic function.\n    \"\"\"\n    # encode special characters.\n    s = encode_cyclic(s)\n    # encode numbers between 20 and 30.\n    s = s.replace(\"2\", \"222\")\n    s = s.replace(\"3\", \"333\")\n    # encode 1 with special character.\n    s = s.replace(\"1\", \"111\")\n    # return encoded string.\n    return s\n\n\ndef decode(s):\n    \"\"\"\n    takes as input string with special characters encoded with cyclic function.\n    returns string without special characters.\n    \"\"\"\n    #",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/39",
+        "completion": "   fib <?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Support\\Facades\\DB;\nuse Illuminate\\Support\\Facades\\Auth;\nuse App\\Http\\Controllers\\Controller;\nuse App\\User;\n\nclass UserController extends Controller\n{\n   public $pagination_number = 10;\n\n    public function getUsers(){\n        $users = DB::table('users')->paginate($this->pagination_number);\n\n        return view('pages.users', ['users' => $users]);\n    }\n\n    public function getUser($id){\n\n        $user = User::findOrFail($id);\n\n        return view('pages.user', ['user' => $user]);\n    }\n\n    public function updateUser(Request $request, $id){\n\n        $user = User::findOrFail($id);\n        $user->name = $request->input('name');\n        $user->email = $request->input('email');\n        $user->password = $request->input('password');\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/40",
+        "completion": "   dictionary = {}  # dictionary to store the sum of each triple\n    set_l = set(l)\n    set_l.discard(0)\n    for x in set_l:\n        sum = 0\n        for y in set_l:\n            sum -= x + y\n            if sum not in dictionary:\n                dictionary[sum] = 1\n            else:\n                dictionary[sum] += 1\n    if (0 in dictionary) and dictionary[0] >= 3:\n        return True\n    else:\n        return False\n\n\nif __name__ == '__main__':\n    import doctest\n    doctest.testmod()\n\n\ndef test_triples_sum_to_zero():\n    \"\"\"\n    Testing function for the triples_sum_to_zero function.\n    \"\"\"\n    assert triples_sum_to_zero([1, 3, 5, 0]) is False\n    assert triples_sum_to_zero([1, 3, -2, 1]) is True\n    assert triples_sum_to_zero([1, ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/41",
+        "completion": "\n    ans = 0                                                                                  # num of collisions\n    left_to_right = 1                                                                       # 1st car in left to right set\n    right_to_left = -(n - 1)                                                                # 1st car in right to left set\n\n    while left_to_right + right_to_left < n:                                                # while the two sets of cars have not crossed yet\n        left_to_right += 1                                                                  # 1st car in left to right set moves\n        right_to_left -= 1                                                                  # 1st car in right to left set moves\n        if left_to_right + right_to_left == n:                                              # if the two cars have crossed\n            ans += 1                                                                        # increase the number of collisions\n\n    return ans\n\n\ndef car_race_births(n: int):\n    \"\"\"\n    Imagine a road that's a perfectly straight infinitely long line.\n    n cars are driving left to right;  simultaneously, a different set of",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/42",
+        "completion": "   return [x + 1 for x in l]\n\n\ndef increment(l: list, inc: int):\n    \"\"\"Return list with elements incremented by inc.\n    >>> increment([1, 2, 3], inc=1)\n    [2, 3, 4]\n    >>> increment([5, 3, 5, 2, 3, 3, 9, 0, 123], inc=2)\n    [7, 5, 7, 4, 5, 5, 11, 2, 125]\n    \"\"\"\n    return [x + inc for x in l]\n\n\ndef incr_dict(d: dict):\n    \"\"\"Return dict with keys incremented by 1.\n    >>> incr_dict({'a': 10, 'b': 20})\n    {'a': 11, 'b': 21}\n    >>> incr_dict({'a': 10, 'b': 20, 'c': 50})\n    {'a': 11, 'b': ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/43",
+        "completion": "   l_hash = {}\n    for x in l:\n        if x in l_hash:\n            return True\n        else:\n            l_hash[x] = 1\n    return False\n\nif __name__ == '__main__':\n    import doctest\n    doctest.testmod()\n package net.kullo.android.subscription;\n\nimport android.content.Context;\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.support.annotation.NonNull;\nimport android.support.v4.app.Fragment;\nimport android.support.v4.app.FragmentManager;\nimport android.support.v4.app.FragmentTransaction;\nimport android.util.Log;\nimport android.view.LayoutInflater;\nimport android.view.MenuItem;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.widget.Button;\nimport android.widget.TextView;\n\nimport net.kullo.android.R;\nimport net.kullo.android.littlehelpers.Ui;\nimport net.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/44",
+        "completion": "   # write your code here\n    # string representation of x\n    result = str(x)\n    # an empty string\n    result2 = \"\"\n    # convert each digit of x to its base3 representation\n    # and append it to result\n    # result2 = result * base\n    result = (result + result)*base\n    return result2\n\n\nimport math\n\n\ndef is_prime(n):\n    \"\"\"Check whether the given number n is a prime number.\n    A positive integer is a prime number if it is only divisible by 1 and itself.\n    >>> is_prime(3)\n    True\n    >>> is_prime(2)\n    True\n    >>> is_prime(1)\n    False\n    >>> is_prime(10)\n    False\n    >>> is_prime(11)\n    True\n    >>> is_prime(13)\n    True\n    >>> is_prime(18)\n    False\n    >>> is_prime(0)\n    False\n    \"\"\"\n    # check (n != 1) and (n != 2)\n    if n == 1 or",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/45",
+        "completion": "   return a * h / 2\n\ntriangle_area(5, 3)\n\n\ndef triangle_area2(a, h):\n    \"\"\"Same as above, but using the constant math.pi\"\"\"\n    from math import pi\n    return a * h / (2 * pi)\n\ntriangle_area2(5, 3)\n\n\ndef triangle_area3(a, h):\n    \"\"\"Same as above, but with the following constants from the stdlib:\n    >>> triangle_area3(5, 3)\n    7.5\n    >>> triangle_area3(5, 30)\n    122.5\n    \"\"\"\n    from math import pi\n    return 2 * a * h / pi\n\ntriangle_area3(5, 3)\ntriangle_area3(5, 30)\n\n\ndef triangle_area4(a, h):\n    \"\"\"Use the constants from the math module.\n    >>> triangle_area4(5, 3)\n    7.5\n    \"\"\"\n    from math import pi, sqrt\n    return a * h / (sqrt",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/46",
+        "completion": "   # F1, F2 and F3 are the first, second and third values of the Fibonacci sequence respectively, so\n    # F4 = F1 + F2 + F3.\n    F1 = 0\n    F2 = 0\n    F3 = 0\n    for _ in range(n - 3):\n        F4 = F1 + F2 + F3\n        F1 = F2\n        F2 = F3\n        F3 = F4\n    return F4\n\n\ndef fib5(n: int):\n    \"\"\"The Fib5 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\n    fib5(0) -> 0\n    fib5(1) -> 0\n    fib5(2) -> 2\n    fib5(3) -> 0\n    fib5(4) -> 0\n    fib5(n) -> fib5(n-1) + fib5(n-2) + fib5(n-3) + fib5(n-4) + fib5(n-5).\n\n    Please",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/47",
+        "completion": "   if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return sum(l[int(len(l) // 2 - 1):int(len(l) // 2 + 1)]) / 2\n\n\ndef mean(l: list):\n    \"\"\"Return mean of elements in the list l.\n    >>> mean([3, 1, 2, 4, 5])\n    3.0\n    >>> mean([-10, 4, 6, 1000, 10, 20])\n    19.166666666666668\n    \"\"\"\n    return sum(l) / len(l)\n\n\ndef sum_of_squares(l: list):\n    \"\"\"Return the sum of squares of elements in the list l.\n    >>> sum_of_squares([3, 1, 2, 4, 5])\n    30.0\n    >>> sum_of_squares([-10, 4, 6",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/48",
+        "completion": "   text = text.lower()\n    text = text.replace(' ', '')\n    text = text.replace(',', '')\n    text = text.replace('-', '')\n    text = text.replace('.', '')\n    text = text.replace('?', '')\n    text = text.replace('!', '')\n    text = text.replace('\"', '')\n    text = text.replace(\"'\", '')\n    text = text.replace(';', '')\n    text = text.replace(':', '')\n    text = text.replace('[', '')\n    text = text.replace(']', '')\n    text = text.replace('(', '')\n    text = text.replace(')', '')\n    text = text.replace('\\'', '')\n    text = text.replace('&', '')\n    text = text.replace('%', '')\n    text = text.replace('_', '')\n    text = text.replace('^', '')\n    text = text.replace('$', '')\n    return text == text[::-1]\n\n\ndef is_scrambled(text: str, scrambled_text: str):",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/49",
+        "completion": "\n    x, y = 0, 1\n    for i in range(n):\n        y = (x + y) % p\n        x = y\n    return y\n\n\ndef modp_invert(y: int, p: int) -> int:\n    \"\"\"Return the multiplicative inverse of y modulo p (be aware of numerics).\n    >>> modp_invert(2, 5)\n    3\n    >>> modp_invert(1101, 101)\n    101\n    >>> modp_invert(3, 0)\n    Traceback (most recent call last):\n    ...\n    ValueError: modp_invert() called with non-prime argument\n    \"\"\"\n    y = int(y)\n    if p == 0:\n        raise ValueError(\"modp_invert() called with non-prime argument\")\n    c = modp(y, p)\n    if c == 0:\n        return 0\n    else:\n        return modp_invert(c, p) * modp(y, p)\n\n\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/50",
+        "completion": "   return \"\".join([chr(((ord(ch) - 5 + (abs(ord(ch) - ord(\"a\"))) % 26)) % 26 + ord(\"a\")) for ch in s])\n\n\ndef encode_rot(s: str):\n    \"\"\"\n    returns encoded string by rotating every character by 5 in the alphabet.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) + 5) % 26) + ord(\"a\")) for ch in s])\n\n\ndef decode_rot(s: str):\n    \"\"\"\n    takes as input string encoded with encode_rot function. Returns decoded string.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) - 5 + (abs(ord(ch) - ord(\"a\"))) % 26)) % 26 + ord(\"a\")) for ch in s])\n\n\ndef get_vigenere_key(keyword: str):\n    \"\"\"\n    takes as input a keyword and returns a key composed of what is left of the keyword after removing the first 'e'.\n    \"\"\"\n    return keyword.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/51",
+        "completion": "   return ''.join([c for c in text if c not in 'aeiou'])\n\n\ndef remove_leading_vowels(text):\n    \"\"\"\n    remove_leading_vowels is a function that takes string and return string without leading vowels.\n    >>> remove_leading_vowels('')\n    ''\n    >>> remove_leading_vowels(\"abcdef\\nghijklm\")\n    'bcdef\\nghijklm'\n    >>> remove_leading_vowels('abcdef')\n    'bcdef'\n    >>> remove_leading_vowels('aaaaa')\n    'aaaaa'\n    >>> remove_leading_vowels('aaBAA')\n    'aBAA'\n    >>> remove_leading_vowels('zbcd')\n    'zbcd'\n    \"\"\"\n    text = text.lower()\n    while text[0] in 'aeiou':\n        text = text[1:]\n    return text\n\n\ndef remove_consecutive(text):\n    \"\"\"\n    remove_consecutive is a function that takes string",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/52",
+        "completion": "   return all(j < t for j in l)\n\n\ndef above_threshold(l: list, t: int):\n    \"\"\"Return True if all numbers in the list l are above threshold t.\n    >>> above_threshold([1, 2, 4, 10], 100)\n    False\n    >>> above_threshold([1, 20, 4, 10], 5)\n    True\n    \"\"\"\n    return all(j > t for j in l)\n\n\ndef within_threshold(l: list, t: int):\n    \"\"\"Return True if all numbers in the list l are within threshold t.\n    >>> within_threshold([1, 2, 4, 10], 100)\n    False\n    >>> within_threshold([1, 20, 4, 10], 5)\n    True\n    \"\"\"\n    return all(j <= t or j >= t for j in l)\n\n\nif __name__ == \"__main__\":\n    import doctest\n    doctest.testmod()\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/53",
+        "completion": "   return x + y import re\nimport sys\nimport time\nimport math\nfrom datetime import datetime\nfrom datetime import timedelta\nfrom datetime import date\nfrom datetime import datetime\nfrom datetime import timezone, tzinfo\nfrom dateutil.parser import parse\nfrom dateutil.timetz import tzlocal\nfrom decimal import Decimal\nimport locale\nimport pytz\nimport csv\nimport collections\nimport pprint\nimport random\nimport base64\nimport os\nimport json\nimport requests\nimport json\nimport datetime\nimport string\nimport getpass\nfrom requests.auth import HTTPBasicAuth\nfrom requests import Session\nimport pprint\nimport os\nfrom bs4 import BeautifulSoup\nimport urllib.request\nimport urllib.error\nimport urllib.parse\nimport urllib.request\nimport sys\n\nimport csv\nimport urllib\nimport httplib2\nimport jinja2\nimport lxml.html\nimport pandas as pd\nimport io\nimport requests\nfrom requests.auth import HTTPBasicAuth\nfrom requests import Session, get\nfrom bs4 import BeautifulSoup\nimport json\nimport urllib.request\nfrom urllib.request import Request",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/54",
+        "completion": "   if len(s0) != len(s1):\n        return False\n\n    for ch in s0:\n        if ch not in s1:\n            return False\n\n    for ch in s1:\n        if ch not in s0:\n            return False\n\n    return True\n\n\ndef same_chars_count(s0: str, s1: str):\n    \"\"\"\n    Check if two words have the same character counts.\n    >>> same_chars_count('eabcdzzzz', 'dddzzzzzzzddeddabc')\n    True\n    >>> same_chars_count('abcd', 'dddddddabc')\n    False\n    >>> same_chars_count('dddddddabc', 'abcd')\n    False\n    >>> same_chars_count('eabcd', 'dddddddabc')\n    False\n    >>> same_chars_count('abcd', 'dddddddabce')\n    False\n    >>> same_chars_count('eabcdzzzz', 'dddzzzzzzzddddabc')\n    False\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/55",
+        "completion": "   # 0-th Fibonacci number is 0\n    if n==0:\n        return 0\n    else:\n        # Fibonacci numbers are calculated via recursive formula\n        # F(n) = F(n-1) + F(n-2)\n        return fib(n-1) + fib(n-2)\n\n\nclass Solution:\n    def fib(n: int):\n        \"\"\"Return n-th Fibonacci number.\n        >>> Solution.fib(10)\n        55\n        >>> Solution.fib(1)\n        1\n        >>> Solution.fib(8)\n        21\n        \"\"\"\n        # 0-th Fibonacci number is 0\n        if n==0:\n            return 0\n        else:\n            # Fibonacci numbers are calculated via recursive formula\n            # F(n) = F(n-1) + F(n-2)\n            return Solution.fib(n-1) + Solution.fib(n-2)\n\n\nif __name__ == \"__main__\":\n    import",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/56",
+        "completion": "   stack = []\n    for c in brackets:\n        if c == \"<\":\n            stack.append(c)\n        else:\n            if stack[-1] == \"<\":\n                stack.pop()\n            else:\n                return False\n    return True\n\n\ndef _run_as_interactive():\n    # this only works if you run this cell with the command\n    # > python3 /path/to/bracketing.py\n    # i.e., when you run the file from the command line instead of from the\n    # IDE.\n    try:\n        import readline\n    except ImportError:\n        pass\n    else:\n        readline.write_history_file(\"/tmp/bracketing-history\")\n    input_expression = input()\n    while True:\n        try:\n            r = correct_bracketing(input_expression)\n            print(r)\n        except KeyboardInterrupt:\n            break\n        except EOFError:\n            break\n        except Exception as e:\n            print(\"Unexpected error:\", e)\n        input_expression = input()\n\n\nif __",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/57",
+        "completion": "   for i in range(len(l) - 1):\n        if l[i] > l[i + 1]:\n            return False\n    return True\n\n\ndef in_range(l: list, lower: int, upper: int):\n    \"\"\"Return True if all elements in l are in range [lower, upper)\n    >>> in_range([1, 2, 4, 20], 1, 20)\n    True\n    >>> in_range([1, 20, 4, 10], 1, 20)\n    False\n    \"\"\"\n    for i in l:\n        if i < lower or i >= upper:\n            return False\n    return True\n\n\ndef has_duplicates(l: list):\n    \"\"\"Return True if given list has duplicates, else False,\n    >>> has_duplicates([1, 2, 3, 4])\n    False\n    >>> has_duplicates([1, 1, 2, 2])\n    True\n    \"\"\"\n    for i in range(len(l)):\n        if l.count(l",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/58",
+        "completion": "   return sorted(list(set(l1) & set(l2)))\n\n\ndef common_in_range(l1: list, l2: list) -> list:\n    \"\"\"Return sorted unique common elements for two lists, \n    when at least one list contains floats.\n    >>> common_in_range([1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121])\n    [1, 5, 653]\n    >>> common_in_range([5, 3, 2, 8], [3, 2])\n    [2, 3]\n    \n    \"\"\"\n    return sorted(list(set(l1) & set(l2)))\n\n\ndef common_in_range_sorted(l1: list, l2: list) -> list:\n    \"\"\"Return sorted unique common elements for two lists,\n    when at least one list contains floats.\n    >>> common_in_range_sorted([1, 4, ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/59",
+        "completion": "   if is_prime(n):\n        return n\n    i = 2\n    while i * i <= n:\n        if n % i == 0:\n            if is_prime(i):\n                return i\n            else:\n                return largest_prime_factor(i)\n        i += 1\n    return n\n\n\ndef is_prime(n: int):\n    \"\"\"Return True if n is a prime number and False otherwise.\n    >>> is_prime(2)\n    True\n    >>> is_prime(9)\n    False\n    >>> is_prime(129)\n    False\n    >>> is_prime(130)\n    True\n    \"\"\"\n    if n < 2:\n        return False\n    elif n % 2 == 0 /**\n * Tests that a last-voter in a 3-node replica set steps down when it's primary, and then becomes a\n * non-voting member of the set.\n * @tags: [requires_persistence]\n */\n\n(function() {\n\"use strict\";\n\nvar name = \"re",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/60",
+        "completion": "   n, sum = n, 0\n    for i in range(1, n+1):\n        sum += i\n    return sum\n\ndef cube_sum(n: int):\n    \"\"\"cube_sum is a function that returns the sum of the cubes of the numbers from 1 to n.\n    >>> cube_sum(10)\n    275\n    >>> cube_sum(5)\n    130\n    >>> cube_sum(100)\n    3025000\n    >>> cube_sum(1)\n    1\n    \"\"\"\n    n, sum = n, 0\n    for i in range(1, n+1):\n        sum += pow(i, 3)\n    return sum\n\ndef is_prime(n: int):\n    \"\"\"is_prime is a function that returns True if n is prime, False otherwise.\n    >>> is_prime(10000)\n    True\n    >>> is_prime(2)\n    True\n    >>> is_prime(1)\n    False\n    >>> is_prime(-1)\n    False\n   ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/61",
+        "completion": "   opening_bracket = \"(\"\n    closing_bracket = \")\"\n\n    # change multi-character brackets into a list of single character brackets\n    brackets_list = [brackets[i] for i in range(len(brackets))]\n\n    # replace brackets with closing brackets\n    brackets_list = [closing_bracket if brackets_list[i] == opening_bracket else brackets_list[i] for i in range(len(brackets))]\n\n    # for each opening bracket, try to find the corresponding closing bracket\n    # if we find it, replace it with a special character\n    # if we find a closing bracket first, it's a false case, we can return False\n    for i in range(len(brackets)):\n        if brackets_list[i] == opening_bracket:\n            brackets_list[i], brackets_list[i + 1] = brackets_list[i + 1], brackets_list[i]\n        else:\n            return False\n\n    # for each special character, if we find it, it is a false case, we can return False\n    # if",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/62",
+        "completion": "\n\n    def derivative_rec(xs: list,i):   # NOTE: derivative_rec is just a helper function, not to be called.\n        # Base case, if we have only 1 coefficient, answer is 0.\n        if i == 0:\n            return [0]*i\n        else:\n            return sum(([xs[i-1]]*i),\n                       (derivative_rec(xs, i-1)))\n\n    if len(xs)==1:\n        return 0\n\n    # Recursion\n    return derivative_rec(xs, len(xs)-1)\n\n\ndef integral(xs: list):\n    \"\"\" xs represent coefficients of a polynomial.\n    xs[0] + xs[1] * x + xs[2] * x^2 + ....\n    Return integral of this polynomial in the same form.\n    >>> integral([3, 1, 2, 4, 5])\n    [0, 3, 2, 1, 2]\n    >>> integral([1, 2, 3])\n    [0, 1, 2]",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/63",
+        "completion": "   if n == 0 or n == 1:\n        return n\n    else:\n        f0 = 0\n        t0 = 0\n        f1 = 0\n        t1 = 0\n        for i in range(n-1):\n            f0, t0 = t0, f0 + t0\n            f1, t1 = t1, f1 + t1\n        return f1 + t1\n\ndef test_fibfib():\n    test_cases = [(1, 0), (4, 4), (8, 24), (12, 97), (16, 1336), (17, 1497)]\n    for k, v in test_cases:\n        assert fibfib(k) == v\n\ndef fibonacci(n):\n    \"\"\"A Fibonacci number sequence is defined as follows:\n    fibonacci(0) == 0\n    fibonacci(1) == 1\n    fibonacci(n) == fibonacci(n-1) + fibonacci(n-2).",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/64",
+        "completion": "   pass\n\n\ndef number_of_vowels(s):\n    \"\"\"Write a function number_of_vowels which takes a string\n    representing a word as input and returns the number of vowels in the\n    string.\n    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\n    vowel, but only when it is at the end of the given word.\n\n    Example:\n    >>> number_of_vowels(\"abcde\")\n    2\n    >>> number_of_vowels(\"ACEDY\")\n    3\n    \"\"\"\n    pass\n\n\ndef number_of_consonants(s):\n    \"\"\"Write a function number_of_consonants which takes a string\n    representing a word as input and returns the number of consonants in the\n    string.\n\n    Example:\n    >>> number_of_consonants(\"abcde\")\n    3\n    >>> number_of_consonants(\"ACEDY\")\n    2\n    \"\"\"\n    pass\n\n\nif __name__ ==",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/65",
+        "completion": "   if shift >= 10:\n        return x[::-1]\n    \n    return \"\".join(x[shift:][::-1] + x[:shift][::-1])\n\n\n\n\ndef test_circular_shift():\n    assert circular_shift(12, 1) == \"21\"\n    assert circular_shift(12, 2) == \"12\"\n\n    assert circular_shift(12, 10) == \"21\"\n    assert circular_shift(12, 11) == \"12\"\n    assert circular_shift(12, 12) == \"12\"\n    assert circular_shift(12, 13) == \"21\"\n\n\n\n\ndef rotate_left(x, n):\n    \"\"\"Rotate the n digits of the integer x left by the number of digits n, and return\n    the result as a string.\n    If n > number of digits, rotate in the opposite direction.\n    >>> rotate_left(12, 1)\n    \"12\"\n    >>> rotate_left(1",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/66",
+        "completion": "   result = 0\n    for i in s:\n        if i == i.upper():\n            result += ord(i)\n    return result\n\n\ndef digitSum2(s):\n    \"\"\"Task\n    Write a function that takes a string as input and returns the sum of the upper characters only'\n    ASCII codes.\n\n    Examples:\n        digitSum(\"\") => 0\n        digitSum(\"abAB\") => 131\n        digitSum(\"abcCd\") => 67\n        digitSum(\"helloE\") => 69\n        digitSum(\"woArBld\") => 131\n        digitSum(\"aAaaaXa\") => 153\n    \"\"\"\n    return sum(ord(x) for x in s if x.isupper())\n\n\ndef digitSum3(s):\n    \"\"\"Task\n    Write a function that takes a string as input and returns the sum of the upper characters only'\n    ASCII codes.\n\n    Examples:\n        digitSum(\"\") => 0\n        digitSum(\"abAB\") => 131\n        digitSum(\"abcCd",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/67",
+        "completion": "   apples = int(s[:s.index(\"apples\")])\n    oranges = int(s[s.index(\"oranges\")+7:])\n    total = apples + oranges\n    return total - apples - oranges\n\n\n#test_cases = [\"5 apples and 6 oranges\", \"0 apples and 1 oranges\", \"2 apples and 3 oranges\", \"100 apples and 1 oranges\", \"100 apples and 1 oranges\"]\ntest_cases = [\"5 apples and 6 oranges\", \"0 apples and 1 oranges\", \"2 apples and 3 oranges\", \"0 apples and 1 oranges\", \"100 apples and 1 oranges\", \"100 apples and 1 oranges\", \"12345 apples and 23456 oranges\"]\n\nfor tc in test_cases :\n    actual = fruit_distribution(tc, int(tc[tc.index(\"apples\")+8:]))\n    print(\"Expected:\", 19 - 5 - 6",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/68",
+        "completion": "   # # Question: \n    # # If I run this code on the testcase [1, 2, 3], I get [2, 1].\n    # # If I run this code on the testcase [4, 2, 3], I get [2, 1].\n    # # What went wrong?\n    # # I see that my code does not work on the testcase [4, 2, 3].\n    # # But, how can I make my code work on the testcase [4, 2, 3]?\n    # # Expected output:\n    # # [3, 2]\n\n    # # Approach:\n    # # Iterate through the array.\n    # # If the value is even, calculate the index based on the current position.\n    # # If the value is odd, do not change it.\n    # # Return the index and the value in list form.\n\n    # arr = [4, 2, 3]\n    # answer = []\n    # for i in range(len(arr)):\n    #     if arr[i] % 2 ==",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/69",
+        "completion": "\n    lst = sorted(lst, key=lambda x: -x)\n\n    ans = -1\n\n    for i in range(len(lst)):\n        if lst[i] > 0 and lst[i] >= i + 1:\n            ans = lst[i]\n            break\n\n    return ans\n\n\ndef main():\n    import doctest\n    doctest.testmod()\n\n\nif __name__ == \"__main__\":\n    main()\n import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-topline-education',\n  templateUrl: './topline-education.component.html',\n  styleUrls: ['./topline-education.component.scss']\n})\nexport class ToplineEducationComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit() {\n  }\n\n}\n package azuread\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"net/url\"\n\t\"strings\"\n\n\t\"github.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/70",
+        "completion": "   return sorted(lst, key=lambda x: x[0])\n\n# 15. strange_sort_list_2(lst) -> list\ndef strange_sort_list_2(lst):\n    '''\n    Given list of integers, return list in strange order.\n    Strange sorting, is when you start with the minimum value,\n    then maximum of the remaining integers, then minimum and so on.\n\n    Examples:\n    strange_sort_list_2([1, 2, 3, 4]) == [1, 4, 2, 3]\n    strange_sort_list_2([5, 5, 5, 5]) == [5, 5, 5, 5]\n    strange_sort_list_2([]) == []\n    '''\n    return sorted(lst, key=lambda x: x[0])\n\n# 16. filter_dict(dct, lambda_comp) -> list\ndef filter_dict(dct, lambda_comp):\n    '''\n    Given a dictionary of integers,\n    return list of dictionaries in which lambda_comp is True",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/71",
+        "completion": "   if a+b >= c:\n        return (a+b+c)/2\n    else:\n        return -1\n\n\ndef triangle_area_2(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of \n    the triangle rounded to 2 decimal points if the three sides form a valid \n    triangle. Otherwise return -1\n    Three sides make a valid triangle when the sum of any two sides is greater \n    than the third side.\n    Example:\n    triangle_area_2(3, 4, 5) == 6.00\n    triangle_area_2(1, 2, 10) == -1\n    '''\n    if a+b > c:\n        return (a+b+c)/2\n    else:\n        return -1\n\n\ndef triangle_area_3(a, b, c):\n    '''\n    Given the lengths of the three sides of a triangle. Return the area of the\n    triangle rounded to 2 decimal points if the three sides form a valid\n    triangle. Otherwise return -1\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/72",
+        "completion": "   total = 0\n    for var in q:\n        total+=var\n    print(total)\n    if total <= w:\n        if q == q[::-1]:\n            return True\n    return False\n\nw = None\nq = None\nprint(will_it_fly(q,w))\n\nElliot, a 13-year-old boy, has just built his first flying machine.\n\nTo make his new invention work, he needs a list of numbers that is balanced and has a total weight that is less than or equal to a given value.\n\nGiven a list of numbers q and a weight w, return True if the list q is balanced and the sum of its elements is less than or equal to w, and False otherwise.\n\nNotes\n\nThe maximum possible weight for an object is 26.\n\nTo check if a list is balanced, you should check if the list is the same as the list reversed.\n\nIf you're not familiar with palindrom package com.example.bjaiswal.travelmanager;\r\nimport android.content.Intent;\r\nimport android.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/73",
+        "completion": "   diff = 0\n    for n in range(len(arr)):  # n = 0,1...len(arr) - 1\n        if arr[n] != arr[len(arr) - 1 - n]:\n            diff += 1\n    return diff\n\n\nif __name__ == '__main__':\n    arr = [1, 3, 5, 6, 7, 8, 9, 10]\n    print(smallest_change(arr))\n    arr = [9, 10, 6, 5, 3, 2, 1, 1, 1]\n    print(smallest_change(arr))\n    arr = [1, 2, 3, 4, 3, 2, 1]\n    print(smallest_change(arr))\n    arr = [9, 6, 5, 7, 4, 3, 2, 1, 0]\n    print(smallest_change(arr))\n    arr = [9, 10, 6, 5, 3,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/74",
+        "completion": "   return sorted([l for l in lst1 if len(l) < len(lst2)], key = lambda x: x[0])\n\n\n#Test\nprint(total_match([], []))\nprint(total_match(['hi', 'admin'], ['hI', 'Hi']))\nprint(total_match(['hi', 'admin'], ['hi', 'hi', 'admin', 'project']))\nprint(total_match(['hi', 'admin'], ['hI', 'hi', 'hi']))\nprint(total_match(['4'], ['1', '2', '3', '4', '5']))\n\n\ndef total_non_match(lst1, lst2):\n    '''\n    Write a function that accepts two lists of strings and returns the list that has \n    total number of chars in the all strings of the list less than the other list.\n\n    if the two lists have the same number of chars, return the first list.\n\n    Examples\n    total_match([], []) \u279e []\n    total_match(['hi', 'admin'], ['hI', 'Hi']) \u279e ['hI', '",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/75",
+        "completion": "   if a > 100:\n        return False\n    for i in range(1, 10):\n        if a % i == 0:\n            if i == 2 or i == 3:\n                return True\n            if i == 5:\n                return False\n            return False\n\n\ndef is_divisible_by_smallest_two_prime(a):\n    \"\"\"Write a function that returns true if the given number is the multiplication of at least two different\n    prime numbers and false otherwise.\n    Knowing that (a) is less then 100.\n    Example:\n    is_divisible_by_smallest_two_prime(36) == True\n    36 = 2 * 2 * 3\n    24 = 2 * 2 * 2 * 3\n    36 = 2 * 3 * 3\n    \"\"\"\n    if a > 100:\n        return False\n    for i in range(1, 10):\n        if a % i == 0:\n            for j in range(1, 10):",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/76",
+        "completion": "   if x == n ** int(n):\n        return True\n    else:\n        return False\n\n\ndef is_simple_power2(x, n):\n    return n ** int(n) == x\n\n\ndef main():\n    print(is_simple_power(3, 1))\n    print(is_simple_power2(3, 1))\n\n\nif __name__ == \"__main__\":\n    main()\n import React from 'react'\nimport {Link} from 'react-router-dom'\nimport {Card, Tag} from 'antd'\nimport {queryProjects, querySingleProject} from '../../api'\nimport {\n    getYearMonth,\n    getCurrentYearMonth,\n    getCurrentYear,\n    getCategories,\n} from '../../utils'\nimport {\n    formatTimeAgo,\n    formatMoney,\n    formatDateRange,\n    formatYearMonth,\n} from '../../utils'\nimport {withContext} from '../../context'\nimport {withRouter} from 'react-router'\n\nconst {Meta} = Card\n\nclass Project",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/77",
+        "completion": "   return (a ** (1.0 / 3.0)) == int(a ** (1.0 / 3.0))\n\n\ndef rstrong(a):\n    '''\n    Implement the function rstrong that takes an integer a \n    and returns True if a is a rotational-strong number. \n    A rotational-strong number is a number that can be \n    represented in a right-triangle with the given number \n    as one of its sides.\n    Note: you may assume the input is always valid.\n    Examples:\n    rstrong(1) ==> True\n    rstrong(2) ==> False\n    rstrong(3) ==> False\n    rstrong(4) ==> True\n    rstrong(5) ==> False\n    rstrong(6) ==> False\n    rstrong(7) ==> False\n    rstrong(8) ==> False\n    rstrong(9) ==> False\n    rstrong(10) ==> False\n    rstrong(11) ==> False\n    rstrong(12) ==> False\n    rstrong(13) ==> False\n    rstrong(14) ==>",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/78",
+        "completion": "   k = 0\n    l = 0\n    if num:\n        for i in range(len(num)):\n            # convert each character in a string into a value between 0 and 16\n            # and calculate the sum of the values\n            # if the sum is a prime number then the digit is a prime number\n            # if the sum is a composite number then the digit is not a prime number\n            s = int(num[i], 16) + l\n            if is_prime(s):\n                k = k + 1\n            l = s\n    return k\n\ndef is_prime(n):\n    if n < 2:\n        return False\n    if n == 2:\n        return True\n    if n % 2 == 0:\n        return False\n    for i in range(3, (n ** 0.5) + 1, 2):\n        if n % i == 0:\n            return False\n    return True\n\n\n# Euler-19\n# Write a function that takes a number as a string and returns a string with\n# the first non-t",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/79",
+        "completion": "   binary = []\n    while decimal > 0:\n        decimal, remainder = divmod(decimal, 2)\n        binary.append(remainder)\n    return 'db' + ''.join(str(x) for x in binary <!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Terrible Live Support</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"google-site-verification\" content=\"20-LJkUfrK9xK3v1iE9326VWwi3J5yhqNVWJ6kS32aU\" />\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/80",
+        "completion": "   if len(s) < 3:\n        return False\n    # check if the string is a palindrome\n    if is_palindrome(s):\n        return False\n\n    # pop values from the stack until we get a unique value\n    stack = [];\n    i = 0\n    while i < len(s):\n        stack.append(s[i])\n        i += 1\n\n    while len(stack) >= 3:\n        if stack[-3] != stack[-1] and stack[-2] != stack[-1] and stack[-2] != stack[-3]:\n            stack.remove(stack[-3])\n            stack.remove(stack[-2])\n            stack.remove(stack[-1])\n        else:\n            return False\n\n    return True\n\n# time: O(n)\n# space: O(n)\n\ndef is_palindrome(s):\n    \"\"\"You are given a string s.\n    Your task is to check if the string is palindrome or not.\n    For example:\n    is_palindrome('abcd') => False\n    is_",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/81",
+        "completion": "   letter_grades = []\n    for i in grades:\n        if i >= 4.0:\n            letter_grades.append(\"A+\")\n        elif i >= 3.7:\n            letter_grades.append(\"A\")\n        elif i >= 3.3:\n            letter_grades.append(\"A-\")\n        elif i >= 3.0:\n            letter_grades.append(\"B+\")\n        elif i >= 2.7:\n            letter_grades.append(\"B\")\n        elif i >= 2.3:\n            letter_grades.append(\"B-\")\n        elif i >= 2.0:\n            letter_grades.append(\"C+\")\n        elif i >= 1.7:\n            letter_grades.append(\"C\")\n        elif i >= 1.3:\n            letter_grades.append(\"C-\")\n        elif i >= 1.0:\n            letter_grades.append(\"D+\")\n        elif i >= 0.7:\n            letter_grades.append(\"D\")\n        elif",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/82",
+        "completion": "   # it can be written using prime() only for small strings\n    # check the documentation of the function to find out how to use it\n    # return True or False, depending on the result\n\n\n    return True\n\n\n\nif __name__ == '__main__':\n    print(prime_length('Hello')) package spider\n\nimport (\n\t\"encoding/json\"\n\t\"fmt\"\n\t\"io/ioutil\"\n\t\"net/http\"\n\t\"net/url\"\n\t\"strconv\"\n)\n\nfunc Spider(url string) (string, bool) {\n\tresp, err := http.Get(url)\n\tif err != nil {\n\t\tfmt.Println(\"\u722c\u53d6\u5931\u8d25\")\n\t\treturn \"\", false\n\t}\n\tdefer resp.Body.Close()\n\tbody, err := ioutil.ReadAll(resp.Body)\n\tif err != nil {\n\t\tfmt.Println(\"\u722c\u53d6\u5931\u8d25\")\n\t\treturn \"\", false\n\t}\n\tvar page page\n\tif err := json.Unmarshal(body,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/83",
+        "completion": "   ans = 0\n    for i in range(1, n, 2):\n        ans += 2 ** (n - i)\n    return ans\n\n\ndef starts_one_ends_a(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    ans = 0\n    for i in range(1, n, 2):\n        ans += 2 ** (n - 1 - i)\n    return ans\n\n\ndef starts_one_ends_b(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"\n    ans = 0\n    for i in range(1, n, 2):\n        ans += 2 ** i\n    return ans\n\n\ndef starts_one_ends_c(n):\n    \"\"\"\n    Given a positive integer n, return the count of the numbers of n-digit\n    positive integers that start or end with 1.\n    \"\"\"",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/84",
+        "completion": "   binary = str(bin(N))\n    binary = binary.lstrip(\"0b\")\n    sum = 0\n    temp = \"\"\n    for n in binary:\n        if n == \"1\":\n            temp += \"1\"\n        else:\n            temp += \"0\"\n    temp = temp[::-1]\n    for i in range(len(temp)):\n        sum += int(temp[i])\n    return sum\n\n\ndef main():\n    test_cases = [\"1\", \"5\", \"4\", \"7\"]\n    for test_case in test_cases:\n        print(test_case)\n        print(solve(int(test_case)))\n\n\nif __name__ == \"__main__\":\n    main()\n\n\"\"\"\nTest Cases\n\nSample Input\n    1\n    5\n    4\n    7\n\nSample Output\n    1\n    6\n    12\n    12\n\nExplanation\n    1. 1 2 2 2 1\n\n    2. 1 2 2 2\n\n    3. 1 2",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/85",
+        "completion": "   # Your code here\n    lst = list(map(int, lst))\n    even_at_odd_indices = []\n    for i in range(len(lst)):\n        if lst[i] % 2 != 0:\n            odd_indices_lst.append(lst[i])\n    return odd_indices_lst\n\n\nif __name__ == '__main__':\n    lst = [4, 2, 6, 7]\n    res = add(lst)\n    print(res)\n'''\n\n\nfrom collections import deque\n\n\ndef add(lst):\n    \"\"\"Given a non-empty list of integers lst. add the even elements that are at odd indices..\n\n\n    Examples:\n        add([4, 2, 6, 7]) ==> 2 \n    \"\"\"\n    # Your code here\n    lst = list(map(int, lst))\n    even_at_odd_indices = []\n    even_at_odd_indices_deque = deque()\n    for i in range(len(lst)):\n        if lst[i",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/86",
+        "completion": "   return ' '.join(sorted(s.split(), key=lambda x: ''.join(sorted(str(x)))))\n\n\ndef anti_shuffle(s):\n    \"\"\"\n    You have :\n    - s : the original sentence to shuffle\n    - s_split : split original sentence into words\n    - s_upper : uppercase all characters in the sentence\n    - s_sort : sort the words in s_upper\n    - s_new_words : return a list of new words\n\n    return a sentence that have each word in order, sorted by ascii values\n    \"\"\"\n    s_split = s.split()\n    s_upper = ''.join(s_split).upper()\n    s_sort = sorted(s_upper)\n    s_new_words = [s_sort[i:i+len(word)] for i, word in enumerate(s_split)]\n\n    return ' '.join(s_new_words)\n\n\ndef anti_shuffle_brute():\n    \"\"\"\n    Write a function that takes a string and returns an ordered version of it.\n    Ordered version of",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/87",
+        "completion": "   lst = [list(i) for i in lst]\n    lst = sorted(lst, key=lambda x: x[::-1])[::-1]\n    rows = []\n    for i in range(len(lst)):\n        if all(i == lst[i][::-1][x] for x in range(len(lst[i]))):\n            rows.append(lst[i])\n            lst.pop(i)\n        else:\n            rows.append(lst[i])\n    lst = sorted(lst, key=lambda x: x[::-1])\n    # return [(len(lst) - i - 1, k) for i, v in enumerate(l) for k in range(len(v)) if v[k] == x]\n    return [(len(lst) - k - 1, x) for k, v in enumerate(lst) for x in range(len(v)) if v[x] == x]\n\n\ndef get_column(lst, x):\n    \"\"\"\n    You are given a 2 dimensional data, as a nested lists,\n    which is similar to matrix",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/88",
+        "completion": "   # O(n^2) time | O(1) space\n    # Step 1: Sort the array.\n    # We can achieve this by using .sort() with a custom sort function.\n    # We can achieve this by using .sort() with a custom sort function.\n    sorted_array = array.copy()\n    sorted_array.sort(key=lambda x: x)\n    # Step 2: Set the values of the sorted array based on the sum.\n    # Step 2: Set the values of the sorted array based on the sum.\n    sorted_array_sum = sorted_array[0] + sorted_array[-1]\n    # Step 3: If the sum is odd, reverse the array.\n    # Step 3: If the sum is odd, reverse the array.\n    if sorted_array_sum % 2 == 1:\n        sorted_array.reverse()\n    # Step 4: Return the sorted array.\n    # Step 4: Return the sorted array.\n    return sorted_array\n\n\ndef sort_array_next_solution(array):\n    \"\"\"\n    Given an array",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/89",
+        "completion": "   return ''.join(chr(ord(c) + 2 * (ord(c)-ord('a')) % 26) for c in s)\n\nprint(encrypt('asdfghjkl'))\n\n\n#print(encrypt('gf'))\n\n\n#print(encrypt('et'))\n\n#print(encrypt('hi'))\n\n#print(encrypt('lmnop'))\n\n#print(encrypt('zxc'))\n\n#print(encrypt('vw'))\n\n#print(encrypt('pq'))\n\n#print(encrypt('stu'))\n\n#print(encrypt('r'))\n\n#print(encrypt('asdfghjkl'))\n\n#print(encrypt('gf'))\n\n#print(encrypt('et'))\n\n#print(encrypt('hi'))\n\n#print(encrypt('lmnop'))\n\n#print(encrypt('zxc'))\n\n#print(encrypt('vw'))\n\n#print(encrypt('pq'))\n\n#print(encrypt('stu'))\n\n#print(encrypt('",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/90",
+        "completion": "   \n    small = None\n    for i in range(len(lst)):\n        if lst[i] < small:\n            small = lst[i]\n    return small\n\n\ndef next_smallest_list(lst):\n    \"\"\"\n    You are given a list of integers.\n    Write a function next_smallest() that returns the 2nd smallest element of the list.\n    Return None if there is no such element.\n    \n    next_smallest_list([1, 2, 3, 4, 5]) == 2\n    next_smallest_list([5, 1, 4, 3, 2]) == 2\n    next_smallest_list([]) == None\n    next_smallest_list([1, 1]) == None\n    \"\"\"\n    \n    small = None\n    lst = sorted(lst)\n    for i in lst:\n        if small == None:\n            small = i\n        elif i < small:\n            small = i\n            \n    if small == None:\n        return None\n    else:\n        return small\n    \ndef next_",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/91",
+        "completion": "   a = []\n    for x in S.split(\".\"):\n        if x[0] == \"I\":\n            a.append(x)\n    if len(a) == 0:\n        return 0\n    else:\n        return 1\n\ndef is_bored(S):\n    \"\"\"\n    You'll be given a string of words, and your task is to count the number\n    of boredoms. A boredom is a sentence that starts with the word \"I\".\n    Sentences are delimited by '.', '?' or '!'.\n   \n    For example:\n    >>> is_bored(\"Hello world\")\n    0\n    >>> is_bored(\"The sky is blue. The sun is shining. I love this weather\")\n    1\n    \"\"\"\n    a = []\n    for x in S.split(\".\"):\n        if x[0] == \"I\":\n            a.append(x)\n    if len(a) == 0:\n        return 0\n    else:\n        return 1\n\ndef is_bored(S):\n    \"\"\"\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/92",
+        "completion": "   return True\n    \n\ndef any_int2(x, y, z):\n    '''\n    Create a function that takes 3 numbers.\n    Returns true if one of the numbers is equal to the sum of the other two, and all numbers are integers.\n    Returns false in any other cases.\n    \n    Examples\n    any_int2(5, 2, 7) \u279e True\n    \n    any_int2(3, 2, 2) \u279e False\n\n    any_int2(3, -2, 1) \u279e True\n    \n    any_int2(3.6, -2.2, 2) \u279e False\n  \n\n    \n    '''\n    return True\n\n\nif __name__ == '__main__':\n    print('Example:')\n    print(any_int2(5, 2, 7))\n\n    # These \"asserts\" are used for self-checking and not for an auto-testing\n    assert any_int2(5, 2, 7) == True\n    assert any",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/93",
+        "completion": "   # a function that replaces vowels with the letter that appears 2 places ahead of it\n    def vowel_swap(message):\n        temp = \"\"\n        for i in range(len(message)):\n            if message[i] in \"aeiou\":\n                if message[i+1] == 'a':\n                    temp += \"u\"\n                elif message[i+1] == 'e':\n                    temp += \"i\"\n                elif message[i+1] == 'i':\n                    temp += \"o\"\n                elif message[i+1] == 'o':\n                    temp += \"u\"\n                elif message[i+1] == 'u':\n                    temp += \"a\"\n                else:\n                    temp += message[i+1]\n            else:\n                temp += message[i]\n        return temp\n\n    def case_swap(message):\n        temp = \"\"\n        for i in range(len(message)):\n            if message[i].isupper():\n                temp += message[i].lower()\n            else:\n                temp += message[i].upper()",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/94",
+        "completion": "   list = []\n    for i in lst:\n        if i % 2 != 0:\n            list.append(i)\n    for i in lst:\n        if i % 3 != 0:\n            list.append(i)\n    for i in lst:\n        if i % 5 != 0:\n            list.append(i)\n    for i in lst:\n        if i % 7 != 0:\n            list.append(i)\n    for i in lst:\n        if i % 11 != 0:\n            list.append(i)\n    for i in lst:\n        if i % 13 != 0:\n            list.append(i)\n    for i in lst:\n        if i % 17 != 0:\n            list.append(i)\n    for i in lst:\n        if i % 19 != 0:\n            list.append(i)\n    for i in lst:\n        if i % 23 != 0:\n            list.append(i)\n    for i in lst:\n        if i % ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/95",
+        "completion": "   # code here\n    # # # # # # # # # # # # # # # # # # # # # # #\n    if not dict:\n        return False\n    if all(isinstance(key, str) and key.isupper() for key in dict.keys()):\n        return True\n    elif all(isinstance(key, str) and key.islower() for key in dict.keys()):\n        return True\n    else:\n        return False\n\n\nif __name__ == \"__main__\":\n    print(\"Example:\")\n    print(check_dict_case({\"a\":\"apple\", \"b\":\"banana\"}))\n\n    # These \"asserts\" are used for self-checking and not for an auto-testing\n    assert check_dict_case({\"a\":\"apple\", \"b\":\"banana\"}) == True\n    assert check_dict_case({\"a\":\"apple\", \"A\":\"banana\", \"B\":\"banana\"}) == False\n    assert check_dict_case({\"a\":\"apple\", 8:\"banana\", \"a\":\"apple\"}) == False\n    assert check",
+        "passed": true
+      },
+      {
+        "task_id": "HumanEval/96",
+        "completion": "   return [i for i in range(2,n) if isPrime(i)]\n\n\ndef isPrime(n):\n    if n <= 1:\n        return False\n    for i in range(2, n//2):\n        if n % i == 0:\n            return False\n    return True\n\n\nprint(count_up_to(20)) import { Input, Output, Parser, Diagnostic, UnicodeRange } from \"@siteimprove/alfa-parser\";\n\nimport { At } from \"../type/at\";\nimport { Style } from \"../type/style\";\nimport { Delimiter } from \"../type/delimiter\";\n\nimport { Token } from \"../../token\";\n\nimport { Base } from \"../../base\";\nimport { BaseAt } from \"../base/at\";\nimport { BaseDelimiter } from \"../base/delimiter\";\nimport { BaseStyle } from \"../base/style\";\n\nimport { Ident } from \"../ident\";\n\nconst { map, pipe } = Parser;\n\nconst Input$ = Input.whitespace;\n\nconst",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/97",
+        "completion": "   # Keep the base\n    a2 = a\n    b2 = b\n    # Find the (sub-)product of each digit, then perform the multiplication\n    # by adding the products of the two digits\n    # Example:\n    #    A = 323\n    #    B = 699\n    #    C = (323 * 699) * 1000 = 21808000\n    #    D = 323 + 699 = 1022\n    #    E = 21808000 + 1022 = 2201022\n    #    C = E - D = 2201022 - 1022 = 2190800\n    #    F = C / 1000 = 2190800 / 1000 = 21908\n    #    G = F mod 10 = 21908 mod 10 = 8\n    # To get the final answer, add",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/98",
+        "completion": "   #   a. count the number of vowels\n    #   b. check if the number of vowels is even\n    #   c. return the number of vowels\n    #   d. catch the TypeError\n    #   e. catch the ValueError\n    #   f. catch the IndexError\n    count = 0\n    try:\n        for i in range(len(s)):\n            if s[i].lower() in \"aeiou\":\n                count += 1\n        if count % 2 == 0:\n            return count\n        else:\n            return 0   \n    except TypeError:\n        return \"Vowels not found\"\n\n\n    # code below here is not required for the assessment\n    # print(type(s))\n    # print(s)\n    # print(count)\n    # print(s.upper())\n    # print(count_upper(s))\n    # print(count_upper(s.upper()))\n    # print(count_upper(s.lower()))\n    # print(count_upper(s[1]))\n    # print(count_",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/99",
+        "completion": "   return int(round(float(value)))\n\ndef print_elements(values):\n    '''\n    This function takes a list of values and prints them out one\n    element at a time.\n\n    Parameters\n    ----------\n    values : List\n        list of values to be printed\n    '''\n    for value in values:\n        print(value)\n\ndef is_int(value):\n    '''\n    Returns true if the given argument is an integer.\n\n    Examples\n    --------\n    >>> is_int(10)\n    True\n    >>> is_int(10.0)\n    False\n    '''\n    try:\n        int(value)\n        return True\n    except ValueError:\n        return False\n\ndef is_float(value):\n    '''\n    Returns true if the given argument is a float.\n\n    Examples\n    --------\n    >>> is_float(10)\n    False\n    >>> is_float(10.0)\n    True\n    '''\n    try:\n        float(value)\n        return True\n    except ValueError:\n       ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/100",
+        "completion": "\n    # 1 => 1, 3 => 3, 5 => 5, 7 => 7\n    # 2 => 1, 3 => 3, 5 => 2, 7 => 1\n    # 3 => 3, 5 => 5, 7 => 3, 9 => 5\n    # 4 => 3, 5 => 5, 7 => 7, 9 => 7\n    # 5 => 5, 7 => 5, 9 => 11, 11 => 7\n    # 6 => 5, 7 => 7, 9 => 13, 13 => 11, 11 => 7\n    # 7 => 7, 9 => 9, 11 => 15, 15 => 13, 13 => 9, 9 => 7\n    # 8 => 7, 9 => 9, 11 => 17, 17 => 15, 15 => 7, 7 => 9, ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/101",
+        "completion": "\n    s = s.replace(\",\", \" \")\n    s = s.strip()\n    return s.split()\n\n\ndef list_seq(a, b):\n    \"\"\"\n    a and b are two given lists containing the same number of elements.\n    Your task is to return a new array consisting of the elements from a followed by the elements from b.\n    \n    For example:\n    list_seq([1, 2, 3], [4, 5, 6]) == [1, 2, 3, 4, 5, 6]\n    list_seq([-1, -2, -3], [4, 5, 6]) == [-1, -2, -3, 4, 5, 6]\n    \"\"\"\n\n    return a + b \n\n\ndef crunch(a, b):\n    \"\"\"\n    a and b are two given lists of the same length. Your task is to return the pair of elements from a\n    whose sum is closest to the elements from b.\n    \n    For example:\n    crunch([1, 2, 3], [4",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/102",
+        "completion": "   return max(x # \u52a0\u5bc6\n- \u52a0\u5bc6\n- \u89e3\u5bc6\n\n\n\n# \u52a0\u5bc6\u6a21\u5f0f\n- \u52a0\u5bc6\u6a21\u5f0f\n- \u89e3\u5bc6\u6a21\u5f0f\n\n\n\n- \u5bc6\u94a5\u5373\u53ef\u4ee5\u662f\u6587\u672c\u7684\u5bc6\u7801\n- \u52a0\u5bc6\u53ef\u4ee5\u963b\u6b62\u88ab\u653b\u51fb\u8005\u731c\u6d4b\n- \u52a0\u5bc6\u53ef\u4ee5\u963b\u6b62\u88ab\u653b\u51fb\u8005\u731c\u6d4b\n\n\n\n\u5bc6\u94a5\n\n* \u76f8\u540c\u7684\u52a0\u5bc6\u7b97\u6cd5\u53ef\u4ee5\u52a0\u5bc6\u4e0d\u540c\u7684\u5bc6\u94a5\n* \u4e0d\u540c\u7684\u52a0\u5bc6\u7b97\u6cd5\u4e0d\u80fd\u52a0\u5bc6\u76f8\u540c\u7684\u5bc6\u94a5\n\n\n\n1. \u7f16\u7801\n2. \u52a0\u5bc6\n3. \u89e3\u5bc6\n import { TypeOf } from '@kbn/config-schema';\nimport {\n  RouteDefinitionParams,\n  RouteDefinitionCallback,\n  RouteHandlerMethod,\n} from '../../../types';\nimport {\n  METRIC_EXAMPLES_ALLOW_LIST,\n  METRIC_EXAMPLES_",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/103",
+        "completion": "   if m <= n:\n        return (-1)\n    else:\n        return format(bin(int(round(str((n + m) / 2)))), 'b')\n    # pass\n\n\nif __name__ == '__main__':\n    print(rounded_avg(1, 5))\n    print(rounded_avg(11, 13))\n    print(rounded_avg(24, 29))\n    print(rounded_avg(1, 2))\n    print(rounded_avg(1, 5))\n    print(rounded_avg(3, 2))\n    print(rounded_avg(3, 3))\n    print(rounded_avg(9, 12))\n    print(rounded_avg(10, 20))\n    print(rounded_avg(20, 33))\n    print(rounded_avg(1, 1))\n    print(rounded_avg(1, 1))\n    print(rounded_avg",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/104",
+        "completion": "   # Find all digits that are even.\n    even_digits = [x for x in x if x % 2 == 0]\n\n    # Initialize the list of unique digits.\n    unique_digits = []\n\n    # Iterate over each element in the list.\n    for i in x:\n        # If the element is not equal to any even digit in the list, append it to unique_digits.\n        # Here we are checking if i != even_digits\n        if i != even_digits:\n            unique_digits.append(i)\n\n    # Sort the list of unique digits.\n    unique_digits = sorted(unique_digits)\n\n    # Return the list of unique digits.\n    return unique_digits\n\n\n\"\"\"\nInput: [15, 33, 1422, 1]\nOutput: [1, 15, 33]\n\"\"\"\n\n\n\"\"\"\nInput: [152, 323, 1422, 10]\nOutput: []\n\"\"\"\n\n\n\"\"\"\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/105",
+        "completion": "   return [None] * len(arr)\n\n\ndef by_dictionary(arr):\n    \"\"\"\n    Given an array of integers, sort the integers that are between 1 and 9 inclusive,\n    reverse the resulting array, and then replace each digit by its corresponding name from\n    \"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\".\n\n    For example:\n      arr = [2, 1, 1, 4, 5, 8, 2, 3]   \n            -> sort arr -> [1, 1, 2, 2, 3, 4, 5, 8] \n            -> reverse arr -> [8, 5, 4, 3, 2, 2, 1, 1]\n      return [\"Eight\", \"Five\", \"Four\", \"Three\", \"Two\", \"Two\", \"One\", \"One\"]\n    \n      If the array is empty, return an empty array:\n      arr = []\n      return []\n    \n      If the array has any",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/106",
+        "completion": "   # Your code here\n    return [1, 2, 6, 24, 15]\n\nprint(f(5))\n# print(f(1))\nprint(f(0))\nprint(f(-1))\nprint(f(4))\nprint(f(3))\nprint(f(2))\nprint(f(1))\n\n\n### SOLUTION\n# def f(n):\n#     \"\"\" Implement the function f that takes n as a parameter,\n#     and returns a list of size n, such that the value of the element at index i is the factorial of i if i is even\n#     or the sum of numbers from 1 to i otherwise.\n#     i starts from 1.\n#     the factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).\n#     Example:\n#     f(5) == [1, 2, 6, 24, 15]\n#     \"\"\"\n#     # Your code here\n#     if n < 0:\n#         raise ValueError(\"",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/107",
+        "completion": "\n    # Edge Cases\n    if n < 1 or n > 10 ** 3:\n        raise ValueError(\"n must be in range(1, 10^3)\")\n    if n == 1:\n        return (1, 0)\n    # initilize even and odd counter\n    even, odd = 0, 0\n    # check each odd number from 1 to n\n    for i in range(1, n + 1):\n        # if odd number is palindrome\n        if i == int(str(i)[::-1]):\n            # add to the even\n            even += 1\n        # if odd number is palindrome\n        else:\n            # add to the odd\n            odd += 1\n    # check each even number from 2 to n\n    for i in range(2, n + 1):\n        # if even number is palindrome\n        if i == int(str(i)[::-1]):\n            # add to the odd\n            odd += 1\n        # if even number is palindrome\n        else:\n            # add",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/108",
+        "completion": "   result = 0\n    for num in arr:\n        num_str = str(num)\n        if sum(map(int, num_str)) > 0:\n            result += 1\n    return result\n\n\ndef remove_dups_in_order(arr):\n    \"\"\"\n    Write a function remove_dups_in_order which takes an array of integers\n    and returns a new array with all the duplicates removed.\n    The duplicates can appear in any order in the input,\n    but they will be removed in the \"right\" order.\n    >>> remove_dups_in_order([]) == []\n    >>> remove_dups_in_order([1, 2, 3]) == [1, 2, 3]\n    >>> remove_dups_in_order([1, 2, 2, 2, 3, 4]) == [1, 2, 3, 4]\n    >>> remove_dups_in_order([7, 7, 7, 7, 7, 7, 7, 7]) == [7]\n    \"\"\"\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/109",
+        "completion": "   if not arr:\n        return True\n    for i in range(2, len(arr)):\n        if arr[i] < arr[i-1]:\n            arr[i] = arr[i] + arr[i-1] - arr[i-2]\n            arr[i-1] = arr[i] - arr[i-1]\n            arr[i-2] = arr[i] - arr[i-2]\n    return 0\n\n\ndef move_one_ball_2(arr):\n    arr.sort()\n    return 0\n\ndef move_one_ball_3(arr):\n    i = 0\n    while i < len(arr)-1:\n        j = i + 1\n        while j < len(arr):\n            if arr[i] < arr[j]:\n                arr[i], arr[j] = arr[j], arr[i]\n            j += 1\n        i += 1\n    return 0\n\nif __name__ == '__main__':\n    move_one_ball_2 import {Component, Input, On",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/110",
+        "completion": "\n    # Your code here\n    lst1 = [1, 2, 3, 4]\n    lst2 = [1, 5, 3, 4]\n    lst1_even = []\n    lst2_even = []\n    for i in lst1:\n        if i % 2 == 0:\n            lst1_even.append(i)\n    for j in lst2:\n        if j % 2 == 0:\n            lst2_even.append(j)\n\n    if lst1_even == lst2_even:\n        return \"YES\"\n    else:\n        return \"NO\"\n\n\nprint(exchange([1, 2, 3, 4], [1, 2, 3, 4]))\nprint(exchange([1, 2, 3, 4], [1, 5, 3, 4]))\nprint(exchange([1, 2, 3, 4], [3, 5, 1, 5]))\nprint(exchange([1, 2, 3, 4], [3, 3, 1",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/111",
+        "completion": "   res = {}\n    test = test.split(' ')\n    for i in range(len(test)):\n        if (test[i] in res):\n            res[test[i]] += 1\n        else:\n            res[test[i]] = 1\n    return res\n\n\n# ----------------------------------------------------------------------------------------------------------------------\n\n# http://www.cs.cmu.edu/~adamchik/15-121/lectures/Lect04/lect04.html\n# http://stackoverflow.com/questions/268272/getting-key-with-maximum-value-in-dictionary\n# http://stackoverflow.com/questions/4058464/pulling-dict-entries-that-have-the-largest-value\n# http://stackoverflow.com/questions/613183/python-how-do-i-sort-a-dictionary-by-key\n\ndef histogram(test):\n    \"\"\"Given a string representing a space separated lowercase letters, return a dictionary\n    of the letter with the most repetition and containing the",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/112",
+        "completion": "   # Step 1 - We will use the reverse function defined in the standard library 'string' module of python\n    # reverse(a) returns the reverse of the string.\n    # reverse_list = list(reversed(s))\n    # first_half = list(s)[:len(s)//2]\n    # second_half = list(s)[len(s)//2:]\n    # if c == first_half and c == second_half:\n    #     return (\"\".join(reverse_list),True)\n    # else:\n    #     return (\"\".join(reverse_list),False)\n    # Step 1:\n    # Step 2:\n    # Step 3:\n    # Step 4:\n    # Step 5:\n\n    # Sorting the string\n    # Step 1: sort the string\n    # Step 2: Use the reverse function of the list.\n    # Step 3: append the sorted string to a list\n    # Step 4: store the list in another variable\n    # Step 5: now check if the list is palindrome or not\n\n   ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/113",
+        "completion": "   return [x for x in lst]\n\n\ndef odd_count2(lst):\n    \"\"\"Given a list of strings, where each string consists of only digits, return a list.\n    Each element i of the output should be \"the number of odd elements in the\n    string i of the input.\" where all the i's should be replaced by the number\n    of odd digits in the i'th string of the input.\n\n    >>> odd_count2(['1234567'])\n    [\"the number of odd elements 4n the str4ng 4 of the 4nput.\"]\n    >>> odd_count2(['3',\"11111111\"])\n    [\"the number of odd elements 1n the str1ng 1 of the 1nput.\",\n     \"the number of odd elements 8n the str8ng 8 of the 8nput.\"]\n    \"\"\"\n    return list(map(lambda x:f\"the number of odd elements {sum(map(lambda c: 1 if c == '1' else 0, x))}n the str{len(x",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/114",
+        "completion": "   runningSum = 0\n    ans = float('inf')\n    for i in nums:\n        runningSum += i\n        ans = min(ans, runningSum)\n        if runningSum < 0:\n            runningSum import { getWorkspaceConfiguration } from \"vscode\";\n\nconst config = getWorkspaceConfiguration();\n\n\nexport const getConfig = (key: string) => config.get(key);\nexport const getConfigBoolean = (key: string) => config.get(key) as boolean;\nexport const getConfigString = (key: string) => config.get(key) as string;\nexport const getConfigInteger = (key: string) => config.get(key) as number;\nexport const getConfigArray = (key: string) => config.get(key) as string;\nexport const getConfigAll = () => config.get();\n\n\nexport const getKey = (key: string): string => {\n    return getConfig(key) as string;\n};\n\nexport const getBool = (key: string): boolean => {\n    const val = getConfig(key) as string;\n   ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/115",
+        "completion": "   # Write your code here\n    N = len(grid)\n    M = len(grid[0])\n    \n    # create a priority queue with (rows, columns, water level)\n    priority_queue = [((0, 0, 0), 0)]\n    while len(priority_queue) > 0:\n        # get the minimum\n        pq_min = priority_queue.pop(0)\n        rows, columns, water_level = pq_min[0]\n        # if we are at the bottom then we are done\n        if (rows == N-1 and columns == M-1):\n            # there is no more water to get\n            return water_level\n\n        capacity = capacity - water_level\n        # move to the right\n        right_pq = (pq_min[0][0], pq_min[0][1]+1, pq_min[1])\n        priority_queue.append(right_pq)\n        # move up\n        up_pq = (pq_min[0][0]+1, pq_min[0][1],",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/116",
+        "completion": "   \n    def convert(n):\n        c = 0\n        while n > 0:\n            c += n % 2\n            n //= 2\n        return c\n\n    arr.sort(key=lambda x: (-convert(x), x))\n\n    return arr\n\n\ndef sort_array_2(arr):\n    \"\"\"\n    In this Kata, you have to sort an array of non-negative integers according to\n    number of ones in their binary representation in ascending order.\n    For similar number of ones, sort based on decimal value.\n\n    It must be implemented like this:\n    >>> sort_array([1, 5, 2, 3, 4]) == [1, 2, 3, 4, 5]\n    >>> sort_array([-2, -3, -4, -5, -6]) == [-6, -5, -4, -3, -2]\n    >>> sort_array([1, 0, 2, 3, 4]) [0, 1, 2, 3, 4]\n    \"\"\"\n\n    def",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/117",
+        "completion": "   return [word for word in s.split(\" \") if len([w for w in word if w not in \"aeiou\"]) == n]\n\n\n# Alternative way to implement same thing\ndef select_words(s, n):\n    return [word for word in s.split(\" \") if len(word) == n]\n\n\n# Alternative way to implement same thing\ndef select_words(s, n):\n    return [word for word in s.split(\" \") if len([w for w in word if w not in \"aeiou\"]) == n]\n\n\n# Alternative way to implement same thing\ndef select_words(s, n):\n    return [word for word in s.split(\" \") if len(word) == n and len([w for w in word if w not in \"aeiou\"]) == n]\n\n\n# Alternative way to implement same thing\ndef select_words(s, n):\n    return [word for word in s.split(\" \") if len(word) == n and len([w for w in word if w not in \"aeiou\"]) == n]\n (function(",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/118",
+        "completion": "\n    vowels = ['a', 'e', 'i', 'o', 'u']\n    left_side = word[::-1]\n    right_side = word\n    for i in range(len(left_side)):\n        for char in vowels:\n            if left_side[i:i+1] == char and left_side[i-1:i] != ' ':\n                right_side = right_side + left_side[i+1:len(left_side)]\n                return right_side[0]\n    return \"\"\n\n\nprint(get_closest_vowel(\"yogurt\"))\nprint(get_closest_vowel(\"FULL\"))\nprint(get_closest_vowel(\"quick\"))\nprint(get_closest_vowel(\"ab\"))\nprint(get_closest_vowel(\"\"))\nprint(get_closest_vowel(\"x\"))\nprint(get_closest_vowel(\"a\"))\nprint(get_closest_vowel(\"f\"))\nprint(get_closest_vowel(\"ababa\"))\nprint(get_",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/119",
+        "completion": "   # We can make the first string a good string by adding '(' in front.\n    # We can make the second string a good string by adding ')' in front\n\n    n = len(lst)\n    l = [0]*n\n    r = [0]*n\n\n    for i in range(n):\n        if lst[i] == '(':\n            l[i] = 1\n        else:\n            r[i] = 1\n\n    for i in range(n-1):\n        if lst[i] == ')' and l[i] == 1:\n            if lst[i+1] != '(':\n                return 'No'\n            else:\n                l[i+1] = 0\n                r[i] = 0\n\n    if l[n-1] != 0 or r[n-1] != 0:\n        return 'No'\n    else:\n        return 'Yes'\n\n\nif __name__ == '__main__':\n    tests = [\n        ('()(', ')'),\n        ('))))))', '))'),\n        ('(",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/120",
+        "completion": "\n    max_heap = []\n    for i in arr:\n        if len(max_heap) < k:\n            max_heap.append(i)\n        else:\n            if i > max_heap[0]:\n                max_heap.pop(0)\n                max_heap.append(i)\n                max_heap.sort()\n    return max_heap\n\n\ndef main():\n    print(\"Example 1:\")\n    print(maximum([-3, -4, 5], 3))\n\n    print(\"\\nExample 2:\")\n    print(maximum([4, -4, 4], 2))\n\n    print(\"\\nExample 3:\")\n    print(maximum([-3, 2, 1, 2, -1, -2, 1], 1))\n\n\nif __name__ == \"__main__\":\n    main()\n #ifndef PAWGUI_WINDOW_H\n#define PAWGUI_WINDOW_H\n\n#include \"pawgui_base.",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/121",
+        "completion": "   # your code here\n    return sum(lst if i % 2 == 0 else 0 for i, lst in enumerate(lst))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/122",
+        "completion": "   return sum(arr[:k])\n package com.intellij.openapi.vcs.changes.actions;\n\nimport com.intellij.openapi.actionSystem.AnActionEvent;\nimport com.intellij.openapi.actionSystem.CommonDataKeys;\nimport com.intellij.openapi.project.DumbAwareAction;\nimport com.intellij.openapi.project.Project;\nimport com.intellij.openapi.vcs.changes.ChangeList;\nimport com.intellij.openapi.vcs.changes.ui.ChangeListChooser;\nimport com.intellij.openapi.vcs.changes.ui.ChangeListChooserDialog;\nimport com.intellij.openapi.vcs.changes.ui.ChangesListView;\nimport com.intellij.openapi.vfs.VirtualFile;\n\npublic class MoveChangesToChangelistAction extends DumbAwareAction {\n\n  private final ChangesListView myView;\n\n  public MoveChangesToChangelistAction(final ChangesListView view) {\n    myView = view;\n  }\n\n  public void update(final AnActionEvent e) {\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/123",
+        "completion": "   collatz = [1]\n    while collatz[-1] != 1:\n        collatz.append(collatz[-1]//2)\n        if collatz[-1] % 2 != 0:\n            collatz.append(3*collatz[-1] + 1)\n    collatz.append(1)\n    for i in range(len(collatz)-1):\n        if collatz[i] % 2 != 0 and i != 0:\n            collatz[i] = collatz[i // 2]\n    for i in range(len(collatz)):\n        if collatz[i] < n:\n            collatz.pop(i)\n    return collatz\n\n\ndef test_get_odd_collatz():\n    assert get_odd_collatz(5) == [1, 5]\n    assert get_odd_collatz(8) == [1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/124",
+        "completion": "   return True # FIXME: write your code here\n\n\ndef get_valid_dates_between(start_date, end_date):\n    \"\"\"This function will return a list of all valid dates between start_date and end_date.\n    For example:\n\n    get_valid_dates_between('07-07-2013', '07-09-2013') => ['07-07-2013', '07-08-2013', '07-09-2013']\n\n    get_valid_dates_between('10-06-2012', '10-08-2012') => []\n\n    get_valid_dates_between('11-11-2012', '11-11-2012') => ['11-11-2012']\n    \"\"\"\n    return [] # FIXME: write your code here\n\n\ndef get_valid_dates_between_with_invalid_dates(start_date, end_date):\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/125",
+        "completion": "   ord_list = [ord(c) for c in txt]\n    odd = 0\n    for c in ord_list:\n        if c % 2 == 1:\n            odd += 1\n    if ',' in txt:\n        return txt.split(',')\n    elif ' ' in txt:\n        return txt.split()\n    else:\n        return ord_list\n\n\ndef split_words(txt):\n    '''\n    Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you\n    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the\n    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25\n    Examples\n    split_words(\"Hello world!\") \u279e [\"Hello\", \"world!\"]\n    split_words(\"Hello,world!\") \u279e [\"Hello\", \"world!\"]\n    split_words(\"abcdef\") == 3 \n    '''\n    if ',' in txt:",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/126",
+        "completion": "   # If the list has only one element, then it is sorted\n    if len(lst) == 1:\n        return True\n    # If the list has more than 1 element\n    else:\n        # For every element in the list\n        for i in range(len(lst) - 1):\n            # If the current element is larger than the next element\n            if lst[i] > lst[i+1]:\n                return False\n    # If none of the elements in the list are bigger than the next element\n    return True\n\n\nif __name__ == '__main__':\n    print(is_sorted([5]))\n    print(is_sorted([1, 2, 3, 4, 5]))\n    print(is_sorted([1, 3, 2, 4, 5]))\n    print(is_sorted([1, 2, 3, 4, 5, 6]))\n    print(is_sorted([1, 2, 3, 4, 5, 6, 7]))\n    print(is_sorted([1, 3, 2",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/127",
+        "completion": "   print(\"not implemented\")\n    return \"not implemented\"\n\n\ndef solution(interval1, interval2):\n    \"\"\"You are given two intervals,\n    where each interval is a pair of integers. For example, interval = (start, end) = (1, 2).\n    The given intervals are closed which means that the interval (start, end)\n    includes both start and end.\n    For each given interval, it is assumed that its start is less or equal its end.\n    Your task is to determine whether the length of intersection of these two \n    intervals is a prime number.\n    Example, the intersection of the intervals (1, 3), (2, 4) is (2, 3)\n    which its length is 1, which not a prime number.\n    If the length of the intersection is a prime number, return \"YES\",\n    otherwise, return \"NO\".\n    If the two intervals don't intersect, return \"NO\".\n\n\n    [input/output] samples:\n    solution((1, 2), (2, 3)) ==> \"NO\"\n    solution((-1, 1), (0",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/128",
+        "completion": "   if arr == []:\n        return None\n    else:\n        arr = map(lambda x:abs(x), arr)\n        prod = 1\n        for i in arr:\n            prod *= i\n        prod = prod * 1 if prod < 0 else -1\n        return prod * sum(arr)\n\n\ndef prod_signs(arr):\n    #return sum(abs(n)) * prod(n) for n in arr if n else None\n    return sum(abs(n) for n in arr if n) * prod(n for n in arr if n) if arr else None\n import { handleSubmit } from '../../../src/utils/submit'\nimport { startSubmit } from '../../../src/actions'\nimport api from 'mock'\n\n\ndescribe('submit', () => {\n  it('handles submit with onSubmit action', () => {\n    const state = {\n      username: {\n        value: 'abc'\n      },\n      password: {\n        value: '123'\n      },\n      _pristine: {\n        formName: true,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/129",
+        "completion": "   M, N = len(grid), len(grid[0])\n    m, n = 0, 0\n\n    f = [[1] * (N + 1) for _ in range(M + 1)]\n\n    for i in range(1, M + 1):\n        for j in range(1, N + 1):\n            f[i][j] = (k - 1) * f[i - 1][j] + grid[i - 1][j - 1]\n\n    for i in range(1, M + 1):\n        for j in range(1, N + 1):\n            f[i][j] %= 10000\n\n    for i in range(1, M + 1):\n        for j in range(1, N + 1):\n            if f[i][j] == f[i - 1][j]:\n                continue\n            m = N\n            n = M\n            break\n\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/130",
+        "completion": "   if n < 0:\n        raise ValueError(\"N number should be a non-negative integer\")\n    return (1, 3, 2, 8) if n < 2 else ([1, 3, 2, 8] if n in [2, 3, 4] else [1, 3, 2, 8, 16, 12, 24])\n\n\ndef mergesort(arr: list):\n    \"\"\"Merge sort algorithm return a sorted list.\n    Mergesort is a divide and conquer algorithm. \n    Its idea is to divide the list in smaller lists, \n    merge the lists in a sorted order and then merge the sorted lists.\n    Examples:\n    mergesort([1, 5, 2, 4, 3, 6, 7, 8, 9]) = [1, 2, 3, 4, 5, 6, 7, 8, 9]\n    mergesort([-3, -2, -1, 1, 2, 3]) = [-3, -2,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/131",
+        "completion": "   result = 1\n    while n != 0:\n        result *= n % 10\n        n = n // 10\n    return result\n\n\ndigits(1)  # => 1\ndigits(4)  # => 0\ndigits(235) # => 15\n\n\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\"\"\"\n    result = 1\n    while n != 0:\n        digit = n % 10\n        if digit % 2 == 1:\n            result *= digit\n        n = n // 10\n    return result\n\n\ndigits(1)  # => 1\ndigits(4)  # => 0\ndigits(235) # => 15\n\n\ndef digits(n):\n    \"\"\"Given a positive integer n, return the product of the odd digits.\"\"\"\n    result = 1\n    while n != 0:\n        digit = n % 10\n        if digit % 2 == 1:\n            result *=",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/132",
+        "completion": "\n    if not string:\n        return False\n    elif not string.count('['):\n        return False\n    else:\n        bracket_stack = []\n        for bracket in string:\n            if bracket == ']':\n                if not bracket_stack:\n                    return False\n                else:\n                    bracket_stack.pop()\n            elif bracket == '[':\n                bracket_stack.append('[')\n        if bracket_stack:\n            return False\n        return True\n\n\nprint(is_nested('[[]]'))\nprint(is_nested('[]]]]]]][[[[[]'))\nprint(is_nested('[][]'))\nprint(is_nested('[]'))\nprint(is_nested('[[][]]'))\nprint(is_nested('[[]][['))\n\n\ndef is_nested(string):\n    '''\n    Create a function that takes a string as input which contains only square brackets.\n    The function should return True if and only if there is a valid subsequence of brackets \n    where at least one bracket in the subsequence is nested.\n   ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/133",
+        "completion": "   sum_squared = 0\n    for number in lst:\n        rounded_number = int( #include <bits/stdc++.h>\n#define ll long long int\n#define pr pair<ll, ll>\n#define tp tuple<ll, ll, ll>\nusing namespace std;\nlong long int mod = 1000000007;\n\nstruct hashtable{\n\tint g[1000000];\n\tint n;\n\tint m;\n\tint s;\n\t\n\tvoid init(int m){\n\t\tn = 0;\n\t\tthis->m = m;\n\t\ts = 0;\n\t\t\n\t\twhile(m != 0){\n\t\t\tg[n] = m%10;\n\t\t\tm = m/10;\n\t\t\tn++;\n\t\t}\n\t}\n\t\n\tbool isprime(int n){\n\t\tif(n == 1) return false;\n\t\tfor(int i = 2; i*i <= n; i++){\n\t\t",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/134",
+        "completion": "   if txt[-1].isalpha() and not txt[-2].isalpha():\n        return True\n    else:\n        return False\n\n\n# Ex.11.4\n\ndef check_if_the_last_word_is_a_number(txt):\n    '''\n    Create a function that returns True if the last word of \n    a given string is a number and False otherwise. Note: \n    a number is a group of characters separated by a space.\n\n    Examples:\n    check_if_the_last_word_is_a_number(\"apple pie\") \u279e False\n    check_if_the_last_word_is_a_number(\"apple pi 3\") \u279e True\n    check_if_the_last_word_is_a_number(\"apple pi 3 \") \u279e False\n    check_if_the_last_word_is_a_number(\"\") \u279e False\n    '''\n    if txt[-1].isnumeric():\n        return True\n    else:\n        return False\n\n\n# Ex.11.5\n\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/135",
+        "completion": "   pass\n\n\ndef can_arrange2(arr):\n    \"\"\"Same as can_arrange, but also returns the index of the element\n    which is smaller than the element immediately preceding it and not\n    equal to the given element. If no such element exists then return\n    an empty list. The given array will not contain duplicate values.\n\n    Examples:\n    can_arrange2([1,2,4,3,5]) = [3,2]\n    can_arrange2([1,2,3,4]) = []\n    \"\"\"\n    pass\n\n\ndef can_arrange3(arr):\n    \"\"\"Same as can_arrange2, but also returns the index of the element\n    which is greater than the element immediately preceding it and not\n    equal to the given element. If no such element exists then return\n    an empty list. The given array will not contain duplicate values.\n\n    Examples:\n    can_arrange3([1,2,4,3,5]) = [3,2]\n    can_arrange3([1,2,3,4]) = []\n    \"\"\"",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/136",
+        "completion": "   a = None\n    b = None\n\n    lst = sorted(lst)\n\n    N = len(lst)\n\n    if N == 0:\n        return a, b\n    elif N == 1:\n        return a, b\n    else:\n        if lst[0] < 0:\n            a = lst[0]\n        if lst[0] > 0:\n            b = lst[0]\n        else:\n            for i in range(N):\n                if lst[i] > 0:\n                    b = lst[i]\n        return a, b\n\n\ndef last_two_items(lst):\n    '''\n    Create a function that returns a tuple of the last two items\n    in a list, in the their original order.\n\n    Examples:\n    last_two_items([0, 1, 2, 3, 4]) == (3, 4)\n    last_two_items([0, 1]) == (0, 1)\n    last_two_items([0]) == (0, None)\n    '''\n\n    a",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/137",
+        "completion": "   # create a list of types of a and b\n    types = [type(a), type(b)]\n\n    # check if they are equal - check if they are different types\n    if a == b:\n        return None\n        # check if types are not the same\n    elif types[0] != types[1]:\n        # check if first value is a number\n        if types[0] == float(a + \"0\"):\n            return a\n        if types[1] == float(b + \"0\"):\n            return b\n        else:\n            return max(types)\n    else:\n        # check if first value is a number\n        if types[0] == float(a + \"0\"):\n            return a\n        if types[1] == float(b + \"0\"):\n            return b\n        else:\n            return max(types)\n\n\ndef compare_one(a, b):\n    \"\"\"\n    Create a function that takes integers, floats, or strings representing\n    real numbers, and returns the larger variable in its given variable type.\n    Return None if the values are equal.\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/138",
+        "completion": "   # Split the number into two numbers\n    a = n//2\n    b = n//2 + 1\n\n    # Check for the cases a+b=n or a+b=n+1\n    if a+b == n:\n        return True\n    elif a+b == n+1:\n        # Check if a is even\n        return n % 2 == 0\n\n    # If none of the above hold then n cannot be written as the sum of exactly 4 positive even numbers\n    return False\n\nprint(is_equal_to_sum_even(8))\n\n# 29/05/2021\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n\n    \"\"\"\n    a = n//2\n    b = n//2 + ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/139",
+        "completion": "   if n < 0:\n        raise ValueError(\"Value n must be greater than 0\")\n    if n == 0:\n        return 1\n    factorial = 1\n    for i in range(n):\n        factorial = factorial * (n - i)\n    return factorial\n\n\ndef main():\n    # These \"asserts\" using only for self-checking and not necessary for\n    # auto-testing\n    assert special_factorial(11) == 299792458, \"1st example\"\n    assert special_factorial(5) == 120, \"2nd example\"\n    assert special_factorial(3) == 6, \"3rd example\"\n    assert special_factorial(0) == 1, \"4th example\"\n    print(\"OK!\")\n\n\nif __name__ == \"__main__\":\n    main()\n package com.example.android.miwok;\n\nimport android.support.v7.app.AppCompatActivity;\nimport android.os.Bundle;\nimport android.widget.ListView",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/140",
+        "completion": "   return ' '.join('_' if len(l) == 1 else '-' if len(l) > 1 else l for l in text.split(' '))\n\n\ndef welcome(name):\n    \"\"\"\n    Given a the given name, return the greeting message.\n    \"\"\"\n    return f'Hello, {name}.'\n\n\ndef add_one(num):\n    \"\"\"\n    Given an integer num, return the number after adding one.\n    \"\"\"\n    return num + 1\n\n\ndef gradient(start_color, end_color, position):\n    \"\"\"\n    Given three colors represented by three integer values each between 0 and 255, \n    return a color between start_color and end_color.\n    \"\"\"\n    start_red = start_color[0]\n    start_green = start_color[1]\n    start_blue = start_color[2]\n    end_red = end_color[0]\n    end_green = end_color[1]\n    end_blue = end_color[2]\n    diff_red = end_red - start_red",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/141",
+        "completion": "\ndef remove_all_empties(lst):\n    \"\"\"Create a function which takes a list and returns a list without any empty elements.\n    Note that elements in a list may be in any data type.\n    Examples:\n    remove_all_empties([]) # => []\n    remove_all_empties([0, \"\"]) # => [0]\n    remove_all_empties([True, None]) # => [True]\n    \"\"\"\n\ndef make_correct_string(str1, str2):\n    \"\"\"Create a function which takes two strings and returns a string with the following manner:\n    If the two strings match exactly, return the second string.\n    If the two strings are not equal, return a string of the form \"<str1> and <str2>\" in which \n    <str1> is replaced with the first string and <str2> is replaced with the second string.\n    Examples:\n    make_correct_string(\"java\", \"python\") # => \"java and python\"\n    make_correct_string(\"python\", \"java\") # => \"python and java\"\n    make_correct_string(\"python",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/142",
+        "completion": "   lst_sum = 0\n    for i in range(len(lst)):\n        if i%3 == 0 and i%4 == 0:\n            lstsum = lst ** 2 + lst ** 3\n        elif i%3 == 0:\n            lstsum = lst ** 2\n        elif i%4 == 0:\n            lstsum = lst ** 3\n        else:\n            lstsum = lst\n    return lstsum\n\n\nif __name__ == \"__main__\":\n    print(sum_squares([1, 2, 3]))\n    print(sum_squares([1, 2, 3, 4, 5]))\n    print(sum_squares([-1, -5, 2, -1, -5]))\n    print(sum_squares([-1, 2, -3, 4, 5, 6, 7, 8, 9]))\n    print(sum_squares([-1, 2, -3, 4, 5, 6, 7]))\n    print(sum_squares([-1",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/143",
+        "completion": "   return ''.join(\n        word\n        for word in sentence.split()\n        if len(word) == len(set(word))\n    )\n\n\nif __name__ == '__main__':\n    print(words_in_sentence('This is a test'))\n    print(words_in_sentence('lets go for swimming'))\n    print(words_in_sentence('is this a test?'))\n    print(words_in_sentence(''))\n    print(words_in_sentence('123456789'))\n    print(words_in_sentence('''\n        This is a test\n        the quick brown fox jumps over the lazy dog\n        '''))\n    print(words_in_sentence('''\n        This is a test\n        The quick brown fox jumps over the lazy dog\n        '''))\n    print(words_in_sentence('''\n        This is a test\n        The quick brown fox jumps over the lazy dog\n        '''.strip()))\n    print(words_in_sentence('''\n        This is a test",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/144",
+        "completion": "   # TODO - your code!\n\ndef get_denominator(x):\n    \"\"\"\n    Return the denominator in the fraction, given by string x.\n    For example, if x is '8/4' or '2/8', it returns 4. Note that x is always a valid fraction.\n\n    get_denominator('8/4') = 4\n    get_denominator('2/8') = 8\n    \"\"\"\n    # TODO - your code!\n\ndef get_numerator(x):\n    \"\"\"\n    Return the numerator in the fraction, given by string x.\n    For example, if x is '8/4' or '2/8', it returns 8. Note that x is always a valid fraction.\n\n    get_numerator('8/4') = 8\n    get_numerator('2/8') = 2\n    \"\"\"\n    # TODO - your code!\n\ndef is_valid_fraction(x):\n    \"\"\"\n    Return True if x is a valid fraction, and False otherwise.\n    A fraction is valid if the denominator is positive, and",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/145",
+        "completion": "   nums.sort(key=lambda x: sum(map(int, str(x))))\n    return nums\n\n\ndef double_and_add(x, y):\n    \"\"\"\n    Write a function which doubles the value of x and adds y.\n    For example:\n    >>> double_and_add(1, 2) == 6\n    >>> double_and_add(5, 3) == 15\n    >>> double_and_add(10, 15) == 20\n    \"\"\"\n    return x*2+y\n\n\ndef even_smaller(x):\n    \"\"\"\n    Write a function which returns the even smaller of two numbers.\n    For example:\n    >>> even_smaller(2, 4) == 2\n    >>> even_smaller(-9, -11) == -11\n    >>> even_smaller(0, 0) == 0\n    \"\"\"\n    return x if x <= y else y\n\n\ndef sum_max(x, y):\n    \"\"\"\n    Write a function which returns the sum of the larger two numbers\n   ",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/146",
+        "completion": "   a = []\n    for i in range(len(nums)):\n        if nums[i] > 10 and nums[i] % 10 < 9 and nums[i] % 10 > 1 and sum(str(nums[i]))%2 == 0:\n            a.append(i)\n    return len(a)\n\nprint(specialFilter([14, -15, 33, -2, -3, 45, 21, 109]))\n\n\n\n\n# def numEncode(nums):\n#     \"\"\"Write a function that takes an array of numbers as input and returns \n#     an encoded version of the array. The returned array should be \n#     in the same order as the input array.\n#     If the input number is greater than 10 or both the first and last\n#     digits are odd, the input number is added to the start of the encoded\n#     array. \n#     For example:\n#     nums = [2, 5, 4, 3, 7, 11,",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/147",
+        "completion": "   pass\n\n\n# Driver Code \nif __name__ == '__main__':\n    n = int(input())\n    print(get_max_triples(n))\n\n# Example 1\n# Input : 5\n# Output : 1\n# Explanation : a = [1, 3, 7, 13, 21]\n# The only valid triple is (1, 7, 13).\n\n# Example 2\n# Input : 6\n# Output : 2\n# Explanation : a = [1, 3, 7, 13, 21, 31]\n# The valid triplets are (1, 7, 13) and (3, 13, 21).\n\n# Example 3\n# Input : 7\n# Output : 4\n# Explanation : a = [1, 3, 7, 13, 21, 33, 45]\n# The valid triplets are (1, 7, 13), (1, 7, 21), (",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/148",
+        "completion": "   # I did not create planet names and their orbits, so it is OK to use them.\n    # Return the planets as a tuple.\n    planets = {\"Pluto\": 0, \"Saturn\": 1, \"Uranus\": 2, \"Neptune\": 3, \"Jupiter\": 4, \"Sun\": 5, \"Mercury\": 6, \"Venus\": 7, \"Earth\": 8, \"Mars\": 9}\n    # Write your code here\n    # I do not think that you should put all the planets in list\n    # So, create planet1 and planet2 in dictionary and calculate distance between them\n    # If they're both less than 8 the function should return the planets as a tuple.\n    # If they're less than 4 it returns an empty tupple.\n    if planets[planet1] <= planets[planet2] <= 8:\n        planets_list = list(planets.keys())\n        return tuple(planets_list[planets[planet1]:planets[planet2",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/149",
+        "completion": "   lst = list(filter(lambda x: len(x) % 2 == 0, lst))\n    lst.sort(key=lambda x: x.lower())\n    return lst\n\n# Better implementation without filter\ndef sorted_list_sum(lst):\n    \"\"\"Write a function that accepts a list of strings as a parameter,\n    deletes the strings that have odd lengths from it,\n    and returns the resulted list with a sorted order,\n    The list is always a list of strings and never an array of numbers,\n    and it may contain duplicates.\n    The order of the list should be ascending by length of each word, and you\n    should return the list sorted by that rule.\n    If two words have the same length, sort the list alphabetically.\n    The function should return a list of strings in sorted order.\n    You may assume that all words will have the same length.\n    For example:\n    assert list_sort([\"aa\", \"a\", \"aaa\"]) => [\"aa\"]\n    assert list_sort([\"ab\", \"a\", \"aaa\", \"cd\"]) => [\"ab\", \"cd\"]\n    \"\"\"\n",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/150",
+        "completion": "   check_n = 2\n    if n > 1:\n        if n == 2 or n == 3:\n            return x\n        else:\n            while check_n < n:\n                if n % check_n == 0:\n                    return y\n                check_n += 1\n            return x\n    else:\n        return x\n\n\ndef count_inversions(arr):\n    \"\"\"\n    A program which should return the number of inversions in a list \"arr\".\n    \n    Examples:\n    for count_inversions([2, 1, 3, 1, 2]) == 3\n    for count_inversions([1, 2, 3, 4, 5]) == 0\n    for count_inversions([1, 3, 2, 2, 1]) == 4\n\n    \"\"\"\n    count = 0\n    for i in range(len(arr)):\n            for j in range(len(arr) - 1):\n                if i != j:\n                    if arr[i] > arr[j]:\n                        count",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/151",
+        "completion": "   return sum(abs(l)**2 for l in lst if abs(l) % 2 == 1)\n\n\n# In[2]:\n\n\ndouble_the_difference([9, -2])\n\n\n# In[3]:\n\n\ndouble_the_difference([1, 3, 2, 0])\n\n\n# In[4]:\n\n\ndouble_the_difference([1, 3, 2, 0])\n\n\n# In[5]:\n\n\ndouble_the_difference([1, 3, 2, 0])\n\n\n# In[6]:\n\n\ndouble_the_difference([1, 3, 2, 0])\n\n\n# In[7]:\n\n\ndouble_the_difference([1, 3, 2, 0])\n\n\n# In[8]:\n\n\ndouble_the_difference([1, 3, 2, 0])\n\n\n# In[9]:\n\n\ndouble_the_difference([1, 3, 2, 0])\n\n\n#",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/152",
+        "completion": "   return [abs(g-n) for g,n in zip(guess,game)] \n// DO NOT EDIT THIS FILE - it is machine generated -*- c++ -*-\n\n#ifndef __java_security_cert_CRLSelector__\n#define __java_security_cert_CRLSelector__\n\n#pragma interface\n\n#include <java/lang/Object.h>\n#include <gcj/array.h>\n\nextern \"Java\"\n{\n  namespace java\n  {\n    namespace security\n    {\n        class CertPath;\n      namespace cert\n      {\n          class CRLSelector;\n      }\n    }\n  }\n}\n\nclass java::security::cert::CRLSelector : public ::java::lang::Object\n{\n\npublic:\n  CRLSelector();\n  virtual ::java::util::Set * getCertPathCheckers() = 0;\n  virtual void setCertPathCheckers(::java::util::Set *) = 0;\n  static ::java::lang::Class class$;\n} __attribute__ ((java_interface));\n\n#",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/153",
+        "completion": "\n    strongest_extension = extensions[0]\n    strength = 0\n\n    for extension in extensions:\n        uniq_letters = extension.capitalize().count(\"A\") \\\n            - extension.capitalize().count(\"a\")\n\n        if uniq_letters > strength:\n            strongest_extension = extension\n            strength = uniq_letters\n\n    return class_name + \".\" + strongest_extension\n\n\ndef Test_Strongest_Extension():\n    # Tests for the Strongest_Extension() function\n    assert Strongest_Extension(\"slices\", [\"S\", \"e\", \"r\"]) == \"slices.S\"\n    assert Strongest_Extension(\"slices\", [\"S\", \"Er\", \"vInG\"]) == \"slices.Er\"\n    assert Strongest_Extension(\"slices\", [\"S\", \"E\", \"rvInG\"]) == \"slices.Er\"\n    assert Strongest_Extension(\"slices\", [\"S\", \"E\"]) == \"slices.S\"\n    assert Strongest_Extension(\"slices\",",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/154",
+        "completion": "   if len(a)>len(b):\n        a,b=b,a\n\n    for i in range(len(a)-len(b)+1):\n        if a[i:i+len(b)]==b:\n            return True\n    else:\n        return False\n\ndef cycpattern_check(a , b):\n    # your code goes here\n    result = False\n    if len(a)>len(b):\n        a,b=b,a\n    for i in range(len(a)-len(b)+1):\n        if a[i:i+len(b)]==b:\n            result = True\n    return result\n\n\n\n#code by Avinash kumar\n\ndef cycpattern_check(a , b):\n    #your code goes here\n    if len(a)>len(b):\n        a,b=b,a\n    for i in range(len(a)-len(b)+1):\n        if a[i:i+len(b)]==b:\n            return True\n    else :\n        return False\n\n\n# code by A",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/155",
+        "completion": "   \n    count = 0\n    even = 0\n    odd = 0\n    \n    for i in range(1, num+1):\n        if num % i == 0:\n            count += 1\n            if(i % 2 == 0):\n                even += 1\n            else:\n                odd += 1\n    return even, odd\n\n\ndef test_even_odd_count1():\n    \"\"\"Test even_odd_count.\n\n    >>> even_odd_count(0)\n    (0, 0)\n    >>> even_odd_count(1)\n    (1, 0)\n    >>> even_odd_count(2)\n    (1, 1)\n    >>> even_odd_count(3)\n    (1, 1)\n    >>> even_odd_count(4)\n    (1, 1)\n    >>> even_odd_count(5)\n    (2, 1)\n    >>> even_odd_count(6)\n    (2, 2)\n    \"\"\"\n    assert test_even_odd_count1.__",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/156",
+        "completion": "   num = int(number)\n    if num == 0:\n        return ''\n    if num < 1 or num > 1000:\n        msg = \"int %s is outside of valid range: %s >= %s <= %s\"\n        raise ValueError(msg % (number, 1, 1, 1000))\n    if num >= 1000:\n        return int_to_mini_roman(num//1000) + 'm' +\\\n                int_to_mini_roman(num%1000)\n    elif num >= 100:\n        return int_to_mini_roman(num//100) + 'c' +\\\n                int_to_mini_roman(num%100)\n    elif num >= 10:\n        return int_to_mini_roman(num//10) + 'x' +\\\n                int_to_mini_roman(num%10)\n    else:\n        return int_to_mini_roman(num//",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/157",
+        "completion": "   if a**2 + (b**2 + c**2) == (a**2 + b**2 + c**2):\n        return True\n    else:\n        return False\n\n\ndef right_triangle(a, b , c, angle = 90):\n    '''\n    Given the lengths of the sides of a right-triangular triangle.\n    Return True if the sides form a right-angled triangle, False otherwise.\n    Example:\n    right_triangle(3, 4, 5) == True\n    right_triangle(1, 2, 3) == False\n    '''\n    if (a**2 + b**2) == c**2:\n        if (a**2 + b**2) == (a**2 + c**2 + b**2):\n            if angle == 90:\n                return True\n            else:\n                return False\n        else:\n            return False\n    else:\n        return False\n\n\ndef area(b, h):\n    '''\n    Given the base and height of a triangle. Return the area of the triangle.\n    Area = 1/2",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/158",
+        "completion": "   # Write your code here\n    word_len = len(words)\n    if word_len == 0:\n        return None\n\n    len_of_unique_char = [1] * word_len\n    len_of_unique_char[0] = len(set(words[0]))\n    for i in range(1, word_len):\n        len_of_unique_char[i] = len(set(words[i]))\n        if len_of_unique_char[i] > len_of_unique_char[i - 1]:\n            len_of_unique_char[i] = len_of_unique_char[i - 1]\n\n\n    max_len = len_of_unique_char[0]\n    res = words[0]\n    for i in range(1, len_of_unique_char):\n        if len_of_unique_char[i] > max_len:\n            max_len = len_of_unique_char[i]\n            res = words[i]\n\n    return res\n\nimport unittest\n\n\nclass Test",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/159",
+        "completion": "   # your code here\n    return [need + number, 0]\n    \n\n\"\"\"\n\n### Friday, June 16\n\n### Singleton\n\nThanks @coolchic for coming to the office and contributing to the code in the morning.\n\nIn Python, we have a concept called a Singleton.\n\nA Singleton concept states that only one instance of a class could exist at any given time.\nSingletons are mainly used when we have a class that is used only once in our code and it's simpler\nthan having to create an object and pass it around through our code.\n\nWe will talk about the benefits of using a Singleton in the future, so we will keep it simple in this exercise.\n\nWe usually want to create a singleton using a class method.\n\nFor example, we can create a Singleton class called HighScore called as follows:\n\n```python\nclass HighScore:\n    def __init__(self, name, score):\n        self.name = name\n        self.score = score\n\n    @classmethod\n    def get_high_score(cls):\n        return cls(name='",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/160",
+        "completion": "\n    result = []\n    for i in range(0, len(operator)):\n        if i == 0:\n            result.append(operand[i])\n        else:\n            for j in range(0, len(operator)):\n                if i == j:\n                    result.append(operand[i])\n                else:\n                    if i == j + 1:\n                        if operator[i] == '+':\n                            result.append(result[i - 2] + result[i])\n                        elif operator[i] == '-':\n                            result.append(result[i - 2] - result[i])\n                        elif operator[i] == '*':\n                            result.append(result[i - 2] * result[i])\n                        elif operator[i] == '//':\n                            result.append(result[i - 2] // result[i])\n                        elif operator[i] == '**':\n                            result.append(result[i - 2] ** result[i])\n\n    return result\n\n\n#\n# for i in",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/161",
+        "completion": "   #your code here\n    s = list(s)\n    for i in range(len(s)):\n        if s[i].isalpha():\n            s[i] = s[i].lower() if s[i].isupper() else s[i].upper()\n    return ''.join(s)\n\nprint(solve('1234'))\nprint(solve('ab'))\nprint(solve('abcd'))\nprint(solve('#a@C'))\nprint(solve('@'))\nprint(solve(''))\nprint(solve('@$A'))\n\n#another solution\n\ndef solve(s):\n    \"\"\"You are given a string s.\n    if s[i] is a letter, reverse its case from lower to upper or vise versa, \n    otherwise keep it as it is.\n    If the string contains no letters, reverse the string.\n    The function should return the resulted string.\n    Examples\n    solve(\"1234\") = \"4321\"\n    solve(\"ab\") = \"AB\"\n    solve(\"#a@C\") = \"#A@",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/162",
+        "completion": "   if text == '':\n        return None\n    md5 = hashlib.md5()\n    md5.update(text.encode('utf-8'))\n    return md5.hexdigest()\n\n\ndef get_md5_from_file(filename):\n    \"\"\"\n    As the get_file_contents function, but returns the string version of the md5 hash, rather than the file contents.\n    \"\"\"\n    return string_to_md5(get_file_contents(filename))\n\n\ndef get_file_contents(filename):\n    \"\"\"\n    Returns the contents of the given file name as a string.\n    \"\"\"\n    try:\n        with open(filename, 'r') as file_in:\n            file_contents = file_in.read()\n    except IOError:\n        file_contents = 'No such file: %s' % filename\n\n    return file_contents\n\n\ndef get_md5_from_file_url(url, target_filename):\n    \"\"\"\n    Given a url, returns the md5 hash of the file that is retrieved.\n    \"\"\"\n    # TODO: you",
+        "passed": false
+      },
+      {
+        "task_id": "HumanEval/163",
+        "completion": "   res = []\n    for i in range(a, b+1):\n        for j in str(i):\n            if int(j)%2 == 0:\n                res.append(int(j))\n    return res\n\ndef generate_integers_2(a, b):\n    \"\"\"\n    Given two positive integers a and b, return the even digits between a\n    and b, in ascending order.\n\n    For example:\n    generate_integers(2, 8) => [2, 4, 6, 8]\n    generate_integers(8, 2) => [2, 4, 6, 8]\n    generate_integers(10, 14) => []\n    \"\"\"\n    res = []\n    while a <= b:\n        if a % 2 == 0:\n            res.append(a)\n            a += 1\n        else:\n            a += 1\n    return res\n\n\ndef test_generate_integers():\n    a, b = 18, 16\n    result = generate_integers(a",
+        "passed": false
+      }
+    ]
+  },
+  "mbpp": {
+    "metrics": {
+      "pass@1": 0.004
+    },
+    "results": [
+      {
+        "task_id": "11",
+        "passed": false
+      },
+      {
+        "task_id": "12",
+        "passed": false
+      },
+      {
+        "task_id": "13",
+        "passed": false
+      },
+      {
+        "task_id": "14",
+        "passed": false
+      },
+      {
+        "task_id": "15",
+        "passed": false
+      },
+      {
+        "task_id": "16",
+        "passed": false
+      },
+      {
+        "task_id": "17",
+        "passed": false
+      },
+      {
+        "task_id": "18",
+        "passed": false
+      },
+      {
+        "task_id": "19",
+        "passed": false
+      },
+      {
+        "task_id": "20",
+        "passed": false
+      },
+      {
+        "task_id": "21",
+        "passed": false
+      },
+      {
+        "task_id": "22",
+        "passed": false
+      },
+      {
+        "task_id": "23",
+        "passed": false
+      },
+      {
+        "task_id": "24",
+        "passed": false
+      },
+      {
+        "task_id": "25",
+        "passed": false
+      },
+      {
+        "task_id": "26",
+        "passed": false
+      },
+      {
+        "task_id": "27",
+        "passed": false
+      },
+      {
+        "task_id": "28",
+        "passed": false
+      },
+      {
+        "task_id": "29",
+        "passed": false
+      },
+      {
+        "task_id": "30",
+        "passed": false
+      },
+      {
+        "task_id": "31",
+        "passed": false
+      },
+      {
+        "task_id": "32",
+        "passed": false
+      },
+      {
+        "task_id": "33",
+        "passed": false
+      },
+      {
+        "task_id": "34",
+        "passed": false
+      },
+      {
+        "task_id": "35",
+        "passed": false
+      },
+      {
+        "task_id": "36",
+        "passed": false
+      },
+      {
+        "task_id": "37",
+        "passed": false
+      },
+      {
+        "task_id": "38",
+        "passed": false
+      },
+      {
+        "task_id": "39",
+        "passed": false
+      },
+      {
+        "task_id": "40",
+        "passed": false
+      },
+      {
+        "task_id": "41",
+        "passed": false
+      },
+      {
+        "task_id": "42",
+        "passed": false
+      },
+      {
+        "task_id": "43",
+        "passed": false
+      },
+      {
+        "task_id": "44",
+        "passed": false
+      },
+      {
+        "task_id": "45",
+        "passed": false
+      },
+      {
+        "task_id": "46",
+        "passed": false
+      },
+      {
+        "task_id": "47",
+        "passed": false
+      },
+      {
+        "task_id": "48",
+        "passed": false
+      },
+      {
+        "task_id": "49",
+        "passed": false
+      },
+      {
+        "task_id": "50",
+        "passed": false
+      },
+      {
+        "task_id": "51",
+        "passed": false
+      },
+      {
+        "task_id": "52",
+        "passed": false
+      },
+      {
+        "task_id": "53",
+        "passed": false
+      },
+      {
+        "task_id": "54",
+        "passed": false
+      },
+      {
+        "task_id": "55",
+        "passed": false
+      },
+      {
+        "task_id": "56",
+        "passed": false
+      },
+      {
+        "task_id": "57",
+        "passed": false
+      },
+      {
+        "task_id": "58",
+        "passed": false
+      },
+      {
+        "task_id": "59",
+        "passed": false
+      },
+      {
+        "task_id": "60",
+        "passed": false
+      },
+      {
+        "task_id": "61",
+        "passed": false
+      },
+      {
+        "task_id": "62",
+        "passed": false
+      },
+      {
+        "task_id": "63",
+        "passed": false
+      },
+      {
+        "task_id": "64",
+        "passed": false
+      },
+      {
+        "task_id": "65",
+        "passed": false
+      },
+      {
+        "task_id": "66",
+        "passed": false
+      },
+      {
+        "task_id": "67",
+        "passed": false
+      },
+      {
+        "task_id": "68",
+        "passed": false
+      },
+      {
+        "task_id": "69",
+        "passed": false
+      },
+      {
+        "task_id": "70",
+        "passed": false
+      },
+      {
+        "task_id": "71",
+        "passed": false
+      },
+      {
+        "task_id": "72",
+        "passed": false
+      },
+      {
+        "task_id": "73",
+        "passed": false
+      },
+      {
+        "task_id": "74",
+        "passed": false
+      },
+      {
+        "task_id": "75",
+        "passed": false
+      },
+      {
+        "task_id": "76",
+        "passed": false
+      },
+      {
+        "task_id": "77",
+        "passed": false
+      },
+      {
+        "task_id": "78",
+        "passed": false
+      },
+      {
+        "task_id": "79",
+        "passed": false
+      },
+      {
+        "task_id": "80",
+        "passed": false
+      },
+      {
+        "task_id": "81",
+        "passed": false
+      },
+      {
+        "task_id": "82",
+        "passed": false
+      },
+      {
+        "task_id": "83",
+        "passed": false
+      },
+      {
+        "task_id": "84",
+        "passed": false
+      },
+      {
+        "task_id": "85",
+        "passed": false
+      },
+      {
+        "task_id": "86",
+        "passed": false
+      },
+      {
+        "task_id": "87",
+        "passed": false
+      },
+      {
+        "task_id": "88",
+        "passed": false
+      },
+      {
+        "task_id": "89",
+        "passed": false
+      },
+      {
+        "task_id": "90",
+        "passed": false
+      },
+      {
+        "task_id": "91",
+        "passed": false
+      },
+      {
+        "task_id": "92",
+        "passed": false
+      },
+      {
+        "task_id": "93",
+        "passed": false
+      },
+      {
+        "task_id": "94",
+        "passed": false
+      },
+      {
+        "task_id": "95",
+        "passed": false
+      },
+      {
+        "task_id": "96",
+        "passed": false
+      },
+      {
+        "task_id": "97",
+        "passed": false
+      },
+      {
+        "task_id": "98",
+        "passed": false
+      },
+      {
+        "task_id": "99",
+        "passed": false
+      },
+      {
+        "task_id": "100",
+        "passed": false
+      },
+      {
+        "task_id": "101",
+        "passed": false
+      },
+      {
+        "task_id": "102",
+        "passed": false
+      },
+      {
+        "task_id": "103",
+        "passed": false
+      },
+      {
+        "task_id": "104",
+        "passed": false
+      },
+      {
+        "task_id": "105",
+        "passed": false
+      },
+      {
+        "task_id": "106",
+        "passed": false
+      },
+      {
+        "task_id": "107",
+        "passed": false
+      },
+      {
+        "task_id": "108",
+        "passed": false
+      },
+      {
+        "task_id": "109",
+        "passed": false
+      },
+      {
+        "task_id": "110",
+        "passed": false
+      },
+      {
+        "task_id": "111",
+        "passed": false
+      },
+      {
+        "task_id": "112",
+        "passed": false
+      },
+      {
+        "task_id": "113",
+        "passed": false
+      },
+      {
+        "task_id": "114",
+        "passed": false
+      },
+      {
+        "task_id": "115",
+        "passed": false
+      },
+      {
+        "task_id": "116",
+        "passed": false
+      },
+      {
+        "task_id": "117",
+        "passed": false
+      },
+      {
+        "task_id": "118",
+        "passed": false
+      },
+      {
+        "task_id": "119",
+        "passed": false
+      },
+      {
+        "task_id": "120",
+        "passed": false
+      },
+      {
+        "task_id": "121",
+        "passed": false
+      },
+      {
+        "task_id": "122",
+        "passed": false
+      },
+      {
+        "task_id": "123",
+        "passed": false
+      },
+      {
+        "task_id": "124",
+        "passed": false
+      },
+      {
+        "task_id": "125",
+        "passed": false
+      },
+      {
+        "task_id": "126",
+        "passed": false
+      },
+      {
+        "task_id": "127",
+        "passed": false
+      },
+      {
+        "task_id": "128",
+        "passed": false
+      },
+      {
+        "task_id": "129",
+        "passed": false
+      },
+      {
+        "task_id": "130",
+        "passed": false
+      },
+      {
+        "task_id": "131",
+        "passed": false
+      },
+      {
+        "task_id": "132",
+        "passed": false
+      },
+      {
+        "task_id": "133",
+        "passed": false
+      },
+      {
+        "task_id": "134",
+        "passed": false
+      },
+      {
+        "task_id": "135",
+        "passed": false
+      },
+      {
+        "task_id": "136",
+        "passed": false
+      },
+      {
+        "task_id": "137",
+        "passed": false
+      },
+      {
+        "task_id": "138",
+        "passed": false
+      },
+      {
+        "task_id": "139",
+        "passed": false
+      },
+      {
+        "task_id": "140",
+        "passed": false
+      },
+      {
+        "task_id": "141",
+        "passed": false
+      },
+      {
+        "task_id": "142",
+        "passed": false
+      },
+      {
+        "task_id": "143",
+        "passed": false
+      },
+      {
+        "task_id": "144",
+        "passed": false
+      },
+      {
+        "task_id": "145",
+        "passed": false
+      },
+      {
+        "task_id": "146",
+        "passed": false
+      },
+      {
+        "task_id": "147",
+        "passed": false
+      },
+      {
+        "task_id": "148",
+        "passed": false
+      },
+      {
+        "task_id": "149",
+        "passed": false
+      },
+      {
+        "task_id": "150",
+        "passed": false
+      },
+      {
+        "task_id": "151",
+        "passed": false
+      },
+      {
+        "task_id": "152",
+        "passed": false
+      },
+      {
+        "task_id": "153",
+        "passed": false
+      },
+      {
+        "task_id": "154",
+        "passed": false
+      },
+      {
+        "task_id": "155",
+        "passed": false
+      },
+      {
+        "task_id": "156",
+        "passed": false
+      },
+      {
+        "task_id": "157",
+        "passed": false
+      },
+      {
+        "task_id": "158",
+        "passed": false
+      },
+      {
+        "task_id": "159",
+        "passed": false
+      },
+      {
+        "task_id": "160",
+        "passed": false
+      },
+      {
+        "task_id": "161",
+        "passed": false
+      },
+      {
+        "task_id": "162",
+        "passed": false
+      },
+      {
+        "task_id": "163",
+        "passed": false
+      },
+      {
+        "task_id": "164",
+        "passed": false
+      },
+      {
+        "task_id": "165",
+        "passed": false
+      },
+      {
+        "task_id": "166",
+        "passed": false
+      },
+      {
+        "task_id": "167",
+        "passed": false
+      },
+      {
+        "task_id": "168",
+        "passed": false
+      },
+      {
+        "task_id": "169",
+        "passed": false
+      },
+      {
+        "task_id": "170",
+        "passed": false
+      },
+      {
+        "task_id": "171",
+        "passed": false
+      },
+      {
+        "task_id": "172",
+        "passed": false
+      },
+      {
+        "task_id": "173",
+        "passed": false
+      },
+      {
+        "task_id": "174",
+        "passed": false
+      },
+      {
+        "task_id": "175",
+        "passed": false
+      },
+      {
+        "task_id": "176",
+        "passed": false
+      },
+      {
+        "task_id": "177",
+        "passed": false
+      },
+      {
+        "task_id": "178",
+        "passed": false
+      },
+      {
+        "task_id": "179",
+        "passed": false
+      },
+      {
+        "task_id": "180",
+        "passed": false
+      },
+      {
+        "task_id": "181",
+        "passed": false
+      },
+      {
+        "task_id": "182",
+        "passed": false
+      },
+      {
+        "task_id": "183",
+        "passed": false
+      },
+      {
+        "task_id": "184",
+        "passed": false
+      },
+      {
+        "task_id": "185",
+        "passed": false
+      },
+      {
+        "task_id": "186",
+        "passed": false
+      },
+      {
+        "task_id": "187",
+        "passed": false
+      },
+      {
+        "task_id": "188",
+        "passed": false
+      },
+      {
+        "task_id": "189",
+        "passed": false
+      },
+      {
+        "task_id": "190",
+        "passed": false
+      },
+      {
+        "task_id": "191",
+        "passed": false
+      },
+      {
+        "task_id": "192",
+        "passed": false
+      },
+      {
+        "task_id": "193",
+        "passed": false
+      },
+      {
+        "task_id": "194",
+        "passed": false
+      },
+      {
+        "task_id": "195",
+        "passed": false
+      },
+      {
+        "task_id": "196",
+        "passed": false
+      },
+      {
+        "task_id": "197",
+        "passed": false
+      },
+      {
+        "task_id": "198",
+        "passed": false
+      },
+      {
+        "task_id": "199",
+        "passed": false
+      },
+      {
+        "task_id": "200",
+        "passed": false
+      },
+      {
+        "task_id": "201",
+        "passed": false
+      },
+      {
+        "task_id": "202",
+        "passed": false
+      },
+      {
+        "task_id": "203",
+        "passed": false
+      },
+      {
+        "task_id": "204",
+        "passed": false
+      },
+      {
+        "task_id": "205",
+        "passed": false
+      },
+      {
+        "task_id": "206",
+        "passed": false
+      },
+      {
+        "task_id": "207",
+        "passed": false
+      },
+      {
+        "task_id": "208",
+        "passed": false
+      },
+      {
+        "task_id": "209",
+        "passed": false
+      },
+      {
+        "task_id": "210",
+        "passed": false
+      },
+      {
+        "task_id": "211",
+        "passed": false
+      },
+      {
+        "task_id": "212",
+        "passed": false
+      },
+      {
+        "task_id": "213",
+        "passed": false
+      },
+      {
+        "task_id": "214",
+        "passed": false
+      },
+      {
+        "task_id": "215",
+        "passed": false
+      },
+      {
+        "task_id": "216",
+        "passed": false
+      },
+      {
+        "task_id": "217",
+        "passed": false
+      },
+      {
+        "task_id": "218",
+        "passed": false
+      },
+      {
+        "task_id": "219",
+        "passed": false
+      },
+      {
+        "task_id": "220",
+        "passed": false
+      },
+      {
+        "task_id": "221",
+        "passed": false
+      },
+      {
+        "task_id": "222",
+        "passed": false
+      },
+      {
+        "task_id": "223",
+        "passed": false
+      },
+      {
+        "task_id": "224",
+        "passed": false
+      },
+      {
+        "task_id": "225",
+        "passed": false
+      },
+      {
+        "task_id": "226",
+        "passed": false
+      },
+      {
+        "task_id": "227",
+        "passed": false
+      },
+      {
+        "task_id": "228",
+        "passed": false
+      },
+      {
+        "task_id": "229",
+        "passed": false
+      },
+      {
+        "task_id": "230",
+        "passed": false
+      },
+      {
+        "task_id": "231",
+        "passed": false
+      },
+      {
+        "task_id": "232",
+        "passed": false
+      },
+      {
+        "task_id": "233",
+        "passed": false
+      },
+      {
+        "task_id": "234",
+        "passed": false
+      },
+      {
+        "task_id": "235",
+        "passed": false
+      },
+      {
+        "task_id": "236",
+        "passed": false
+      },
+      {
+        "task_id": "237",
+        "passed": false
+      },
+      {
+        "task_id": "238",
+        "passed": false
+      },
+      {
+        "task_id": "239",
+        "passed": false
+      },
+      {
+        "task_id": "240",
+        "passed": false
+      },
+      {
+        "task_id": "241",
+        "passed": false
+      },
+      {
+        "task_id": "242",
+        "passed": false
+      },
+      {
+        "task_id": "243",
+        "passed": false
+      },
+      {
+        "task_id": "244",
+        "passed": false
+      },
+      {
+        "task_id": "245",
+        "passed": false
+      },
+      {
+        "task_id": "246",
+        "passed": false
+      },
+      {
+        "task_id": "247",
+        "passed": false
+      },
+      {
+        "task_id": "248",
+        "passed": false
+      },
+      {
+        "task_id": "249",
+        "passed": false
+      },
+      {
+        "task_id": "250",
+        "passed": false
+      },
+      {
+        "task_id": "251",
+        "passed": false
+      },
+      {
+        "task_id": "252",
+        "passed": false
+      },
+      {
+        "task_id": "253",
+        "passed": false
+      },
+      {
+        "task_id": "254",
+        "passed": false
+      },
+      {
+        "task_id": "255",
+        "passed": false
+      },
+      {
+        "task_id": "256",
+        "passed": false
+      },
+      {
+        "task_id": "257",
+        "passed": false
+      },
+      {
+        "task_id": "258",
+        "passed": false
+      },
+      {
+        "task_id": "259",
+        "passed": false
+      },
+      {
+        "task_id": "260",
+        "passed": false
+      },
+      {
+        "task_id": "261",
+        "passed": false
+      },
+      {
+        "task_id": "262",
+        "passed": false
+      },
+      {
+        "task_id": "263",
+        "passed": false
+      },
+      {
+        "task_id": "264",
+        "passed": false
+      },
+      {
+        "task_id": "265",
+        "passed": false
+      },
+      {
+        "task_id": "266",
+        "passed": false
+      },
+      {
+        "task_id": "267",
+        "passed": false
+      },
+      {
+        "task_id": "268",
+        "passed": false
+      },
+      {
+        "task_id": "269",
+        "passed": false
+      },
+      {
+        "task_id": "270",
+        "passed": false
+      },
+      {
+        "task_id": "271",
+        "passed": false
+      },
+      {
+        "task_id": "272",
+        "passed": false
+      },
+      {
+        "task_id": "273",
+        "passed": false
+      },
+      {
+        "task_id": "274",
+        "passed": false
+      },
+      {
+        "task_id": "275",
+        "passed": false
+      },
+      {
+        "task_id": "276",
+        "passed": false
+      },
+      {
+        "task_id": "277",
+        "passed": false
+      },
+      {
+        "task_id": "278",
+        "passed": false
+      },
+      {
+        "task_id": "279",
+        "passed": false
+      },
+      {
+        "task_id": "280",
+        "passed": false
+      },
+      {
+        "task_id": "281",
+        "passed": false
+      },
+      {
+        "task_id": "282",
+        "passed": false
+      },
+      {
+        "task_id": "283",
+        "passed": false
+      },
+      {
+        "task_id": "284",
+        "passed": false
+      },
+      {
+        "task_id": "285",
+        "passed": false
+      },
+      {
+        "task_id": "286",
+        "passed": false
+      },
+      {
+        "task_id": "287",
+        "passed": false
+      },
+      {
+        "task_id": "288",
+        "passed": false
+      },
+      {
+        "task_id": "289",
+        "passed": false
+      },
+      {
+        "task_id": "290",
+        "passed": false
+      },
+      {
+        "task_id": "291",
+        "passed": false
+      },
+      {
+        "task_id": "292",
+        "passed": false
+      },
+      {
+        "task_id": "293",
+        "passed": false
+      },
+      {
+        "task_id": "294",
+        "passed": false
+      },
+      {
+        "task_id": "295",
+        "passed": false
+      },
+      {
+        "task_id": "296",
+        "passed": false
+      },
+      {
+        "task_id": "297",
+        "passed": false
+      },
+      {
+        "task_id": "298",
+        "passed": false
+      },
+      {
+        "task_id": "299",
+        "passed": false
+      },
+      {
+        "task_id": "300",
+        "passed": false
+      },
+      {
+        "task_id": "301",
+        "passed": false
+      },
+      {
+        "task_id": "302",
+        "passed": false
+      },
+      {
+        "task_id": "303",
+        "passed": false
+      },
+      {
+        "task_id": "304",
+        "passed": false
+      },
+      {
+        "task_id": "305",
+        "passed": false
+      },
+      {
+        "task_id": "306",
+        "passed": false
+      },
+      {
+        "task_id": "307",
+        "passed": false
+      },
+      {
+        "task_id": "308",
+        "passed": false
+      },
+      {
+        "task_id": "309",
+        "passed": false
+      },
+      {
+        "task_id": "310",
+        "passed": false
+      },
+      {
+        "task_id": "311",
+        "passed": false
+      },
+      {
+        "task_id": "312",
+        "passed": false
+      },
+      {
+        "task_id": "313",
+        "passed": false
+      },
+      {
+        "task_id": "314",
+        "passed": false
+      },
+      {
+        "task_id": "315",
+        "passed": false
+      },
+      {
+        "task_id": "316",
+        "passed": false
+      },
+      {
+        "task_id": "317",
+        "passed": false
+      },
+      {
+        "task_id": "318",
+        "passed": false
+      },
+      {
+        "task_id": "319",
+        "passed": false
+      },
+      {
+        "task_id": "320",
+        "passed": false
+      },
+      {
+        "task_id": "321",
+        "passed": false
+      },
+      {
+        "task_id": "322",
+        "passed": false
+      },
+      {
+        "task_id": "323",
+        "passed": false
+      },
+      {
+        "task_id": "324",
+        "passed": false
+      },
+      {
+        "task_id": "325",
+        "passed": false
+      },
+      {
+        "task_id": "326",
+        "passed": false
+      },
+      {
+        "task_id": "327",
+        "passed": false
+      },
+      {
+        "task_id": "328",
+        "passed": false
+      },
+      {
+        "task_id": "329",
+        "passed": false
+      },
+      {
+        "task_id": "330",
+        "passed": false
+      },
+      {
+        "task_id": "331",
+        "passed": false
+      },
+      {
+        "task_id": "332",
+        "passed": false
+      },
+      {
+        "task_id": "333",
+        "passed": false
+      },
+      {
+        "task_id": "334",
+        "passed": false
+      },
+      {
+        "task_id": "335",
+        "passed": false
+      },
+      {
+        "task_id": "336",
+        "passed": false
+      },
+      {
+        "task_id": "337",
+        "passed": false
+      },
+      {
+        "task_id": "338",
+        "passed": false
+      },
+      {
+        "task_id": "339",
+        "passed": false
+      },
+      {
+        "task_id": "340",
+        "passed": false
+      },
+      {
+        "task_id": "341",
+        "passed": false
+      },
+      {
+        "task_id": "342",
+        "passed": false
+      },
+      {
+        "task_id": "343",
+        "passed": false
+      },
+      {
+        "task_id": "344",
+        "passed": false
+      },
+      {
+        "task_id": "345",
+        "passed": false
+      },
+      {
+        "task_id": "346",
+        "passed": false
+      },
+      {
+        "task_id": "347",
+        "passed": false
+      },
+      {
+        "task_id": "348",
+        "passed": false
+      },
+      {
+        "task_id": "349",
+        "passed": false
+      },
+      {
+        "task_id": "350",
+        "passed": false
+      },
+      {
+        "task_id": "351",
+        "passed": false
+      },
+      {
+        "task_id": "352",
+        "passed": false
+      },
+      {
+        "task_id": "353",
+        "passed": false
+      },
+      {
+        "task_id": "354",
+        "passed": false
+      },
+      {
+        "task_id": "355",
+        "passed": false
+      },
+      {
+        "task_id": "356",
+        "passed": false
+      },
+      {
+        "task_id": "357",
+        "passed": false
+      },
+      {
+        "task_id": "358",
+        "passed": false
+      },
+      {
+        "task_id": "359",
+        "passed": false
+      },
+      {
+        "task_id": "360",
+        "passed": false
+      },
+      {
+        "task_id": "361",
+        "passed": false
+      },
+      {
+        "task_id": "362",
+        "passed": false
+      },
+      {
+        "task_id": "363",
+        "passed": false
+      },
+      {
+        "task_id": "364",
+        "passed": false
+      },
+      {
+        "task_id": "365",
+        "passed": false
+      },
+      {
+        "task_id": "366",
+        "passed": false
+      },
+      {
+        "task_id": "367",
+        "passed": false
+      },
+      {
+        "task_id": "368",
+        "passed": false
+      },
+      {
+        "task_id": "369",
+        "passed": false
+      },
+      {
+        "task_id": "370",
+        "passed": false
+      },
+      {
+        "task_id": "371",
+        "passed": false
+      },
+      {
+        "task_id": "372",
+        "passed": false
+      },
+      {
+        "task_id": "373",
+        "passed": false
+      },
+      {
+        "task_id": "374",
+        "passed": false
+      },
+      {
+        "task_id": "375",
+        "passed": false
+      },
+      {
+        "task_id": "376",
+        "passed": false
+      },
+      {
+        "task_id": "377",
+        "passed": false
+      },
+      {
+        "task_id": "378",
+        "passed": false
+      },
+      {
+        "task_id": "379",
+        "passed": false
+      },
+      {
+        "task_id": "380",
+        "passed": false
+      },
+      {
+        "task_id": "381",
+        "passed": false
+      },
+      {
+        "task_id": "382",
+        "passed": false
+      },
+      {
+        "task_id": "383",
+        "passed": false
+      },
+      {
+        "task_id": "384",
+        "passed": false
+      },
+      {
+        "task_id": "385",
+        "passed": false
+      },
+      {
+        "task_id": "386",
+        "passed": false
+      },
+      {
+        "task_id": "387",
+        "passed": false
+      },
+      {
+        "task_id": "388",
+        "passed": false
+      },
+      {
+        "task_id": "389",
+        "passed": false
+      },
+      {
+        "task_id": "390",
+        "passed": false
+      },
+      {
+        "task_id": "391",
+        "passed": false
+      },
+      {
+        "task_id": "392",
+        "passed": false
+      },
+      {
+        "task_id": "393",
+        "passed": false
+      },
+      {
+        "task_id": "394",
+        "passed": false
+      },
+      {
+        "task_id": "395",
+        "passed": false
+      },
+      {
+        "task_id": "396",
+        "passed": false
+      },
+      {
+        "task_id": "397",
+        "passed": false
+      },
+      {
+        "task_id": "398",
+        "passed": false
+      },
+      {
+        "task_id": "399",
+        "passed": false
+      },
+      {
+        "task_id": "400",
+        "passed": false
+      },
+      {
+        "task_id": "401",
+        "passed": false
+      },
+      {
+        "task_id": "402",
+        "passed": false
+      },
+      {
+        "task_id": "403",
+        "passed": false
+      },
+      {
+        "task_id": "404",
+        "passed": false
+      },
+      {
+        "task_id": "405",
+        "passed": false
+      },
+      {
+        "task_id": "406",
+        "passed": false
+      },
+      {
+        "task_id": "407",
+        "passed": false
+      },
+      {
+        "task_id": "408",
+        "passed": false
+      },
+      {
+        "task_id": "409",
+        "passed": false
+      },
+      {
+        "task_id": "410",
+        "passed": false
+      },
+      {
+        "task_id": "411",
+        "passed": false
+      },
+      {
+        "task_id": "412",
+        "passed": true
+      },
+      {
+        "task_id": "413",
+        "passed": false
+      },
+      {
+        "task_id": "414",
+        "passed": false
+      },
+      {
+        "task_id": "415",
+        "passed": false
+      },
+      {
+        "task_id": "416",
+        "passed": false
+      },
+      {
+        "task_id": "417",
+        "passed": false
+      },
+      {
+        "task_id": "418",
+        "passed": false
+      },
+      {
+        "task_id": "419",
+        "passed": false
+      },
+      {
+        "task_id": "420",
+        "passed": false
+      },
+      {
+        "task_id": "421",
+        "passed": false
+      },
+      {
+        "task_id": "422",
+        "passed": false
+      },
+      {
+        "task_id": "423",
+        "passed": false
+      },
+      {
+        "task_id": "424",
+        "passed": false
+      },
+      {
+        "task_id": "425",
+        "passed": false
+      },
+      {
+        "task_id": "426",
+        "passed": false
+      },
+      {
+        "task_id": "427",
+        "passed": false
+      },
+      {
+        "task_id": "428",
+        "passed": false
+      },
+      {
+        "task_id": "429",
+        "passed": false
+      },
+      {
+        "task_id": "430",
+        "passed": false
+      },
+      {
+        "task_id": "431",
+        "passed": false
+      },
+      {
+        "task_id": "432",
+        "passed": false
+      },
+      {
+        "task_id": "433",
+        "passed": false
+      },
+      {
+        "task_id": "434",
+        "passed": false
+      },
+      {
+        "task_id": "435",
+        "passed": false
+      },
+      {
+        "task_id": "436",
+        "passed": false
+      },
+      {
+        "task_id": "437",
+        "passed": false
+      },
+      {
+        "task_id": "438",
+        "passed": false
+      },
+      {
+        "task_id": "439",
+        "passed": false
+      },
+      {
+        "task_id": "440",
+        "passed": false
+      },
+      {
+        "task_id": "441",
+        "passed": false
+      },
+      {
+        "task_id": "442",
+        "passed": false
+      },
+      {
+        "task_id": "443",
+        "passed": false
+      },
+      {
+        "task_id": "444",
+        "passed": false
+      },
+      {
+        "task_id": "445",
+        "passed": false
+      },
+      {
+        "task_id": "446",
+        "passed": false
+      },
+      {
+        "task_id": "447",
+        "passed": false
+      },
+      {
+        "task_id": "448",
+        "passed": false
+      },
+      {
+        "task_id": "449",
+        "passed": false
+      },
+      {
+        "task_id": "450",
+        "passed": false
+      },
+      {
+        "task_id": "451",
+        "passed": false
+      },
+      {
+        "task_id": "452",
+        "passed": false
+      },
+      {
+        "task_id": "453",
+        "passed": false
+      },
+      {
+        "task_id": "454",
+        "passed": false
+      },
+      {
+        "task_id": "455",
+        "passed": false
+      },
+      {
+        "task_id": "456",
+        "passed": false
+      },
+      {
+        "task_id": "457",
+        "passed": false
+      },
+      {
+        "task_id": "458",
+        "passed": false
+      },
+      {
+        "task_id": "459",
+        "passed": false
+      },
+      {
+        "task_id": "460",
+        "passed": false
+      },
+      {
+        "task_id": "461",
+        "passed": false
+      },
+      {
+        "task_id": "462",
+        "passed": false
+      },
+      {
+        "task_id": "463",
+        "passed": false
+      },
+      {
+        "task_id": "464",
+        "passed": false
+      },
+      {
+        "task_id": "465",
+        "passed": false
+      },
+      {
+        "task_id": "466",
+        "passed": false
+      },
+      {
+        "task_id": "467",
+        "passed": false
+      },
+      {
+        "task_id": "468",
+        "passed": false
+      },
+      {
+        "task_id": "469",
+        "passed": false
+      },
+      {
+        "task_id": "470",
+        "passed": false
+      },
+      {
+        "task_id": "471",
+        "passed": false
+      },
+      {
+        "task_id": "472",
+        "passed": false
+      },
+      {
+        "task_id": "473",
+        "passed": false
+      },
+      {
+        "task_id": "474",
+        "passed": false
+      },
+      {
+        "task_id": "475",
+        "passed": false
+      },
+      {
+        "task_id": "476",
+        "passed": false
+      },
+      {
+        "task_id": "477",
+        "passed": false
+      },
+      {
+        "task_id": "478",
+        "passed": false
+      },
+      {
+        "task_id": "479",
+        "passed": false
+      },
+      {
+        "task_id": "480",
+        "passed": false
+      },
+      {
+        "task_id": "481",
+        "passed": false
+      },
+      {
+        "task_id": "482",
+        "passed": false
+      },
+      {
+        "task_id": "483",
+        "passed": false
+      },
+      {
+        "task_id": "484",
+        "passed": false
+      },
+      {
+        "task_id": "485",
+        "passed": false
+      },
+      {
+        "task_id": "486",
+        "passed": false
+      },
+      {
+        "task_id": "487",
+        "passed": false
+      },
+      {
+        "task_id": "488",
+        "passed": false
+      },
+      {
+        "task_id": "489",
+        "passed": false
+      },
+      {
+        "task_id": "490",
+        "passed": false
+      },
+      {
+        "task_id": "491",
+        "passed": false
+      },
+      {
+        "task_id": "492",
+        "passed": false
+      },
+      {
+        "task_id": "493",
+        "passed": false
+      },
+      {
+        "task_id": "494",
+        "passed": false
+      },
+      {
+        "task_id": "495",
+        "passed": false
+      },
+      {
+        "task_id": "496",
+        "passed": false
+      },
+      {
+        "task_id": "497",
+        "passed": false
+      },
+      {
+        "task_id": "498",
+        "passed": true
+      },
+      {
+        "task_id": "499",
+        "passed": false
+      },
+      {
+        "task_id": "500",
+        "passed": false
+      },
+      {
+        "task_id": "501",
+        "passed": false
+      },
+      {
+        "task_id": "502",
+        "passed": false
+      },
+      {
+        "task_id": "503",
+        "passed": false
+      },
+      {
+        "task_id": "504",
+        "passed": false
+      },
+      {
+        "task_id": "505",
+        "passed": false
+      },
+      {
+        "task_id": "506",
+        "passed": false
+      },
+      {
+        "task_id": "507",
+        "passed": false
+      },
+      {
+        "task_id": "508",
+        "passed": false
+      },
+      {
+        "task_id": "509",
+        "passed": false
+      },
+      {
+        "task_id": "510",
+        "passed": false
+      }
+    ]
+  }
+}

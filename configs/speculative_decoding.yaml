@@ -1,0 +1,29 @@
+# Speculative Decoding Pipeline Config
+
+target_model:
+  model_id: "codellama/CodeLlama-7b-hf"
+  load_in_4bit: true
+  bnb_4bit_compute_dtype: "float16"
+  bnb_4bit_quant_type: "nf4"
+
+draft_model:
+  # Switch between generic and domain-tuned by changing model_id
+  generic:
+    model_id: "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T"
+    lora_adapter: null
+
+  domain_tuned:
+    model_id: "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T"
+    lora_adapter: "./checkpoints/tinyllama-qlora-code"   # path to saved adapter
+
+decoding:
+  gamma: 5                 # number of draft tokens per step (lookahead)
+  max_new_tokens: 256
+  temperature: 1.0
+  top_p: 0.95
+
+logging:
+  log_acceptance_rate: true
+  log_latency: true
+  log_gpu_memory: true
+  results_dir: "./results"
