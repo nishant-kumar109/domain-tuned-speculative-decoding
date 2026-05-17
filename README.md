@@ -1,7 +1,7 @@
 # Domain-Tuned Draft Models for Efficient Speculative Decoding in Code LLMs
 
 **Course:** LLMs: A Hands-on Approach, CCE IISc  
-**Author:** Nishant Kumar (nishantkr039@gmail.com)  
+**Author:** Nishant Kumar  
 **Date:** May 2026
 
 ---
@@ -34,7 +34,7 @@ All experiments run on Google Colab with an **NVIDIA A100 (40GB)**. Run in this 
 | 5 | `04_benchmarking_humaneval_mbpp.ipynb` | HumanEval + MBPP benchmark across all 4 conditions | ~11.8 hrs |
 | 6 | `05_ablation_studies.ipynb` | Ablation studies, failure analysis, statistical tests | ~45 min |
 
-> **Total compute: ~18.5 hours on A100**
+> **Total compute: ~45 hours on A100** (~29 hrs training + ~12 hrs benchmarking + ~4 hrs inference/ablations)
 
 ### Notebook Dependencies
 
@@ -56,6 +56,26 @@ NB01 → NB02 → NB03 → NB06
 | NB04 | HF Hub: `nishant-k/speculative-decoding-benchmark-results` + Google Drive |
 | NB05 | Google Drive: ablation plots + `ablations_and_failure_modes.json` |
 | All | WandB: `nishantkr109-na/speculative-decoding-code-llm` |
+
+### Actual Training Times (A100 40GB)
+
+| Corpus | Samples | Time | Notes |
+|---|---|---|---|
+| 10% | 41K | 3h 15min | Single session |
+| 50% | 206K | ~8.5 hrs | Resumed from checkpoint after session crash |
+| 100% | 412K | ~17.5 hrs | Two sessions with overnight reset |
+
+---
+
+## Technical Notes
+
+**VRAM requirements:** CodeLlama-7B (bf16) ~14 GB + TinyLlama (bf16) ~2.2 GB = ~16 GB minimum. A100 40GB recommended for training + inference simultaneously.
+
+**PEFT inference overhead:** Loading the QLoRA adapter via `PeftModel` adds per-forward-pass latency (~24–33% throughput reduction vs generic draft). Use `merge_and_unload()` before inference to fold adapter weights into the base model and eliminate this overhead.
+
+**vLLM incompatibility:** vLLM validates exact draft/target vocab size match. CodeLlama (32,016 tokens) and TinyLlama (32,000 tokens) mismatch blocks vLLM initialisation. All throughput numbers are from a custom HF inference loop (single sequence, no KV-cache reuse) and underestimate production performance.
+
+**Vocab masking:** Target model logits beyond index 32,000 are masked to `-inf` before softmax to prevent rejected draft tokens from generating invalid token IDs in the TinyLlama embedding layer.
 
 ---
 
