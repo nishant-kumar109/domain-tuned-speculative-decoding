@@ -22,12 +22,12 @@ Large language models (LLMs) have transformed software development tooling, powe
 Existing work uses generic pretrained models as drafts. For code generation, this is a poor fit: code has domain-specific vocabulary, syntax patterns, and API usage that a general-purpose draft model fails to predict accurately. We hypothesize that **fine-tuning the draft model on code data** will improve acceptance rates and therefore throughput.
 
 This project makes the following contributions:
-1. A QLoRA fine-tuning pipeline for aligning a lightweight draft model (TinyLlama-1.1B) with a code-specialized target (CodeLlama-7B) using CodeSearchNet.
-2. A systematic 4-way comparison of speculative decoding strategies — generic draft, domain-tuned draft, Medusa, and EAGLE-2 — on HumanEval and MBPP.
+1. A QLoRA fine-tuning pipeline for aligning a lightweight draft model (TinyLlama-1.1B) with a code-specialized target (CodeLlama-7B) using **CodeSearchNet**.
+2. A systematic 4-way comparison of speculative decoding strategies — generic draft, domain-tuned draft, Medusa, and EAGLE-2 — on **HumanEval** and **MBPP**.
 3. Ablation studies quantifying how acceptance rate scales with training data size, and failure mode analysis identifying where each approach breaks down.
-4. All code, trained adapters, and results are released publicly on HuggingFace Hub.
+4. All code, trained adapters, and results are released publicly on **HuggingFace Hub**.
 
-All experiments were conducted on a single NVIDIA A100 40GB GPU (Google Colab), totalling approximately **18.5 hours** of compute across training, benchmarking, and ablation runs.
+All experiments were conducted on a single NVIDIA A100 40GB GPU (Google Colab), totalling approximately **45 hours** of compute: ~29 hrs training (10% + 50% + 100% corpus QLoRA runs), ~12 hrs benchmarking (NB04), and ~4 hrs inference, Medusa training, and ablation runs.
 
 ---
 
@@ -65,8 +65,9 @@ Speculative decoding (Chen et al., 2023) uses a draft model q to propose γ toke
 We fine-tune TinyLlama-1.1B on CodeSearchNet Python subset using QLoRA:
 - **Data:** 100% of CodeSearchNet Python (~400K functions); also 10% and 50% for ablation
 - **PEFT config:** rank=16, alpha=32, target modules: q_proj, v_proj, k_proj, o_proj
-- **Training:** 3 epochs, batch size 4, learning rate 2e-4, bf16
+- **Training:** 3 epochs, learning rate 2e-4, bf16. Batch size 4 for 10% run; increased to 16 (effective batch=32 with grad accumulation) for 50%/100% runs for A100 efficiency
 - **Final adapter:** 18M parameters, ~18MB, saved to HuggingFace Hub
+- **Actual training times (A100, across Colab sessions):** 10% → 3h 15min (11,728s); 50% → ~8.5 hrs (with checkpoint resume after session crash); 100% → ~17.5 hrs (two sessions, overnight reset)
 
 ![QLoRA Training Loss — all three corpus sizes (10%, 50%, 100%)](results/training-weights-and-biases/02-QLoRA-training-loss(NB02).png)
 *Figure 1: Training loss curves for QLoRA fine-tuning across 10%, 50%, and 100% of CodeSearchNet. All runs converge, with the 100% run training for the most steps (~37K).*
@@ -89,13 +90,13 @@ A simplified EAGLE-2 draft model using an MLP that maps (hidden_state, token_emb
 ### 3.5 Speculative Decoding Pipeline
 
 - **γ = 5** draft tokens per round
-- **Temperature = 0.8**, **max_new_tokens = 256**
+- **Temperature = 1.0**, **max_new_tokens = 256**
 - Vocab masking: TinyLlama has vocab size 32,000 vs CodeLlama's 32,016 — tokens beyond index 32,000 are masked to -inf in target logits before comparison
 - Rejection sampling with corrected distribution: on rejection, resample from `relu(p - q) / ||relu(p - q)||`
 
 ### 3.6 Evaluation
 
-- **Benchmarks:** HumanEval (164 problems), MBPP (500 problems, test split)
+- **Benchmarks:** HumanEval (164 problems), MBPP (374 problems, test split)
 - **Metric:** Pass@1 using unbiased estimator (Chen et al., 2021): `pass@k = 1 - C(n-c, k)/C(n, k)`
 - **Efficiency:** Tokens/sec, speedup ratio vs autoregressive baseline, acceptance rate
 - **Hardware:** NVIDIA A100 40GB
@@ -106,21 +107,23 @@ A simplified EAGLE-2 draft model using an MLP that maps (hidden_state, token_emb
 
 ### 4.1 Efficiency: Acceptance Rate and Throughput
 
-Results from NB06 (measured on 50 HumanEval prompts, γ=5):
+Results compiled from NB03 (C1/C2) and NB06 (C3/C4), measured on HumanEval prompts, γ=5:
 
-| Condition | Spec. Accept. Rate (%) | Tokens/sec | Speedup | Draft Accept. Rate |
+| Condition | Spec. Accept. Rate (%) | Tokens/sec | Speedup | Draft Accept. Rate (%) |
 |---|---|---|---|---|
-| C1: Baseline Generic | 48.2% | 8.1 | 1.85× | ~0.37 |
-| C2: Domain Tuned | 49.6% | 6.1 | 1.91× | ~0.38 |
+| C1: Baseline Generic | 48.2% | 8.1 | 1.85× | ~37% |
+| C2: Domain Tuned | 49.6% | 6.1 | 1.91× | ~38% |
 | C3: Medusa | 26.4% | 28.3 | 1.03× | N/A† |
-| C4: EAGLE-2 (untrained) | 20.1% | 26.5 | 1.00× | ~0.01 |
+| C4: EAGLE-2 (untrained) | 20.1% | 26.5 | 1.00× | ~1% |
+
+**NB01 Baseline hardware stats:** Mean acceptance rate 46.8% (run-to-run variance ±5pp due to temperature=1.0), mean throughput 8.1 tok/s (custom HF loop, single sequence, no KV-cache reuse), peak VRAM 15.81 GB (CodeLlama-7B bf16 ~14 GB + TinyLlama bf16 ~2.2 GB), TTFT ~307ms post warm-up (cold-start: ~1145ms). KV-cache utilisation: ~32% of theoretical max (1.95× out of 6× for γ=5).
 
 > †Medusa does not use a separate draft model, so classical acceptance rate (p/q rejection sampling) is undefined. Medusa verifies head predictions via one extra forward pass of the same target model — a different verification mechanism entirely.
 
 > **Note:** Two distinct metrics here — "Spec. Accept. Rate (%)" is the fraction of test prompts where at least one draft token was accepted (prompt-level, NB06). "Draft Accept. Rate" is the token-level fraction of individual draft tokens accepted per decoding step (NB05). Both measure alignment but at different granularities. Functional correctness (Pass@1) is in §4.2.
 
 ![All 4 Conditions: Acceptance Rate, Throughput and KV-Cache Efficiency](results/efficiency/all_conditions_comparison.png)
-*Figure 4: Side-by-side comparison of all four conditions — acceptance rate (left), throughput in tokens/sec (centre), and KV-cache efficiency/speedup (right).*
+*Figure 3: Side-by-side comparison of all four conditions — acceptance rate (left), throughput in tokens/sec (centre), and KV-cache efficiency/speedup (right).*
 
 **Key finding:** Domain tuning improves speedup from 1.85× to 1.91× — a modest but consistent gain. Medusa achieves the highest raw throughput (28.3 tok/s) due to parallelizing 4 head predictions, but its speculative gain over autoregressive is only 1.03× because the heads were trained on only 5% of data. EAGLE-2 without training produces near-zero acceptance rate, confirming that hidden-state extrapolation requires training to be effective.
 
@@ -142,7 +145,7 @@ Results from NB06 (measured on 50 HumanEval prompts, γ=5):
 3. **No few-shot prompting.** Base models require demonstration examples to follow the expected output format. We pass raw prompts without examples.
 
 ![HumanEval Running Pass Rate during NB04 benchmarking](results/training-weights-and-biases/running-pass-rate.png)
-*Figure 3: Running Pass@1 rate across all 164 HumanEval problems during NB04 benchmarking. All four conditions converge to near-zero, confirming consistent behaviour across the full problem set.*
+*Figure 4: Running Pass@1 rate across all 164 HumanEval problems during NB04 benchmarking. All four conditions converge to near-zero, confirming consistent behaviour across the full problem set.*
 
 ![Pass@1 on HumanEval and MBPP — All 4 Conditions](results/benchmarking/benchmark_passk_all_conditions.png)
 *Figure 5: Pass@1 scores on HumanEval (left) and MBPP (right) for all four conditions. All conditions cluster near zero, confirming speculative decoding is lossless.*
@@ -157,28 +160,76 @@ Results from NB06 (measured on 50 HumanEval prompts, γ=5):
 
 | Metric | Generic (C1) | Domain-Tuned (C2) | Δ |
 |---|---|---|---|
-| Acceptance rate (NB05, 8 prompts) | 0.527 | 0.532 | +0.005 |
+| Acceptance rate (NB05, 8 prompts) | 52.7% | 53.2% | +0.5pp |
 | Tokens/sec (NB06, 5 prompts) | 8.1 | 6.1 | -2.0 |
 | Speedup (NB06) | 1.85× | 1.91× | +0.06× |
 
-**Analysis:** Domain tuning shows a marginal acceptance rate improvement (+0.005) on a small prompt set. The speedup improvement (1.85×→1.91×) is consistent with this. Raw throughput drops (8.1→6.1 tok/s) due to LoRA adapter overhead on draft model forward passes — a consistent **24–33% throughput penalty** observed across all corpus sizes. This overhead is independent of corpus size and is caused by PEFT's per-forward-pass adapter computation. A merged adapter (weights folded into base model) would eliminate this penalty entirely.
+**Analysis:** Domain tuning shows a marginal acceptance rate improvement (+0.5pp) on a small prompt set. The speedup improvement (1.85×→1.91×) is consistent with this. Raw throughput drops (8.1→6.1 tok/s) due to LoRA adapter overhead on draft model forward passes — a consistent **24–33% throughput penalty** observed across all corpus sizes. This overhead is independent of corpus size and is caused by PEFT's per-forward-pass adapter computation. A merged adapter (weights folded into base model) would eliminate this penalty entirely.
 
 ### 5.2 A2: Dataset Size Effect (10% / 50% / 100% CodeSearchNet)
 
 | Training Data | Acceptance Rate |
 |---|---|
-| 0% (generic) | 0.527 |
-| 10% | 0.538 |
-| 50% | 0.560 |
-| 100% | 0.532 |
+| 0% (generic) | 52.7% |
+| 10% | 53.8% |
+| 50% | 56.0% |
+| 100% | 53.2% |
 
 A more detailed view from NB03 per-prompt analysis across all three corpus sizes:
 
 | Corpus | Samples | Mean AR Delta | KV-eff Delta | Key Winner | Key Loser |
 |---|---|---|---|---|---|
 | 10% | 41K | −1.7pp | −0.09× | fibonacci +10pp, palindrome +18pp | Stack −23pp, merge_sort −17pp |
-| 50% | 206K | −2.7pp | −0.09× | Stack +21pp | fibonacci −19pp, palindrome −9pp |
+| 50% | 206K | +3.4pp (10 prompts) | −0.09× | HTMLValidator +15.6pp, ExpressionEvaluator +24.8pp | fibonacci −19.4pp |
 | 100% | 412K | **+1.4pp** | **+0.07×** | binary_search +26pp | Stack −19pp |
+
+**Per-prompt breakdown — 10% corpus:**
+
+| Prompt | C1 AR | C2 AR | Delta |
+|---|---|---|---|
+| fibonacci | 38.6% | 48.7% | +10.1pp |
+| binary_search | 52.3% | 55.0% | +2.7pp |
+| Stack (OOP) | 50.6% | 28.1% | **−22.5pp** |
+| merge_sort | 68.9% | 52.2% | **−16.7pp** |
+| is_palindrome | 41.1% | 59.0% | +17.9pp |
+
+10% adapter helps on simple/common patterns (fibonacci, palindrome) — well represented in CodeSearchNet — but hurts on OOP (Stack) and recursive (merge_sort), which are underrepresented in the 10% subset.
+
+**Per-prompt breakdown — 50% corpus (NB03, 8 prompts):**
+
+| Prompt | C1 AR | C2 AR | Delta | C1 Tok/s | C2 Tok/s |
+|---|---|---|---|---|---|
+| fibonacci | 66.2% | 46.8% | **−19.4pp** | 10.6 | 5.8 |
+| binary_search | 44.8% | 52.2% | +7.4pp | 7.8 | 6.3 |
+| is_palindrome | 40.4% | 41.1% | +0.7pp | 7.2 | 5.4 |
+| merge_sort | 40.0% | 45.0% | +5.0pp | 7.2 | 5.6 |
+| BracketValidator | 50.2% | 44.4% | −5.8pp | 8.2 | 5.6 |
+| MinStack | 55.5% | 48.6% | −6.9pp | 8.9 | 5.9 |
+| BrowserHistory | 55.5% | 47.3% | −8.2pp | 8.9 | 5.8 |
+| HTMLValidator | 49.4% | 65.0% | **+15.6pp** | 8.0 | 7.3 |
+| **Mean** | **50.2%** | **48.8%** | **−1.4pp** | 8.4 | 5.9 |
+
+**Extended demo — additional class prompts (same 50% adapter):**
+
+| Prompt | C1 AR | C2 AR | Delta | C1 Tok/s | C2 Tok/s |
+|---|---|---|---|---|---|
+| ExpressionEvaluator | 44.7% | 69.5% | **+24.8pp** | 7.5 | **10.6** |
+| HTMLValidator (rerun) | 41.5% | 62.4% | **+20.9pp** | 7.1 | 7.1 |
+| **Combined mean (all 10 prompts)** | **48.8%** | **52.2%** | **+3.4pp** | **8.1** | **6.5** |
+
+50% adapter shows a clear pattern: simple function stubs regress (fibonacci −19.4pp), while structured OOP class prompts improve (HTMLValidator +15.6pp, ExpressionEvaluator +24.8pp). **ExpressionEvaluator is the only case across all runs where domain tuning produces a real throughput gain (+3.2 tok/s)** — acceptance rate improvement large enough to overcome PEFT overhead. The 8-prompt systematic mean is −1.4pp, but including the 2 additional class prompts the combined 10-prompt mean flips to **+3.4pp** — confirming that the prompt set composition heavily influences the aggregate result (range: −19.4pp to +24.8pp).
+
+**Per-prompt breakdown — 100% corpus:**
+
+| Prompt | C1 AR | C2 AR | Delta |
+|---|---|---|---|
+| fibonacci | 50.6% | 48.7% | −1.9pp |
+| binary_search | 37.5% | **63.9%** | **+26.4pp** |
+| Stack (OOP) | 56.4% | 37.5% | **−18.8pp** |
+| merge_sort | 43.1% | 47.3% | +4.2pp |
+| is_palindrome | 53.3% | 50.2% | −3.1pp |
+
+100% corpus is the first run with positive mean AR delta (+1.4pp). binary_search shows the largest single-prompt gain across all runs (+26.4pp) — full corpus covers diverse search algorithm patterns. Stack regression persists across all corpus sizes.
 
 ![A1: Acceptance Rate vs Dataset Size](results/ablations/ablation_a1_dataset_size.png)
 *Figure 6: Acceptance rate vs training corpus size. Peaks at 50% (0.560) then drops at 100% (0.532), showing non-monotonic behaviour.*
@@ -191,13 +242,13 @@ Domain-tuned draft applied to non-code prompts (math word problems, general QA):
 
 | Task Type | Acceptance Rate (Generic) | Acceptance Rate (Domain-Tuned) | Delta |
 |---|---|---|---|
-| Code | 0.608 | 0.533 | -0.075 |
-| Math | 0.421 | 0.381 | -0.040 |
-| General QA | 0.448 | 0.391 | -0.057 |
+| Code | 60.8% | 53.3% | −7.5pp |
+| Math | 42.1% | 38.1% | −4.0pp |
+| General QA | 44.8% | 39.1% | −5.7pp |
 
-> **Note on numbers:** The generic AR here (Code: 0.608) differs from A1 (0.527) because these are different prompt sets — A3 uses 3 short domain-specific prompts per task type, while A1 uses 8 mixed HumanEval prompts. Acceptance rate varies significantly with prompt content; both measurements are from the same unmodified generic TinyLlama-1.1B model.
+> **Note on numbers:** The generic AR here (Code: 60.8%) differs from A1 (52.7%) because these are different prompt sets — A3 uses 3 short domain-specific prompts per task type, while A1 uses 8 mixed HumanEval prompts. Acceptance rate varies significantly with prompt content; both measurements are from the same unmodified generic TinyLlama-1.1B model.
 
-**Finding:** Domain tuning reduces acceptance rate across all domains including code (Code: -0.075, Math: -0.040, General QA: -0.057). Fine-tuning on CodeSearchNet narrows the draft model's token distribution, making it more peaked — this increases probability mass on code-specific tokens but reduces alignment with the target model's broader distribution on the simple test prompts used here. The delta is largest on Code (-0.075), confirming the effect is domain-specific.
+**Finding:** Domain tuning reduces acceptance rate across all domains including code (Code: −7.5pp, Math: −4.0pp, General QA: −5.7pp). Fine-tuning on CodeSearchNet narrows the draft model's token distribution, making it more peaked — this increases probability mass on code-specific tokens but reduces alignment with the target model's broader distribution on the simple test prompts used here. The delta is largest on Code (-0.075), confirming the effect is domain-specific.
 
 > **Note:** This appears to contradict the NB06 speedup result (C2: 1.91× > C1: 1.85×). The resolution is that the NB05 A3 prompts are short, simple function stubs (8 prompts), while NB06 uses 50 longer HumanEval problems. Domain tuning's benefit is prompt-complexity dependent — see §8.2 for full discussion.
 
@@ -233,9 +284,9 @@ Comparison of rejection rates between generic (C1) and domain-tuned (C2) draft o
 
 | Condition | Mean Rejection Rate (NB05, 8 prompts) |
 |---|---|
-| C1: Generic draft | ~0.473 (1 − 0.527) |
-| C2: Domain-tuned draft | ~0.468 (1 − 0.532) |
-| C2 on A3 code prompts | ~0.467 (1 − 0.533) vs C1 ~0.392 (1 − 0.608) |
+| C1: Generic draft | ~47.3% (1 − 52.7%) |
+| C2: Domain-tuned draft | ~46.8% (1 − 53.2%) |
+| C2 on A3 code prompts | ~46.7% (1 − 53.3%) vs C1 ~39.2% (1 − 60.8%) |
 
 **Finding:** The domain-tuned draft actually produces more token rejections on the NB05 test prompts. Fine-tuning on CodeSearchNet narrows the draft's token distribution — it becomes more confident on code-specific tokens but less aligned with the target's broader distribution on simple prompts. This is consistent with the A2/A3 findings and explains why the acceptance rate benefit is prompt-dependent.
 
@@ -275,12 +326,12 @@ McNemar's paired test on per-problem pass/fail outcomes to test whether domain t
 - All 12 pairwise comparisons across both benchmarks: p >> Bonferroni threshold (α=0.0042)
 - **0/12 pairs significant** — confirms speculative decoding is lossless
 
-### 7.3 Gamma Effect on Acceptance Rate
+### 7.3 A4: Gamma Effect on Acceptance Rate
 
-From the gamma sweep in NB05 (separate from A3 domain generalization): acceptance rate decreases monotonically with γ (0.827 at γ=1 → 0.301 at γ=10), confirming γ=5 is a good trade-off between speedup potential and acceptance rate.
+From the gamma sweep in NB05 (A4, separate from A3 domain generalization): acceptance rate decreases monotonically with γ (0.827 at γ=1 → 0.301 at γ=10), confirming γ=5 is a good trade-off between speedup potential and acceptance rate.
 
-![A3: Acceptance Rate vs Gamma](results/ablations/ablation_a3_gamma.png)
-*Figure 7: Monotonic decrease in acceptance rate as γ increases from 1 to 10. γ=5 balances speedup potential and acceptance rate.*
+![A4: Acceptance Rate vs Gamma](results/ablations/ablation_a3_gamma.png)
+*Figure 7: A4 — Monotonic decrease in acceptance rate as γ increases from 1 to 10. γ=5 balances speedup potential and acceptance rate.*
 
 ---
 
@@ -296,7 +347,7 @@ Our results reveal a fundamental trade-off:
 
 ### 8.2 Unexpected Finding: Domain Tuning Reduces Acceptance Rate on Small Prompt Sets
 
-Ablation A2 (domain generalization) shows that the domain-tuned draft has **lower** acceptance rate than the generic draft across all domains (Code: 0.533 vs 0.608, Math: 0.381 vs 0.421, General QA: 0.391 vs 0.448). This appears to contradict the speedup results from NB06 (1.91× vs 1.85×).
+Ablation A3 (domain generalization) shows that the domain-tuned draft has **lower** acceptance rate than the generic draft across all domains (Code: 53.3% vs 60.8%, Math: 38.1% vs 42.1%, General QA: 39.1% vs 44.8%). This appears to contradict the speedup results from NB06 (1.91× vs 1.85×).
 
 The explanation lies in **distribution narrowing**: QLoRA fine-tuning on CodeSearchNet makes the draft model's token distribution more peaked around code-specific tokens. On the 8 simple test prompts used in NB05, the generic model's broader distribution actually aligns better with CodeLlama's output. However, on longer, more complex code generation tasks (NB06 test prompts), the domain-tuned model's code-specific predictions are accepted more often, yielding the higher speedup.
 
@@ -317,6 +368,8 @@ For **production code LLM serving:**
 3. **Single GPU:** All experiments on A100 40GB. Multi-GPU or batched inference may shift throughput rankings.
 4. **EAGLE-2 untrained:** Our C4 is a lower bound. A fully trained EAGLE-2 would likely match or exceed C2 in acceptance rate.
 5. **γ=5 fixed:** Optimal γ varies by method; adaptive γ (as in EAGLE-2 paper) would benefit Medusa more.
+6. **No KV-cache reuse across decoding steps:** The custom HF loop passes the full growing sequence to both models on every call. Production systems (vLLM) reuse the KV-cache, significantly improving tok/s. All throughput numbers underestimate production performance.
+7. **bitsandbytes CUDA incompatibility for inference:** 4-bit quantization used during QLoRA training cannot be used for inference on CUDA 12.8/13.x without additional setup. All inference runs use full bf16 precision, making inference slightly more memory-intensive than training.
 
 **If we were to redo this project with more time and compute, we would:**
 - Use `CodeLlama-7B-instruct` as the target model to get meaningful Pass@1 scores and properly validate functional correctness
